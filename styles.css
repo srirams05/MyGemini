@@ -1,10 +1,11 @@
 /* Basic Styles */
 body {
   font-family: "Times New Roman", "Times", serif;
+  font-size: 20px;
   line-height: 1.6;
   margin: 20px;
   background-color: #141414; /* Dark gray background */
-  color: #abb39c; /* White text */
+  color: #a8ac9f; /* White text */
 }
 
 
