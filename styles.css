@@ -3,8 +3,8 @@ body {
   font-family: "Times New Roman", "Times", serif;
   line-height: 1.6;
   margin: 20px;
-  background-color: #000000; /* Dark gray background */
-  color: #c1c3bc; /* White text */
+  background-color: #0f0f0f; /* Dark gray background */
+  color: #acb19f; /* White text */
 }
 
 
@@ -49,7 +49,7 @@ nav li a:hover {
 /* Main Content Styles */
 article {
   margin-left: 260px;
-  font-size: 22px;
+  font-size: 20px;
   overflow: auto;
 }
 
