@@ -22,6 +22,11 @@
     vectors</a></li>
     <li><a href="#tangent-space-and-basis"
     id="toc-tangent-space-and-basis">Tangent space and basis</a></li>
+    <li><a href="#tangent-space-via-curves"
+    id="toc-tangent-space-via-curves">Tangent space via curves</a></li>
+    <li><a href="#equivalence-of-tangent-space-definitions"
+    id="toc-equivalence-of-tangent-space-definitions">Equivalence of
+    tangent space definitions</a></li>
     </ul>
   </nav>
   <article>
@@ -472,6 +477,349 @@
     remainder term in the Taylor series and taking the limit as <span
     class="math inline">\(x\)</span> approaches <span
     class="math inline">\(p\)</span>.</p>
+    <h1 id="tangent-space-via-curves">Tangent space via curves</h1>
+    <p><strong>Let <span class="math inline">\(c_1(t), c_2(t)\)</span>
+    be two curves from <span class="math inline">\(R\)</span> to <span
+    class="math inline">\(E^n\)</span> such that <span
+    class="math inline">\(c_1(p) = c_2(p)\)</span> and <span
+    class="math inline">\(d c_1 / dt = d c_2/ dt\)</span> at <span
+    class="math inline">\(p \in E^n\)</span>. This defines an
+    equivalence relation for curves through <span
+    class="math inline">\(p\)</span>. An equivalence class of curves is
+    defined to be a tangent vector. The set of such tangent vectors is a
+    vector space called the tangent space <span
+    class="math inline">\(T_p E^n\)</span>. How to show that the vector
+    space axioms are satisfied?</strong></p>
+    <p>You’ve described a geometric approach to defining the tangent
+    space, focusing on equivalence classes of curves. Let’s show that
+    the set of equivalence classes (tangent vectors) forms a vector
+    space.</p>
+    <p><strong>1. Defining Addition:</strong></p>
+    <p>Let <span class="math inline">\([c_1]\)</span> and <span
+    class="math inline">\([c_2]\)</span> be two equivalence classes of
+    curves through <span class="math inline">\(p\)</span>, representing
+    tangent vectors <span class="math inline">\(\mathbf{v}\)</span> and
+    <span class="math inline">\(\mathbf{w}\)</span> respectively. To
+    define the addition of these equivalence classes, we need a
+    representative curve for their sum. We choose the representative
+    curves <span class="math inline">\(c_1\)</span> and <span
+    class="math inline">\(c_2\)</span> such that <span
+    class="math inline">\(c_1(0) = c_2(0) = p\)</span>. Then, we define
+    the sum of the equivalence classes as:</p>
+    <p><span class="math inline">\([c_1] + [c_2] = [c_1 +
+    c_2]\)</span></p>
+    <p>where <span class="math inline">\((c_1 + c_2)(t) = c_1(t) +
+    c_2(t)\)</span> is the pointwise sum of the curves. This is
+    well-defined because if we pick different representative curves for
+    <span class="math inline">\([c_1]\)</span> and <span
+    class="math inline">\([c_2]\)</span>, say <span
+    class="math inline">\(c_1&#39;\)</span> and <span
+    class="math inline">\(c_2&#39;\)</span>, the derivatives at <span
+    class="math inline">\(p\)</span> would still be equal, therefore the
+    derivative of <span class="math inline">\(c_1&#39; +
+    c_2&#39;\)</span> would be the same at <span
+    class="math inline">\(p\)</span>, hence the equivalence class is
+    unchanged.</p>
+    <p><strong>2. Defining Scalar Multiplication:</strong></p>
+    <p>For a scalar <span class="math inline">\(\alpha \in
+    \mathbb{R}\)</span> and an equivalence class <span
+    class="math inline">\([c]\)</span>, we define scalar multiplication
+    as:</p>
+    <p><span class="math inline">\(\alpha [c] = [\alpha c]\)</span></p>
+    <p>where <span class="math inline">\((\alpha c)(t) = \alpha
+    c(t)\)</span> is the scalar multiple of the curve. Similar to
+    addition, this is well defined because the derivative of <span
+    class="math inline">\(\alpha c\)</span> at <span
+    class="math inline">\(p\)</span> would scale by <span
+    class="math inline">\(\alpha\)</span>, so equivalence classes are
+    preserved under scalar multiplication.</p>
+    <p><strong>3. Verification of Vector Space Axioms:</strong></p>
+    <p>Now we need to check that the vector space axioms hold:</p>
+    <ul>
+    <li><p><strong>Associativity of addition:</strong> This follows
+    directly from the associativity of vector addition in <span
+    class="math inline">\(\mathbb{R}^n\)</span> because we add curves
+    pointwise using vector addition in <span
+    class="math inline">\(E^n\)</span>.</p></li>
+    <li><p><strong>Commutativity of addition:</strong> This follows from
+    the commutativity of vector addition in <span
+    class="math inline">\(\mathbb{R}^n\)</span>.</p></li>
+    <li><p><strong>Existence of a zero vector:</strong> The zero vector
+    is the equivalence class of the constant curve <span
+    class="math inline">\(c(t) = p\)</span> for all <span
+    class="math inline">\(t\)</span>.</p></li>
+    <li><p><strong>Existence of additive inverses:</strong> The additive
+    inverse of <span class="math inline">\([c]\)</span> is <span
+    class="math inline">\([-c]\)</span>, where <span
+    class="math inline">\((-c)(t) = -c(t)\)</span>.</p></li>
+    <li><p><strong>Associativity of scalar multiplication:</strong> This
+    follows directly from the associativity of scalar multiplication in
+    <span class="math inline">\(\mathbb{R}^n\)</span>.</p></li>
+    <li><p><strong>Distributivity of scalar multiplication with respect
+    to vector addition:</strong> This follows from the distributivity
+    property of scalar multiplication in <span
+    class="math inline">\(\mathbb{R}^n\)</span>.</p></li>
+    <li><p><strong>Distributivity of scalar multiplication with respect
+    to scalar addition:</strong> This follows from the distributivity
+    property of scalar multiplication in <span
+    class="math inline">\(\mathbb{R}^n\)</span>.</p></li>
+    <li><p><strong>Identity element of scalar multiplication:</strong>
+    This is the scalar 1.</p></li>
+    </ul>
+    <p>Therefore, by showing that the addition and scalar multiplication
+    are well-defined and that the vector space axioms are satisfied, we
+    have proven that the set of equivalence classes of curves through
+    <span class="math inline">\(p\)</span> forms a vector space—the
+    tangent space <span class="math inline">\(T_pE^n\)</span>. The key
+    is that the operations on equivalence classes are inherited from the
+    vector space structure of <span
+    class="math inline">\(\mathbb{R}^n\)</span> (or <span
+    class="math inline">\(E^n\)</span>) and hence inherit their
+    properties.</p>
+    <p><strong>The pointwise addition of curves <span
+    class="math inline">\((c_1 + c_2)(t) = c_1(t) + c_2(t)\)</span> is
+    unclear. <span class="math inline">\(c_1(t)\)</span> is a point in
+    <span class="math inline">\(E^n\)</span>. Similarly for <span
+    class="math inline">\(c_2(t)\)</span> for a fixed value of <span
+    class="math inline">\(t\)</span>. How to add two points in <span
+    class="math inline">\(E^n\)</span>?</strong></p>
+    <p>You are absolutely correct to point out the ambiguity. My
+    apologies for the oversight. We can’t directly add points in <span
+    class="math inline">\(E^n\)</span> like we add vectors. The notation
+    <span class="math inline">\((c_1 + c_2)(t) = c_1(t) +
+    c_2(t)\)</span> is misleading in that context. It’s better to
+    clarify the addition in terms of <em>tangent vectors</em>.</p>
+    <p>The curves <span class="math inline">\(c_1(t)\)</span> and <span
+    class="math inline">\(c_2(t)\)</span> represent paths through <span
+    class="math inline">\(E^n\)</span>. Their derivatives at <span
+    class="math inline">\(t=0\)</span> (where they pass through <span
+    class="math inline">\(p\)</span>), <span
+    class="math inline">\(\frac{dc_1}{dt}(0)\)</span> and <span
+    class="math inline">\(\frac{dc_2}{dt}(0)\)</span>, are vectors in
+    <span class="math inline">\(\mathbb{R}^n\)</span> representing the
+    tangent vectors at <span class="math inline">\(p\)</span>. It is
+    <em>these vectors</em> that we are adding.</p>
+    <p>The correct way to define the sum of equivalence classes is as
+    follows:</p>
+    <p>Let <span class="math inline">\([c_1]\)</span> and <span
+    class="math inline">\([c_2]\)</span> be equivalence classes of
+    curves through <span class="math inline">\(p\)</span>. Then:</p>
+    <p><span class="math inline">\([c_1] + [c_2] = [c]\)</span></p>
+    <p>where <span class="math inline">\([c]\)</span> is the equivalence
+    class of a curve <span class="math inline">\(c\)</span> such that
+    <span class="math inline">\(\frac{dc}{dt}(0) = \frac{dc_1}{dt}(0) +
+    \frac{dc_2}{dt}(0)\)</span>. We are adding the <em>tangent
+    vectors</em>, which are elements of <span
+    class="math inline">\(\mathbb{R}^n\)</span> (or the tangent space
+    <span class="math inline">\(T_pE^n\)</span>). The existence of such
+    a curve <span class="math inline">\(c\)</span> is guaranteed (we can
+    construct it explicitly).</p>
+    <p>Similarly, scalar multiplication is defined as:</p>
+    <p><span class="math inline">\(\alpha[c] = [c&#39;]\)</span></p>
+    <p>where <span class="math inline">\(\frac{dc&#39;}{dt}(0) = \alpha
+    \frac{dc}{dt}(0)\)</span>.</p>
+    <p>With these corrected definitions, the vector space axioms are
+    satisfied because the addition and scalar multiplication operate on
+    the tangent vectors (elements of <span
+    class="math inline">\(\mathbb{R}^n\)</span>) which are the velocity
+    vectors at <span class="math inline">\(t=0\)</span>. The ambiguity
+    of pointwise addition is avoided. The curves are just a way to
+    define the tangent vectors themselves.</p>
+    <h1 id="equivalence-of-tangent-space-definitions">Equivalence of
+    tangent space definitions</h1>
+    <p><strong>We have defined tangent spaces at <span
+    class="math inline">\(p \in E^n\)</span> in two different ways: via
+    equivalence classes of curves through <span
+    class="math inline">\(p\)</span> and the set of derivations at <span
+    class="math inline">\(p\)</span>. They must be equivalent. How to
+    show this?</strong></p>
+    <p>To show the equivalence between the tangent space defined via
+    equivalence classes of curves and the tangent space defined as the
+    set of derivations at a point <span class="math inline">\(p \in
+    E^n\)</span>, we need to establish a bijective (one-to-one and onto)
+    mapping between the two spaces that preserves the vector space
+    structure (i.e., it’s a linear isomorphism).</p>
+    <p><strong>1. Mapping from Curves to Derivations:</strong></p>
+    <p>Let <span class="math inline">\([c]\)</span> be an equivalence
+    class of curves passing through <span
+    class="math inline">\(p\)</span> at <span
+    class="math inline">\(t=0\)</span>. The velocity vector of the curve
+    <span class="math inline">\(c\)</span> at <span
+    class="math inline">\(p\)</span> (which is the same for all curves
+    in the equivalence class), <span class="math inline">\(\mathbf{v} =
+    \frac{dc}{dt}(0)\)</span>, is a tangent vector. We can associate
+    this tangent vector with a derivation <span
+    class="math inline">\(X_{[c]}\)</span> defined by its action on
+    smooth functions <span class="math inline">\(f \in
+    C^\infty(E^n)\)</span>:</p>
+    <p><span class="math inline">\(X_{[c]}(f) =
+    \frac{d}{dt}(f(c(t)))|_{t=0} = \nabla f(p) \cdot \mathbf{v} =
+    \sum_{i=1}^n v_i \frac{\partial f}{\partial x_i}(p)\)</span></p>
+    <p>where <span class="math inline">\(\nabla f(p)\)</span> is the
+    gradient of <span class="math inline">\(f\)</span> at <span
+    class="math inline">\(p\)</span>, and <span
+    class="math inline">\(v_i\)</span> are the components of the
+    velocity vector <span class="math inline">\(\mathbf{v}\)</span>.
+    This is the directional derivative of <span
+    class="math inline">\(f\)</span> at <span
+    class="math inline">\(p\)</span> in the direction of <span
+    class="math inline">\(\mathbf{v}\)</span>. This mapping assigns a
+    unique derivation to each equivalence class of curves.</p>
+    <p><strong>2. Mapping from Derivations to Curves:</strong></p>
+    <p>Now, let’s consider the reverse mapping. Given a derivation <span
+    class="math inline">\(X\)</span> at <span
+    class="math inline">\(p\)</span>, we can find a curve <span
+    class="math inline">\(c(t)\)</span> whose velocity vector at <span
+    class="math inline">\(t=0\)</span> corresponds to <span
+    class="math inline">\(X\)</span>. We choose a curve whose velocity
+    vector at <span class="math inline">\(t=0\)</span> has components
+    <span class="math inline">\(v_i = X(x_i)(p)\)</span> where <span
+    class="math inline">\(x_i\)</span> are the coordinate functions. A
+    simple choice is a straight line through <span
+    class="math inline">\(p\)</span>:</p>
+    <p><span class="math inline">\(c(t) = p + t\mathbf{v}\)</span>,
+    where <span class="math inline">\(\mathbf{v} = (v_1, \dots,
+    v_n)\)</span></p>
+    <p>The velocity vector of this curve at <span
+    class="math inline">\(t=0\)</span> is precisely <span
+    class="math inline">\(\mathbf{v} = (v_1, \dots, v_n)\)</span>. The
+    equivalence class <span class="math inline">\([c]\)</span>
+    corresponds to the derivation <span
+    class="math inline">\(X\)</span>. This mapping assigns a unique
+    equivalence class of curves to each derivation.</p>
+    <p><strong>3. Showing it’s an Isomorphism:</strong></p>
+    <ol type="1">
+    <li><p><strong>One-to-one and onto:</strong> The mappings are
+    bijective because each equivalence class has a unique velocity
+    vector, and each velocity vector defines a unique derivation, and
+    vice-versa.</p></li>
+    <li><p><strong>Preservation of Vector Space Structure:</strong> It
+    is straightforward to verify that the mappings respect vector
+    addition and scalar multiplication. The addition of equivalence
+    classes maps to the addition of derivations (directional
+    derivatives), and similarly, scalar multiplication of equivalence
+    classes maps to the scalar multiplication of derivations. Therefore,
+    the mappings are linear isomorphisms.</p></li>
+    </ol>
+    <p><strong>Conclusion:</strong></p>
+    <p>We have constructed a linear isomorphism between the vector space
+    of equivalence classes of curves through <span
+    class="math inline">\(p\)</span> and the vector space of derivations
+    at <span class="math inline">\(p\)</span>. Therefore, the two
+    definitions of the tangent space <span
+    class="math inline">\(T_pE^n\)</span> are equivalent. The key is the
+    recognition that the velocity vector of a curve is precisely what
+    determines the directional derivatives, providing the link between
+    the geometric (curves) and algebraic (derivations) approaches.</p>
+    <p><strong>In part 1 above, the equation showing the connection
+    between <span class="math inline">\([c]\)</span> and the derivation
+    <span class="math inline">\(X\)</span> needs to be broken down. It
+    appears that the derivative of <span class="math inline">\(f \circ
+    c\)</span> with respect to <span class="math inline">\(t\)</span> is
+    considered. Why?</strong></p>
+    <p>You’re right to ask for a breakdown of that equation. The key
+    lies in understanding how the curve <span
+    class="math inline">\(c(t)\)</span> and the function <span
+    class="math inline">\(f\)</span> interact to define the directional
+    derivative.</p>
+    <p>The expression <span
+    class="math inline">\(\frac{d}{dt}(f(c(t)))|_{t=0}\)</span>
+    represents the rate of change of the function <span
+    class="math inline">\(f\)</span> along the curve <span
+    class="math inline">\(c(t)\)</span> as we pass through the point
+    <span class="math inline">\(p\)</span> at <span
+    class="math inline">\(t=0\)</span>. Let’s break it down using the
+    chain rule:</p>
+    <p>The composite function <span
+    class="math inline">\(f(c(t))\)</span> represents the value of the
+    function <span class="math inline">\(f\)</span> at the point on the
+    curve <span class="math inline">\(c(t)\)</span> at time <span
+    class="math inline">\(t\)</span>. Since <span
+    class="math inline">\(c(t) = (c_1(t), c_2(t), ..., c_n(t))\)</span>
+    where <span class="math inline">\(c_i(t)\)</span> are the coordinate
+    functions of the curve, we can write:</p>
+    <p><span class="math inline">\(f(c(t)) = f(c_1(t), c_2(t), ...,
+    c_n(t))\)</span></p>
+    <p>Now, applying the chain rule for multivariable functions:</p>
+    <p><span class="math inline">\(\frac{d}{dt}(f(c(t))) = \sum_{i=1}^n
+    \frac{\partial f}{\partial x_i}(c(t))
+    \frac{dc_i}{dt}(t)\)</span></p>
+    <p>Evaluating this at <span class="math inline">\(t=0\)</span> (when
+    the curve passes through <span
+    class="math inline">\(p\)</span>):</p>
+    <p><span class="math inline">\(\frac{d}{dt}(f(c(t)))|_{t=0} =
+    \sum_{i=1}^n \frac{\partial f}{\partial x_i}(c(0))
+    \frac{dc_i}{dt}(0) = \sum_{i=1}^n \frac{\partial f}{\partial x_i}(p)
+    v_i\)</span></p>
+    <p>where <span class="math inline">\(v_i =
+    \frac{dc_i}{dt}(0)\)</span> are the components of the velocity
+    vector <span class="math inline">\(\mathbf{v} =
+    \frac{dc}{dt}(0)\)</span> of the curve <span
+    class="math inline">\(c(t)\)</span> at the point <span
+    class="math inline">\(p\)</span>. This is precisely the directional
+    derivative of <span class="math inline">\(f\)</span> at <span
+    class="math inline">\(p\)</span> in the direction of <span
+    class="math inline">\(\mathbf{v}\)</span>:</p>
+    <p><span class="math inline">\(\nabla f(p) \cdot \mathbf{v} =
+    \sum_{i=1}^n \frac{\partial f}{\partial x_i}(p) v_i\)</span></p>
+    <p>Therefore, the derivative <span
+    class="math inline">\(\frac{d}{dt}(f(c(t)))|_{t=0}\)</span>
+    naturally captures the rate of change of <span
+    class="math inline">\(f\)</span> along the tangent vector defined by
+    the curve <span class="math inline">\(c(t)\)</span>, providing the
+    connection between the curve and the derivation. The derivative with
+    respect to <span class="math inline">\(t\)</span> is taken because
+    the curve <span class="math inline">\(c(t)\)</span> provides a
+    parameterization of a path through <span
+    class="math inline">\(p\)</span>. The derivative thus measures how
+    <span class="math inline">\(f\)</span> changes as we move along this
+    path.</p>
+    <p><strong>The chain rule expansion is still giving me trouble. I
+    would write <span class="math inline">\(f(c(t))\)</span> as <span
+    class="math inline">\(f(x_1(t), \cdots, x_n(t))\)</span>. Then the
+    chain rule as you show above makes sense to me. What do you
+    think?</strong></p>
+    <p>You’re absolutely right to point that out; my previous notation
+    was a bit sloppy. Using <span class="math inline">\(x_i(t)\)</span>
+    to explicitly represent the <span
+    class="math inline">\(i\)</span>-th coordinate function of the curve
+    <span class="math inline">\(c(t)\)</span> makes the chain rule
+    application much clearer.</p>
+    <p>So, we have <span class="math inline">\(c(t) = (x_1(t), x_2(t),
+    \dots, x_n(t))\)</span>, where each <span
+    class="math inline">\(x_i(t)\)</span> is a function giving the <span
+    class="math inline">\(i\)</span>-th coordinate of the point on the
+    curve at time <span class="math inline">\(t\)</span>. Then:</p>
+    <p><span class="math inline">\(f(c(t)) = f(x_1(t), x_2(t), \dots,
+    x_n(t))\)</span></p>
+    <p>Now, applying the chain rule:</p>
+    <p><span class="math inline">\(\frac{d}{dt} f(c(t)) = \frac{\partial
+    f}{\partial x_1} \frac{dx_1}{dt} + \frac{\partial f}{\partial x_2}
+    \frac{dx_2}{dt} + \dots + \frac{\partial f}{\partial x_n}
+    \frac{dx_n}{dt}\)</span></p>
+    <p>Evaluating this at <span class="math inline">\(t = 0\)</span> (at
+    the point <span class="math inline">\(p\)</span>):</p>
+    <p><span class="math inline">\(\frac{d}{dt} f(c(t))|_{t=0} =
+    \frac{\partial f}{\partial x_1}(p) \frac{dx_1}{dt}(0) +
+    \frac{\partial f}{\partial x_2}(p) \frac{dx_2}{dt}(0) + \dots +
+    \frac{\partial f}{\partial x_n}(p) \frac{dx_n}{dt}(0)\)</span></p>
+    <p>This is precisely:</p>
+    <p><span class="math inline">\(\sum_{i=1}^n \frac{\partial
+    f}{\partial x_i}(p) v_i\)</span></p>
+    <p>where <span class="math inline">\(v_i =
+    \frac{dx_i}{dt}(0)\)</span> are the components of the velocity
+    vector <span class="math inline">\(\mathbf{v} =
+    \frac{dc}{dt}(0)\)</span> at point <span
+    class="math inline">\(p\)</span>. This is the directional derivative
+    of <span class="math inline">\(f\)</span> along <span
+    class="math inline">\(\mathbf{v}\)</span> at <span
+    class="math inline">\(p\)</span>, which is the action of the
+    derivation associated with the equivalence class <span
+    class="math inline">\([c]\)</span>. Your suggestion of explicitly
+    using the coordinate functions <span
+    class="math inline">\(x_i(t)\)</span> is much more precise and
+    avoids potential confusion. My apologies for the earlier
+    ambiguity.</p>
   </article>
 </body>
 </html>
