@@ -120,6 +120,9 @@
     <li><a href="#taylor-expansion-of-flows-contd."
     id="toc-taylor-expansion-of-flows-contd.">Taylor expansion of flows
     contd.</a></li>
+    <li><a href="#taylor-expansion-of-flows-step-by-step"
+    id="toc-taylor-expansion-of-flows-step-by-step">Taylor Expansion of
+    flows step by step</a></li>
     </ul>
   </nav>
   <article>
@@ -3593,6 +3596,190 @@
     evaluated repeatedly at the point in question. This is the crucial
     element that leads to the appearance of the Lie bracket in the
     calculation.</p>
+    <h1 id="taylor-expansion-of-flows-step-by-step">Taylor Expansion of
+    flows step by step</h1>
+    <p><strong>The flow <span class="math inline">\(\Phi^V(t,x)\)</span>
+    is the flow associated with the vector field <span
+    class="math inline">\(V\)</span>. It is a function of <span
+    class="math inline">\(t \in R\)</span> and <span
+    class="math inline">\(x \in M\)</span>. Is this correct</strong></p>
+    <p>Yes, that’s correct. The flow <span
+    class="math inline">\(\Phi^V\)</span> associated with a vector field
+    <span class="math inline">\(V\)</span> on a manifold <span
+    class="math inline">\(M\)</span> is a map:</p>
+    <p><span class="math inline">\(\Phi^V: \mathcal{D} \subset
+    \mathbb{R} \times M \to M\)</span></p>
+    <p>where <span class="math inline">\(\mathcal{D}\)</span> is the
+    domain of definition of the flow. For each point <span
+    class="math inline">\(x \in M\)</span>, <span
+    class="math inline">\(\Phi^V(t, x)\)</span> gives the point reached
+    by flowing along the integral curves of <span
+    class="math inline">\(V\)</span> starting at <span
+    class="math inline">\(x\)</span> for a time <span
+    class="math inline">\(t\)</span>. The domain <span
+    class="math inline">\(\mathcal{D}\)</span> is an open subset of
+    <span class="math inline">\(\mathbb{R} \times M\)</span>, and the
+    maximal interval of existence of the integral curves will determine
+    the values of <span class="math inline">\(t\)</span> for which the
+    flow is defined at a given point <span
+    class="math inline">\(x\)</span>. So, <span
+    class="math inline">\(\Phi^V\)</span> is indeed a function of both
+    time <span class="math inline">\(t \in \mathbb{R}\)</span> (at least
+    within a maximal interval of existence) and position <span
+    class="math inline">\(x \in M\)</span>.</p>
+    <p><strong>Let us fix a point <span class="math inline">\(x = p \in
+    M\)</span>. Let <span class="math inline">\(V_p\)</span> represent
+    the tangent vector corresponding to the vector field <span
+    class="math inline">\(V\)</span> at <span
+    class="math inline">\(p\)</span>. With <span
+    class="math inline">\(p\)</span> fixed, <span
+    class="math inline">\(\Phi^V(t,p)\)</span> represents the integral
+    curve corresponding to <span class="math inline">\(V\)</span> at
+    <span class="math inline">\(p\)</span>. Is this
+    correct?</strong></p>
+    <p>Yes, that’s correct. If we fix a point <span
+    class="math inline">\(x = p \in M\)</span>, then the curve <span
+    class="math inline">\(\gamma_p(t) = \Phi^V(t, p)\)</span> is the
+    integral curve of the vector field <span
+    class="math inline">\(V\)</span> that passes through the point <span
+    class="math inline">\(p\)</span> at time <span
+    class="math inline">\(t=0\)</span>. The tangent vector to this curve
+    at time <span class="math inline">\(t=0\)</span> is <span
+    class="math inline">\(V_p\)</span>, which is the value of the vector
+    field <span class="math inline">\(V\)</span> at point <span
+    class="math inline">\(p\)</span>. So, <span
+    class="math inline">\(\Phi^V(t,p)\)</span> traces out the integral
+    curve, with <span class="math inline">\(V_p\)</span> representing
+    the direction and magnitude of the movement at the initial time.</p>
+    <p><strong>Using local coordinates, what is the associated
+    ODE</strong></p>
+    <p>Using local coordinates <span class="math inline">\((U,
+    \varphi)\)</span> on the manifold <span
+    class="math inline">\(M\)</span>, where <span
+    class="math inline">\(\varphi: U \to \mathbb{R}^n\)</span> is the
+    chart map, and expressing the vector field <span
+    class="math inline">\(V\)</span> as:</p>
+    <p><span class="math inline">\(V = \sum_{i=1}^n V^i(x)
+    \frac{\partial}{\partial x^i}\)</span></p>
+    <p>where <span class="math inline">\(x = (x^1, \dots, x^n)\)</span>
+    are the local coordinates and <span
+    class="math inline">\(V^i(x)\)</span> are smooth functions, the
+    integral curve <span class="math inline">\(\gamma(t)\)</span>
+    through a point <span class="math inline">\(p\)</span> with local
+    coordinates <span class="math inline">\(x_0 = \varphi(p)\)</span>
+    satisfies the following system of ordinary differential equations
+    (ODEs):</p>
+    <p><span class="math inline">\(\frac{d x^i}{dt} = V^i(x^1(t), \dots,
+    x^n(t))\)</span>, with initial condition <span
+    class="math inline">\(x^i(0) = x_0^i\)</span> for <span
+    class="math inline">\(i = 1, \dots, n\)</span>.</p>
+    <p>Here:</p>
+    <ul>
+    <li><span class="math inline">\(x^i(t)\)</span> represents the <span
+    class="math inline">\(i\)</span>-th component of <span
+    class="math inline">\(\varphi(\gamma(t))\)</span> in <span
+    class="math inline">\(\mathbb{R}^n\)</span>. It gives the trajectory
+    of the <span class="math inline">\(i\)</span>-th coordinate of the
+    integral curve <span class="math inline">\(\gamma(t)\)</span> in the
+    local coordinate system.</li>
+    <li><span class="math inline">\(V^i(x^1(t), \dots, x^n(t))\)</span>
+    is the <span class="math inline">\(i\)</span>-th component of the
+    vector field <span class="math inline">\(V\)</span> evaluated at the
+    point <span class="math inline">\(\gamma(t)\)</span>, expressed in
+    local coordinates. This function depends on the position on the
+    manifold in the local coordinate system.</li>
+    <li>The initial condition specifies that at time <span
+    class="math inline">\(t=0\)</span>, the integral curve passes
+    through the point <span class="math inline">\(p\)</span>, which has
+    coordinate values <span class="math inline">\(x_0^i\)</span>.</li>
+    </ul>
+    <p>Solving this system of ODEs gives the local coordinate
+    representation of the integral curve <span
+    class="math inline">\(\gamma(t)\)</span> of the vector field <span
+    class="math inline">\(V\)</span> passing through <span
+    class="math inline">\(p\)</span>. The flow <span
+    class="math inline">\(\Phi^V(t, p)\)</span> is then obtained by
+    applying the inverse chart map to this local representation:</p>
+    <p><span class="math inline">\(\Phi^V(t, p) =
+    \varphi^{-1}(x(t))\)</span></p>
+    <p>where <span class="math inline">\(x(t) = (x^1(t), \dots,
+    x^n(t))\)</span> is the solution to the system of ODEs. The initial
+    point is specified by <span class="math inline">\(\varphi(p)=(x_0^1,
+    \dots, x_0^n)\)</span>.</p>
+    <p><strong>How to do the Taylor expansion of <span
+    class="math inline">\(\Phi^V(t,p) = \gamma_p(t)\)</span> around
+    <span class="math inline">\(t=0\)</span>?</strong></p>
+    <p>To perform the Taylor expansion of <span
+    class="math inline">\(\Phi^V(t, p) = \gamma_p(t)\)</span> around
+    <span class="math inline">\(t = 0\)</span>, we need to use the fact
+    that <span class="math inline">\(\gamma_p(t)\)</span> satisfies the
+    system of ODEs defining the integral curves, along with the initial
+    condition <span class="math inline">\(\gamma_p(0) = p\)</span>.
+    Let’s work in local coordinates <span class="math inline">\((U,
+    \varphi)\)</span> around <span class="math inline">\(p\)</span>,
+    where the coordinates of <span class="math inline">\(p\)</span> are
+    given by <span class="math inline">\(x_0 = \varphi(p)\)</span>. The
+    ODEs are:</p>
+    <p><span class="math inline">\(\frac{d x^i}{dt}(t) =
+    V^i(x(t))\)</span></p>
+    <p>where <span class="math inline">\(x(t) = \varphi(\gamma_p(t)) =
+    (x^1(t), \dots, x^n(t))\)</span> are the local coordinates of <span
+    class="math inline">\(\gamma_p(t)\)</span>.</p>
+    <p><strong>Taylor Expansion:</strong></p>
+    <p>The Taylor expansion of <span
+    class="math inline">\(x^i(t)\)</span> around <span
+    class="math inline">\(t = 0\)</span> is given by:</p>
+    <p><span class="math inline">\(x^i(t) = x^i(0) + t \left(
+    \frac{dx^i}{dt}\Big|_{t=0} \right) + \frac{t^2}{2!} \left(
+    \frac{d^2x^i}{dt^2}\Big|_{t=0} \right) + \frac{t^3}{3!} \left(
+    \frac{d^3x^i}{dt^3}\Big|_{t=0} \right) + \dots\)</span></p>
+    <p>Now, let’s compute the derivatives:</p>
+    <ul>
+    <li><p><strong>First derivative:</strong> <span
+    class="math inline">\(\frac{dx^i}{dt}\Big|_{t=0} = V^i(x(0)) =
+    V^i(x_0)\)</span> (This follows directly from the ODE).</p></li>
+    <li><p><strong>Second derivative:</strong> To compute the second
+    derivative, we differentiate the ODE with respect to <span
+    class="math inline">\(t\)</span>:</p></li>
+    </ul>
+    <p><span class="math inline">\(\frac{d^2 x^i}{dt^2} = \sum_{k=1}^n
+    \frac{\partial V^i}{\partial x^k}(x(t)) \frac{dx^k}{dt}(t) =
+    \sum_{k=1}^n \frac{\partial V^i}{\partial x^k}(x(t))
+    V^k(x(t))\)</span></p>
+    <p>Evaluating at <span class="math inline">\(t=0\)</span>, we
+    get:</p>
+    <p><span class="math inline">\(\frac{d^2 x^i}{dt^2}\Big|_{t=0} =
+    \sum_{k=1}^n \frac{\partial V^i}{\partial x^k}(x_0) V^k(x_0) =
+    V(V^i)(x_0)\)</span>, which is the <span
+    class="math inline">\(i\)</span>-th component of <span
+    class="math inline">\(V(V(x_0))\)</span>.</p>
+    <ul>
+    <li><strong>Higher-order derivatives:</strong> Higher-order
+    derivatives can be computed recursively by repeatedly
+    differentiating the ODE, involving higher-order partial derivatives
+    of the <span class="math inline">\(V^i\)</span> functions and more
+    applications of the vector field <span
+    class="math inline">\(V\)</span> as a derivation.</li>
+    </ul>
+    <p><strong>Taylor Expansion up to Second Order:</strong></p>
+    <p>Combining the derivatives, the Taylor expansion up to second
+    order is:</p>
+    <p><span class="math inline">\(x^i(t) = x_0^i + t V^i(x_0) +
+    \frac{t^2}{2} V(V^i)(x_0) + \mathcal{O}(t^3)\)</span></p>
+    <p>This can be written more compactly using the vector notation
+    (recalling that <span class="math inline">\(x_0 =
+    \varphi(p)\)</span>):</p>
+    <p><span class="math inline">\(x(t) = x_0 + t V(x_0) + \frac{t^2}{2}
+    V(V(x_0)) + \mathcal{O}(t^3)\)</span></p>
+    <p>Finally, using the inverse chart map to get back to the manifold
+    M:</p>
+    <p><span class="math inline">\(\Phi^V(t,p) = \varphi^{-1}\left( x_0
+    + t V(x_0) + \frac{t^2}{2} V(V(x_0)) + \mathcal{O}(t^3)
+    \right)\)</span></p>
+    <p>This shows how to obtain the Taylor expansion up to second order.
+    The higher-order terms become increasingly complex but follow a
+    similar pattern involving higher-order derivatives of the component
+    functions of <span class="math inline">\(V\)</span>.</p>
   </article>
 </body>
 </html>
