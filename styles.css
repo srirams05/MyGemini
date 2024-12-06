@@ -1,7 +1,6 @@
 /* Basic Styles */
 body {
   font-family: "Times New Roman", "Times", serif;
-  font-size: 22px;
   line-height: 1.6;
   margin: 20px;
   background-color: #000000; /* Dark gray background */
@@ -50,6 +49,7 @@ nav li a:hover {
 /* Main Content Styles */
 article {
   margin-left: 260px;
+  font-size: 22px;
   overflow: auto;
 }
 
