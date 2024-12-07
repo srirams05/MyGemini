@@ -122,6 +122,8 @@
     <li><a href="#geometric-intuition-of-1-forms"
     id="toc-geometric-intuition-of-1-forms">Geometric Intuition of
     1-forms</a></li>
+    <li><a href="#example-of-1-form" id="toc-example-of-1-form">Example
+    of 1-form</a></li>
     </ul>
   </nav>
   <article>
@@ -4079,6 +4081,77 @@
     understanding the differential 1-form in this specific case. For
     other 1-forms, other geometric interpretations are more
     appropriate.</p>
+    <h1 id="example-of-1-form">Example of 1-form</h1>
+    <p><strong>Consider an example case where <span
+    class="math inline">\(M = E^3\)</span>. Let <span
+    class="math inline">\((x,y,z)\)</span> represent the local
+    coordinates of a point <span class="math inline">\(p \in
+    E^3\)</span>. Give some examples of 1-forms in this
+    case.</strong></p>
+    <p>In the case of <span class="math inline">\(M =
+    \mathbb{E}^3\)</span> (Euclidean 3-space), with local coordinates
+    <span class="math inline">\((x, y, z)\)</span>, a 1-form <span
+    class="math inline">\(\omega\)</span> can be expressed locally
+    as:</p>
+    <p><span class="math inline">\(\omega = \omega_x(x, y, z) dx +
+    \omega_y(x, y, z) dy + \omega_z(x, y, z) dz\)</span></p>
+    <p>where <span class="math inline">\(\omega_x\)</span>, <span
+    class="math inline">\(\omega_y\)</span>, and <span
+    class="math inline">\(\omega_z\)</span> are smooth functions of
+    <span class="math inline">\(x\)</span>, <span
+    class="math inline">\(y\)</span>, and <span
+    class="math inline">\(z\)</span>. Here are some examples:</p>
+    <ol type="1">
+    <li><p><strong>Exact 1-form (differential of a function):</strong>
+    Let <span class="math inline">\(f(x, y, z) = x^2 + y^2 +
+    z^2\)</span>. Then the differential is:</p>
+    <p><span class="math inline">\(df = 2x \, dx + 2y \, dy + 2z \,
+    dz\)</span></p>
+    <p>This 1-form measures the rate of change of the function <span
+    class="math inline">\(f\)</span>. Its level sets are spheres
+    centered at the origin.</p></li>
+    <li><p><strong>Arbitrary Smooth Functions as Coefficients:</strong>
+    We can choose arbitrary smooth functions for the coefficients:</p>
+    <p><span class="math inline">\(\omega = e^{-(x^2+y^2)} \, dx +
+    \sin(z) \, dy + \cos(x) \, dz\)</span></p>
+    <p>This 1-form has no particular geometric significance related to
+    level sets but illustrates the flexibility in selecting the
+    coefficient functions.</p></li>
+    <li><p><strong>Constant Coefficients:</strong> A simple 1-form with
+    constant coefficients:</p>
+    <p><span class="math inline">\(\omega = dx + 2dy - 3dz\)</span></p>
+    <p>This could be associated with a constant vector field in a
+    different context. For example, it could measure the flow of a fluid
+    with a constant velocity field. It would associate with a vector
+    (1,2,-3).</p></li>
+    <li><p><strong>Geometrically Defined 1-form:</strong> Let <span
+    class="math inline">\(\mathbf{v}(x,y,z)\)</span> be a vector field
+    in <span class="math inline">\(\mathbb{R}^3\)</span>. We can define
+    a one-form via the inner product: <span
+    class="math inline">\(\omega_v(X) = \mathbf{v}\cdot X\)</span> where
+    <span class="math inline">\(X\)</span> is a vector field. Suppose
+    <span class="math inline">\(\mathbf{v} = (y, x, z)\)</span>. Then
+    the one-form is <span class="math inline">\(\omega = y dx + x dy + z
+    dz\)</span>.</p></li>
+    <li><p><strong>A 1-form obtained from a vector field:</strong>
+    Consider a vector field <span class="math inline">\(\mathbf{F} =
+    (F_1(x,y,z), F_2(x,y,z), F_3(x,y,z))\)</span>. The one-form
+    associated with it can be expressed as <span
+    class="math inline">\(\omega = F_1 dx + F_2 dy + F_3 dz\)</span>.
+    This means the one-form would measure the dot product between <span
+    class="math inline">\(\mathbf{F}\)</span> and other tangent
+    vectors.</p></li>
+    </ol>
+    <p>These examples show the variety of 1-forms that can exist on
+    <span class="math inline">\(\mathbb{E}^3\)</span>. Some have simple
+    geometric interpretations (such as the differential of a function),
+    while others have a more abstract nature. The coefficient functions
+    are crucial because they determine the specific nature and
+    interpretation of the 1-form. The choice of functions for the
+    coefficients are constrained by the requirement that the one-form
+    must be smooth. These examples illustrate that there is not just one
+    one-form; there are a very large number of 1-forms on <span
+    class="math inline">\(\mathbb{E}^3\)</span>.</p>
   </article>
 </body>
 </html>
