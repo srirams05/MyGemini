@@ -124,8 +124,9 @@
     1-forms</a></li>
     <li><a href="#example-of-1-form" id="toc-example-of-1-form">Example
     of 1-form</a></li>
-    <li><a href="#submanifolds-immersions"
-    id="toc-submanifolds-immersions">Submanifolds, Immersions</a></li>
+    <li><a href="#submanifolds-immersions-submersions"
+    id="toc-submanifolds-immersions-submersions">Submanifolds,
+    Immersions, Submersions</a></li>
     </ul>
   </nav>
   <article>
@@ -4154,7 +4155,8 @@
     must be smooth. These examples illustrate that there is not just one
     one-form; there are a very large number of 1-forms on <span
     class="math inline">\(\mathbb{E}^3\)</span>.</p>
-    <h1 id="submanifolds-immersions">Submanifolds, Immersions</h1>
+    <h1 id="submanifolds-immersions-submersions">Submanifolds,
+    Immersions, Submersions</h1>
     <p><strong>Let <span class="math inline">\(f: M \to N\)</span>,
     where <span class="math inline">\(M,N\)</span> are smooth manifolds.
     When is <span class="math inline">\(f\)</span> and
@@ -4420,6 +4422,78 @@
     desired in a particular context. Both indicate that <span
     class="math inline">\(S\)</span> can be viewed as a submanifold of
     <span class="math inline">\(M\)</span>.</p>
+    <p><strong>Let <span class="math inline">\(f: M \to N\)</span>. When
+    is <span class="math inline">\(f\)</span> a submersion</strong></p>
+    <p>A smooth map <span class="math inline">\(f: M \to N\)</span>
+    between smooth manifolds <span class="math inline">\(M\)</span> and
+    <span class="math inline">\(N\)</span> is a submersion if its
+    differential <span class="math inline">\(df_p\)</span> is surjective
+    (onto) at every point <span class="math inline">\(p \in
+    M\)</span>.</p>
+    <p>Let’s break this down:</p>
+    <ol type="1">
+    <li><p><strong>Smooth Map:</strong> <span
+    class="math inline">\(f\)</span> must be a smooth map, meaning that
+    in local coordinates, its coordinate representation is smooth (has
+    continuous partial derivatives of all orders).</p></li>
+    <li><p><strong>Differential:</strong> The differential of <span
+    class="math inline">\(f\)</span> at a point <span
+    class="math inline">\(p\)</span>, denoted <span
+    class="math inline">\(df_p\)</span>, is a linear map between tangent
+    spaces:</p>
+    <p><span class="math inline">\(df_p: T_p M \to T_{f(p)}
+    N\)</span></p>
+    <p>This linear map is also called the pushforward.</p></li>
+    <li><p><strong>Surjective Differential:</strong> The condition for
+    <span class="math inline">\(f\)</span> to be a submersion is that
+    <span class="math inline">\(df_p\)</span> must be surjective (onto)
+    for every <span class="math inline">\(p \in M\)</span>. This means
+    that for every tangent vector <span class="math inline">\(w \in
+    T_{f(p)}N\)</span>, there exists at least one tangent vector <span
+    class="math inline">\(v \in T_pM\)</span> such that <span
+    class="math inline">\(df_p(v) = w\)</span>. The image of the
+    differential is the whole of the tangent space.</p></li>
+    </ol>
+    <p><strong>In terms of dimensions:</strong></p>
+    <p>If <span class="math inline">\(\dim(M) = m\)</span> and <span
+    class="math inline">\(\dim(N) = n\)</span>, then for <span
+    class="math inline">\(f\)</span> to be a submersion, we must have
+    <span class="math inline">\(m \ge n\)</span>, and the rank of the
+    Jacobian matrix of <span class="math inline">\(f\)</span> (in local
+    coordinates) must be equal to <span class="math inline">\(n\)</span>
+    at every point. The Jacobian matrix is the matrix representation of
+    the differential. The rank of the matrix represents the number of
+    linearly independent rows or columns.</p>
+    <p><strong>Geometric Intuition:</strong></p>
+    <p>A submersion maps <span class="math inline">\(M\)</span> onto
+    <span class="math inline">\(N\)</span> in a way that, at each point
+    <span class="math inline">\(p\)</span>, “locally covers” a
+    neighborhood of <span class="math inline">\(f(p)\)</span> in <span
+    class="math inline">\(N\)</span>. This means that near every point,
+    the inverse image of a point in <span
+    class="math inline">\(N\)</span> is a submanifold of <span
+    class="math inline">\(M\)</span>. The image is locally a
+    submanifold. Near each point, it behaves like a projection onto a
+    submanifold.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+    <li>The projection map <span class="math inline">\(\mathbb{R}^{m+n}
+    \to \mathbb{R}^n\)</span> given by <span class="math inline">\((x_1,
+    \dots, x_m, x_{m+1}, \dots, x_{m+n}) \mapsto (x_{m+1}, \dots,
+    x_{m+n})\)</span> is a submersion.</li>
+    <li>Let <span class="math inline">\(M\)</span> be the manifold of
+    <span class="math inline">\(2 \times 2\)</span> matrices. Let <span
+    class="math inline">\(N\)</span> be the manifold of <span
+    class="math inline">\(2 \times 2\)</span> matrices with determinant
+    1. Then <span class="math inline">\(f: M \to N\)</span> defined by
+    <span class="math inline">\(A \to A/\sqrt{\det(A)}\)</span> is a
+    submersion.</li>
+    </ul>
+    <p>In short, a submersion is a smooth map whose differential is
+    surjective at every point, implying that it locally behaves like a
+    projection onto a submanifold. The dimension of the domain manifold
+    cannot be less than that of the codomain manifold. The image is
+    locally a submanifold near each point. The map is onto locally.</p>
   </article>
 </body>
 </html>
