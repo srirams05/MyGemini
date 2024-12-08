@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <link rel="stylesheet" href="styles.css">
+  </script> </head><script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>  
+<body>
+  <nav>
+    <a href="index.html" style="display: block; text-align: center; padding: 10px; background-color: #f0f0f0; text-decoration: none; color: #333; border-radius: 5px; margin-bottom: 10px;">Back to Home</a>
+    <ul>
+    <li><a href="#curves-and-hypersurfaces-in-euclidean-space"
+    id="toc-curves-and-hypersurfaces-in-euclidean-space">Curves and
+    Hypersurfaces in Euclidean space</a></li>
+    </ul>
+  </nav>
+  <article>
+    <h1 id="curves-and-hypersurfaces-in-euclidean-space">Curves and
+    Hypersurfaces in Euclidean space</h1>
+    <p><strong>Let <span class="math inline">\(c: I \to M\)</span> be a
+    curve, <span class="math inline">\(I \in R\)</span> and <span
+    class="math inline">\(M\)</span> a smooth manifold. Let <span
+    class="math inline">\(Y: I \to TM\)</span> be a smooth map such that
+    <span class="math inline">\(c(t) = \pi \circ Y\)</span>. We can
+    compute <span class="math inline">\(dY/dt\)</span>. What is this
+    object and what space does it live in?</strong></p>
+    <p>The object <span class="math inline">\(\frac{dY}{dt}\)</span>
+    represents the derivative of the vector field <span
+    class="math inline">\(Y\)</span> along the curve <span
+    class="math inline">\(c\)</span>. It’s not simply a tangent vector;
+    it’s a vector in the tangent space of the tangent bundle <span
+    class="math inline">\(TM\)</span>, which is itself a manifold.</p>
+    <p>Let’s break it down:</p>
+    <ol type="1">
+    <li><p><strong>Curve <span class="math inline">\(c\)</span> and
+    Vector Field <span class="math inline">\(Y\)</span> along <span
+    class="math inline">\(c\)</span></strong>: We have a curve <span
+    class="math inline">\(c: I \to M\)</span>, where <span
+    class="math inline">\(I\)</span> is an open interval in <span
+    class="math inline">\(\mathbb{R}\)</span> and <span
+    class="math inline">\(M\)</span> is a smooth manifold. The smooth
+    map <span class="math inline">\(Y: I \to TM\)</span> is a vector
+    field along the curve <span class="math inline">\(c\)</span>,
+    meaning that <span class="math inline">\(Y(t)\)</span> is a tangent
+    vector <span class="math inline">\(Y(t) \in T_{c(t)}M\)</span> at
+    each <span class="math inline">\(t \in I\)</span>. The condition
+    <span class="math inline">\(c(t) = \pi \circ Y(t)\)</span> means
+    that the projection of the vector field <span
+    class="math inline">\(Y(t)\)</span> is the point <span
+    class="math inline">\(c(t)\)</span> on the curve. In other words,
+    the base point of the tangent vector at each point of the curve is
+    the point on the curve itself.</p></li>
+    <li><p><strong>Derivative as a Vector in <span
+    class="math inline">\(TTM\)</span></strong>: The derivative <span
+    class="math inline">\(\frac{dY}{dt}\)</span> lives in the
+    <em>tangent bundle of the tangent bundle</em>, denoted <span
+    class="math inline">\(TTM\)</span>. More precisely, <span
+    class="math inline">\(\frac{dY}{dt}(t) \in T_{Y(t)}(TM)\)</span>.
+    This is because <span class="math inline">\(Y(t)\)</span> is a point
+    in <span class="math inline">\(TM\)</span>, and the derivative of
+    <span class="math inline">\(Y\)</span> with respect to <span
+    class="math inline">\(t\)</span> is the velocity of the curve <span
+    class="math inline">\(Y(t)\)</span> in the tangent bundle <span
+    class="math inline">\(TM\)</span>. The tangent bundle itself is a
+    manifold, so it has a tangent space. The derivative <span
+    class="math inline">\(\frac{dY}{dt}(t)\)</span> is an element of the
+    tangent space to the tangent bundle at the point <span
+    class="math inline">\(Y(t)\)</span>. This is a higher order tangent
+    space; it is the tangent space of the tangent bundle.</p></li>
+    <li><p><strong>Local Coordinates:</strong> To understand this
+    better, consider local coordinates. Let <span
+    class="math inline">\((U, \varphi)\)</span> be a chart on <span
+    class="math inline">\(M\)</span> with coordinates <span
+    class="math inline">\((x^1, \dots, x^n)\)</span>. The tangent bundle
+    <span class="math inline">\(TM\)</span> has local coordinates <span
+    class="math inline">\((x^1, \dots, x^n, v^1, \dots, v^n)\)</span>,
+    where <span class="math inline">\((v^1, \dots, v^n)\)</span>
+    represent the components of a tangent vector in the coordinate
+    basis. Then <span class="math inline">\(Y(t)\)</span> can be
+    represented locally as <span class="math inline">\((x^1(t), \dots,
+    x^n(t), v^1(t), \dots, v^n(t))\)</span>. The derivative is:</p>
+    <p><span class="math inline">\(\frac{dY}{dt}(t) = \left(
+    \frac{dx^1}{dt}(t), \dots, \frac{dx^n}{dt}(t), \frac{dv^1}{dt}(t),
+    \dots, \frac{dv^n}{dt}(t) \right)\)</span></p>
+    <p>Each component is a real number. This is a tangent vector in
+    <span class="math inline">\(T_{Y(t)} TM\)</span>.</p></li>
+    <li><p><strong>Connection:</strong> The derivative <span
+    class="math inline">\(\frac{dY}{dt}\)</span> can be interpreted
+    using a <em>connection</em> <span
+    class="math inline">\(\nabla\)</span> on <span
+    class="math inline">\(M\)</span>. The connection allows us to define
+    the covariant derivative <span
+    class="math inline">\(\nabla_{\gamma&#39;(t)} Y(t)\)</span> which
+    can be related to <span
+    class="math inline">\(\frac{dY}{dt}\)</span>. However, the
+    derivative itself lives in <span class="math inline">\(TTM\)</span>
+    and is not simply a tangent vector on <span
+    class="math inline">\(M\)</span>.</p></li>
+    </ol>
+    <p>In summary, <span class="math inline">\(\frac{dY}{dt}\)</span> is
+    a vector in the tangent bundle of the tangent bundle <span
+    class="math inline">\(TTM\)</span>. It represents the rate of change
+    of the vector field <span class="math inline">\(Y\)</span> along the
+    curve <span class="math inline">\(c\)</span>, where the tangent
+    vectors at each point in the curve lie on the tangent space of <span
+    class="math inline">\(M\)</span>. Understanding this requires
+    considering the tangent bundle as a manifold in its own right and
+    utilizing the concept of tangent spaces of a tangent bundle. The use
+    of a connection and covariant derivative provides further insight
+    into the interpretation of this object.</p>
+    <p><strong>Now, let <span class="math inline">\(M = E^n\)</span>. In
+    this case, we get <span class="math inline">\(T_pE^n \sim
+    R^n\)</span>. Thus <span class="math inline">\(TE^n = R^n \times
+    R^n\)</span>. Is this correct? What would be <span
+    class="math inline">\(TTE^n\)</span>?</strong></p>
+    <p>You’re right that for <span class="math inline">\(M =
+    \mathbb{E}^n\)</span> (Euclidean <span
+    class="math inline">\(n\)</span>-space), we can identify each
+    tangent space <span class="math inline">\(T_p\mathbb{E}^n\)</span>
+    with <span class="math inline">\(\mathbb{R}^n\)</span> itself. This
+    identification is canonical (coordinate-independent), making
+    calculations simpler. However, the statement <span
+    class="math inline">\(T\mathbb{E}^n = \mathbb{R}^n \times
+    \mathbb{R}^n\)</span> requires a bit more precision.</p>
+    <p><strong>Tangent Bundle of <span
+    class="math inline">\(\mathbb{E}^n\)</span></strong>:</p>
+    <p>It’s more accurate to say that the tangent bundle <span
+    class="math inline">\(T\mathbb{E}^n\)</span> is <em>isomorphic</em>
+    to <span class="math inline">\(\mathbb{R}^n \times
+    \mathbb{R}^n\)</span>, not exactly equal to it. The tangent bundle
+    is defined as the set of pairs <span class="math inline">\((p,
+    v_p)\)</span> where <span class="math inline">\(p \in
+    \mathbb{E}^n\)</span> and <span class="math inline">\(v_p \in
+    T_p\mathbb{E}^n\)</span>. Since <span
+    class="math inline">\(T_p\mathbb{E}^n \cong \mathbb{R}^n\)</span>,
+    we can identify each pair <span class="math inline">\((p,
+    v_p)\)</span> with a pair <span class="math inline">\((p, v) \in
+    \mathbb{R}^n \times \mathbb{R}^n\)</span>, where <span
+    class="math inline">\(v\)</span> is the coordinate representation of
+    <span class="math inline">\(v_p\)</span>. This identification is a
+    diffeomorphism and a vector bundle isomorphism, making <span
+    class="math inline">\(T\mathbb{E}^n\)</span> and <span
+    class="math inline">\(\mathbb{R}^n \times \mathbb{R}^n\)</span>
+    essentially equivalent for practical purposes in terms of their
+    vector bundle structure.</p>
+    <p><strong>Double Tangent Bundle <span
+    class="math inline">\(TT\mathbb{E}^n\)</span></strong>:</p>
+    <p>The double tangent bundle <span
+    class="math inline">\(TT\mathbb{E}^n\)</span> is the tangent bundle
+    of the tangent bundle <span
+    class="math inline">\(T\mathbb{E}^n\)</span>. Since <span
+    class="math inline">\(T\mathbb{E}^n \cong \mathbb{R}^n \times
+    \mathbb{R}^n\)</span>, we can think of <span
+    class="math inline">\(TT\mathbb{E}^n\)</span> as the tangent bundle
+    of <span class="math inline">\(\mathbb{R}^n \times
+    \mathbb{R}^n\)</span>. Using the same reasoning as above, <span
+    class="math inline">\(TT\mathbb{E}^n\)</span> is isomorphic to:</p>
+    <p><span class="math inline">\((\mathbb{R}^n \times \mathbb{R}^n)
+    \times (\mathbb{R}^n \times \mathbb{R}^n) \cong \mathbb{R}^n \times
+    \mathbb{R}^n \times \mathbb{R}^n \times \mathbb{R}^n \cong
+    \mathbb{R}^{4n}\)</span></p>
+    <p>The isomorphism arises from identifying each tangent space <span
+    class="math inline">\(T_{(p, v)}(T\mathbb{E}^n)\)</span> with <span
+    class="math inline">\(\mathbb{R}^n \times \mathbb{R}^n\)</span>,
+    where <span class="math inline">\((p, v) \in \mathbb{R}^n \times
+    \mathbb{R}^n\)</span>. Intuitively, at each point <span
+    class="math inline">\((p, v)\)</span> in the tangent bundle, we have
+    a tangent space that is also <span
+    class="math inline">\(\mathbb{R}^n \times \mathbb{R}^n\)</span>,
+    representing the possible directions of motion both in the base
+    space <span class="math inline">\(\mathbb{R}^n\)</span> and in the
+    fiber <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
+    <p>In summary: While <span
+    class="math inline">\(T\mathbb{E}^n\)</span> is <em>isomorphic</em>
+    to <span class="math inline">\(\mathbb{R}^n \times
+    \mathbb{R}^n\)</span>, we should not say it is equal to it.
+    Similarly, <span class="math inline">\(TT\mathbb{E}^n\)</span> is
+    isomorphic to <span class="math inline">\(\mathbb{R}^{4n}\)</span>.
+    These isomorphisms are crucial for making calculations, but one must
+    keep in mind the difference between the tangent bundle as a manifold
+    and its isomorphic representation as a Cartesian product.</p>
+    <p><strong>Let <span class="math inline">\(c(t): I \to E^n\)</span>
+    be a smooth curve and <span class="math inline">\(Y\)</span> be the
+    vector field on <span class="math inline">\(E^n\)</span> along <span
+    class="math inline">\(c(t)\)</span>. Is there a way to represent
+    <span class="math inline">\(Y(t)\)</span> in terms of the canonical
+    basis of <span class="math inline">\(TE^n\)</span> given the
+    previous answer</strong></p>
+    <p>Yes, given that <span class="math inline">\(T\mathbb{E}^n \cong
+    \mathbb{R}^n \times \mathbb{R}^n\)</span>, we can represent the
+    vector field <span class="math inline">\(Y(t)\)</span> along the
+    curve <span class="math inline">\(c(t)\)</span> in terms of the
+    canonical basis of this product space. Let’s break down how:</p>
+    <ol type="1">
+    <li><p><strong>Curve and Vector Field:</strong> We have a smooth
+    curve <span class="math inline">\(c: I \to \mathbb{E}^n\)</span>,
+    where <span class="math inline">\(I\)</span> is an open interval in
+    <span class="math inline">\(\mathbb{R}\)</span>. The vector field
+    <span class="math inline">\(Y\)</span> along <span
+    class="math inline">\(c\)</span> assigns a tangent vector <span
+    class="math inline">\(Y(t) \in T_{c(t)}\mathbb{E}^n\)</span> to each
+    <span class="math inline">\(t \in I\)</span>.</p></li>
+    <li><p><strong>Canonical Basis of <span
+    class="math inline">\(\mathbb{R}^n \times
+    \mathbb{R}^n\)</span></strong>: The canonical basis for <span
+    class="math inline">\(\mathbb{R}^n \times \mathbb{R}^n\)</span>
+    consists of vectors of the form <span class="math inline">\((e_i,
+    0)\)</span> and <span class="math inline">\((0, e_i)\)</span>, where
+    <span class="math inline">\(e_i\)</span> is the <span
+    class="math inline">\(i\)</span>-th standard basis vector in <span
+    class="math inline">\(\mathbb{R}^n\)</span> (all zeros except for a
+    1 in the <span class="math inline">\(i\)</span>-th position). There
+    are <span class="math inline">\(2n\)</span> such vectors.</p></li>
+    <li><p><strong>Representing <span
+    class="math inline">\(c(t)\)</span>:</strong> The curve <span
+    class="math inline">\(c(t)\)</span> can be represented in terms of
+    the standard basis vectors of <span
+    class="math inline">\(\mathbb{R}^n\)</span> as:</p>
+    <p><span class="math inline">\(c(t) = \sum_{i=1}^n c^i(t)
+    e_i\)</span></p>
+    <p>where <span class="math inline">\(c^i(t)\)</span> are smooth
+    functions giving the coordinates of <span
+    class="math inline">\(c(t)\)</span> in <span
+    class="math inline">\(\mathbb{R}^n\)</span>.</p></li>
+    <li><p><strong>Representing <span
+    class="math inline">\(Y(t)\)</span>:</strong> The tangent vector
+    <span class="math inline">\(Y(t)\)</span> is an element of <span
+    class="math inline">\(T_{c(t)}\mathbb{E}^n \cong
+    \mathbb{R}^n\)</span>. We can express <span
+    class="math inline">\(Y(t)\)</span> in terms of the standard basis
+    vectors of <span class="math inline">\(\mathbb{R}^n\)</span> as:</p>
+    <p><span class="math inline">\(Y(t) = \sum_{i=1}^n Y^i(t)
+    e_i\)</span></p>
+    <p>where <span class="math inline">\(Y^i(t)\)</span> are smooth
+    functions giving the components of <span
+    class="math inline">\(Y(t)\)</span> in the standard basis.</p></li>
+    <li><p><strong>Representation in <span
+    class="math inline">\(\mathbb{R}^n \times
+    \mathbb{R}^n\)</span></strong>: To represent <span
+    class="math inline">\(Y(t)\)</span> in the canonical basis of <span
+    class="math inline">\(\mathbb{R}^n \times \mathbb{R}^n\)</span>, we
+    combine the coordinate representation of its base point <span
+    class="math inline">\(c(t)\)</span> and its components <span
+    class="math inline">\(Y(t)\)</span>:</p>
+    <p><span class="math inline">\(Y(t) \equiv (c(t), Y(t)) = \left(
+    \sum_{i=1}^n c^i(t) e_i, \sum_{i=1}^n Y^i(t) e_i
+    \right)\)</span></p>
+    <p>We can write this more explicitly as a linear combination of the
+    basis vectors of <span class="math inline">\(\mathbb{R}^n \times
+    \mathbb{R}^n\)</span>:</p>
+    <p><span class="math inline">\(Y(t) = \sum_{i=1}^n c^i(t) (e_i, 0) +
+    \sum_{i=1}^n Y^i(t) (0, e_i)\)</span></p></li>
+    </ol>
+    <p>This shows how to express <span
+    class="math inline">\(Y(t)\)</span> in terms of the canonical basis
+    of <span class="math inline">\(\mathbb{R}^n \times
+    \mathbb{R}^n\)</span>. The representation uses the coordinate
+    functions of both the base point of the tangent vector <span
+    class="math inline">\(c(t)\)</span> and the components of the
+    tangent vector <span class="math inline">\(Y(t)\)</span>. The
+    components <span class="math inline">\(c^i(t)\)</span> and <span
+    class="math inline">\(Y^i(t)\)</span> are scalar valued smooth
+    functions of <span class="math inline">\(t\)</span>.</p>
+    <p><strong>Given the representations above, how to represent <span
+    class="math inline">\(dY / dt\)</span> which appears to be another
+    vector field?</strong></p>
+    <p>Given the representation of <span
+    class="math inline">\(Y(t)\)</span> in the canonical basis of <span
+    class="math inline">\(\mathbb{R}^n \times \mathbb{R}^n\)</span>
+    as:</p>
+    <p><span class="math inline">\(Y(t) = \sum_{i=1}^n c^i(t) (e_i, 0) +
+    \sum_{i=1}^n Y^i(t) (0, e_i)\)</span></p>
+    <p>we can compute the derivative <span
+    class="math inline">\(\frac{dY}{dt}\)</span> component-wise. This
+    derivative will live in the tangent space of the tangent bundle
+    <span class="math inline">\(TT\mathbb{E}^n\)</span>, which is
+    isomorphic to <span class="math inline">\(\mathbb{R}^{4n}\)</span>.
+    The derivative is given by:</p>
+    <p><span class="math inline">\(\frac{dY}{dt}(t) = \sum_{i=1}^n
+    \frac{dc^i}{dt}(t) (e_i, 0) + \sum_{i=1}^n \frac{dY^i}{dt}(t) (0,
+    e_i)\)</span></p>
+    <p>Here’s a breakdown:</p>
+    <ol type="1">
+    <li><p><strong>Derivative of Base Point:</strong> The term <span
+    class="math inline">\(\sum_{i=1}^n \frac{dc^i}{dt}(t) (e_i,
+    0)\)</span> represents the derivative of the base point <span
+    class="math inline">\(c(t)\)</span> along the curve in <span
+    class="math inline">\(\mathbb{E}^n\)</span>. It’s a vector in <span
+    class="math inline">\(\mathbb{R}^n\)</span> representing the
+    velocity of the base point <span
+    class="math inline">\(c(t)\)</span>. Note that we can replace <span
+    class="math inline">\(\sum_{i=1}^n \frac{dc^i}{dt}(t) e_i\)</span>
+    with <span class="math inline">\(c&#39;(t)\)</span>.</p></li>
+    <li><p><strong>Derivative of Tangent Vector Components:</strong> The
+    term <span class="math inline">\(\sum_{i=1}^n \frac{dY^i}{dt}(t) (0,
+    e_i)\)</span> represents the rate of change of the components of the
+    tangent vector <span class="math inline">\(Y(t)\)</span> as we move
+    along the curve. This is another vector in <span
+    class="math inline">\(\mathbb{R}^n\)</span> that describes how the
+    tangent vector itself changes.</p></li>
+    <li><p><strong>Representation in <span
+    class="math inline">\(TT\mathbb{E}^n\)</span></strong>: Combining
+    these, we see that <span
+    class="math inline">\(\frac{dY}{dt}(t)\)</span> is a vector in <span
+    class="math inline">\(\mathbb{R}^n \times \mathbb{R}^n \cong
+    T_{(c(t), Y(t))}(T\mathbb{E}^n)\)</span>, which represents the
+    tangent space of <span class="math inline">\(T\mathbb{E}^n\)</span>
+    at the point <span class="math inline">\((c(t), Y(t))\)</span>.
+    Thus, <span class="math inline">\(\frac{dY}{dt}\)</span> can be
+    viewed as a vector field along the curve <span
+    class="math inline">\(Y(t)\)</span> on <span
+    class="math inline">\(T\mathbb{E}^n\)</span>.</p></li>
+    <li><p><strong>Explicit Representation:</strong> If we consider the
+    canonical basis of <span
+    class="math inline">\(T\mathbb{E}^n\)</span> as <span
+    class="math inline">\(\{(e_i,0), (0, e_i)\}_{i=1, \dots n}\)</span>,
+    we can represent <span class="math inline">\(\frac{dY}{dt}\)</span>
+    as:</p>
+    <p><span class="math inline">\(\frac{dY}{dt}(t) = \sum_{i=1}^n
+    \frac{dc^i}{dt}(t) (e_i, 0) + \sum_{i=1}^n \frac{dY^i}{dt}(t) (0,
+    e_i)\)</span></p>
+    <p>This is a linear combination of the <span
+    class="math inline">\(2n\)</span> basis vectors, where the
+    coefficients are the time derivatives of the coordinate functions of
+    the curve and of the vector field along the curve.</p></li>
+    </ol>
+    <p>Thus, the derivative <span
+    class="math inline">\(\frac{dY}{dt}(t)\)</span> is represented as a
+    vector in the tangent space of the tangent bundle <span
+    class="math inline">\(TT\mathbb{E}^n\)</span>, which is isomorphic
+    to <span class="math inline">\(\mathbb{R}^{4n}\)</span>. This shows
+    explicitly how this derivative is a vector in <span
+    class="math inline">\(TT\mathbb{E}^n\)</span>. It can be viewed as a
+    vector field along the curve <span
+    class="math inline">\(Y(t)\)</span> in the tangent bundle <span
+    class="math inline">\(T\mathbb{E}^n\)</span>.</p>
+  </article>
+</body>
+</html>
