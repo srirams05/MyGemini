@@ -124,6 +124,8 @@
     1-forms</a></li>
     <li><a href="#example-of-1-form" id="toc-example-of-1-form">Example
     of 1-form</a></li>
+    <li><a href="#submanifolds-immersions"
+    id="toc-submanifolds-immersions">Submanifolds, Immersions</a></li>
     </ul>
   </nav>
   <article>
@@ -4152,6 +4154,234 @@
     must be smooth. These examples illustrate that there is not just one
     one-form; there are a very large number of 1-forms on <span
     class="math inline">\(\mathbb{E}^3\)</span>.</p>
+    <h1 id="submanifolds-immersions">Submanifolds, Immersions</h1>
+    <p><strong>Let <span class="math inline">\(f: M \to N\)</span>,
+    where <span class="math inline">\(M,N\)</span> are smooth manifolds.
+    When is <span class="math inline">\(f\)</span> and
+    immersion</strong></p>
+    <p>A smooth map <span class="math inline">\(f: M \to N\)</span>
+    between smooth manifolds <span class="math inline">\(M\)</span> and
+    <span class="math inline">\(N\)</span> is an immersion if its
+    differential <span class="math inline">\(df_p\)</span> is injective
+    (one-to-one) at every point <span class="math inline">\(p \in
+    M\)</span>.</p>
+    <p>Let’s break this down:</p>
+    <ol type="1">
+    <li><p><strong>Smooth Map:</strong> <span
+    class="math inline">\(f\)</span> must be a smooth map, meaning that
+    in local coordinates, the coordinate representation of <span
+    class="math inline">\(f\)</span> is smooth (has continuous partial
+    derivatives of all orders).</p></li>
+    <li><p><strong>Differential:</strong> The differential of <span
+    class="math inline">\(f\)</span> at a point <span
+    class="math inline">\(p\)</span>, denoted <span
+    class="math inline">\(df_p\)</span>, is a linear map between tangent
+    spaces:</p>
+    <p><span class="math inline">\(df_p: T_p M \to T_{f(p)}
+    N\)</span></p>
+    <p>It maps tangent vectors at <span class="math inline">\(p\)</span>
+    to tangent vectors at <span class="math inline">\(f(p)\)</span>.
+    This linear map is also called the pushforward.</p></li>
+    <li><p><strong>Injective Differential:</strong> The condition for
+    <span class="math inline">\(f\)</span> to be an immersion is that
+    <span class="math inline">\(df_p\)</span> must be injective
+    (one-to-one) for every <span class="math inline">\(p \in M\)</span>.
+    This means that the differential maps distinct tangent vectors at
+    <span class="math inline">\(p\)</span> to distinct tangent vectors
+    at <span class="math inline">\(f(p)\)</span>. In other words, the
+    map does not collapse any directions in the tangent space of the
+    domain at a point. The dimension of the tangent space of the domain
+    manifold must be less than or equal to that of the codomain
+    manifold.</p></li>
+    </ol>
+    <p><strong>In terms of dimensions:</strong></p>
+    <p>If <span class="math inline">\(\dim(M) = m\)</span> and <span
+    class="math inline">\(\dim(N) = n\)</span>, then for <span
+    class="math inline">\(f\)</span> to be an immersion, we must have
+    <span class="math inline">\(m \le n\)</span>, and the rank of the
+    Jacobian matrix of <span class="math inline">\(f\)</span> (in local
+    coordinates) must be equal to <span class="math inline">\(m\)</span>
+    at every point. The Jacobian matrix is the matrix representation of
+    the differential. The rank of the matrix represents the number of
+    linearly independent columns.</p>
+    <p><strong>Geometric Intuition:</strong></p>
+    <p>An immersion locally “embeds” <span
+    class="math inline">\(M\)</span> into <span
+    class="math inline">\(N\)</span>. The image of <span
+    class="math inline">\(f\)</span> might self-intersect, but at each
+    point, the tangent space to <span class="math inline">\(M\)</span>
+    is mapped injectively into the tangent space of <span
+    class="math inline">\(N\)</span>. It maps distinct vectors to
+    distinct vectors. The image of the immersion might be a
+    self-intersecting object but locally it looks like a
+    submanifold.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+    <li>The inclusion map of a submanifold into a larger manifold is an
+    immersion.</li>
+    <li>A curve in <span class="math inline">\(\mathbb{R}^3\)</span>
+    whose tangent vector never vanishes is an immersion.</li>
+    <li>A map from <span class="math inline">\(S^1\)</span> to <span
+    class="math inline">\(\mathbb{R}^2\)</span> that wraps the circle
+    around the origin once is an immersion.</li>
+    </ul>
+    <p>In short, an immersion is a smooth map that preserves the local
+    geometry of the tangent spaces without collapsing directions at any
+    point. The image is a submanifold near each point. The dimension of
+    the domain manifold cannot exceed that of the codomain manifold.</p>
+    <p><strong>For a smooth manifold <span
+    class="math inline">\(M\)</span> what is a regular
+    submanifold</strong></p>
+    <p>A regular submanifold <span class="math inline">\(S\)</span> of a
+    smooth manifold <span class="math inline">\(M\)</span> is a subset
+    <span class="math inline">\(S \subset M\)</span> that satisfies the
+    following conditions:</p>
+    <ol type="1">
+    <li><p><strong>Submanifold:</strong> <span
+    class="math inline">\(S\)</span> is itself a smooth
+    manifold.</p></li>
+    <li><p><strong>Embedding:</strong> There exists an embedding <span
+    class="math inline">\(i: S \to M\)</span>, which is an injective
+    immersion such that <span class="math inline">\(i(S) = S\)</span>.
+    This means that the inclusion map from <span
+    class="math inline">\(S\)</span> to <span
+    class="math inline">\(M\)</span> is a smooth embedding. This means
+    that the map <span class="math inline">\(i\)</span> is injective
+    (one-to-one), its differential <span
+    class="math inline">\(di_p\)</span> is injective (one-to-one) for
+    all <span class="math inline">\(p \in S\)</span>, and <span
+    class="math inline">\(i\)</span> is a homeomorphism onto its image
+    <span class="math inline">\(S\)</span> in <span
+    class="math inline">\(M\)</span>. This implies that the subspace
+    topology of <span class="math inline">\(S\)</span> inherited from
+    <span class="math inline">\(M\)</span> is equivalent to the manifold
+    topology of <span class="math inline">\(S\)</span>.</p></li>
+    <li><p><strong>Regularity:</strong> The inclusion map <span
+    class="math inline">\(i: S \to M\)</span> must be an embedding,
+    which means that the map must be an injective immersion and a
+    homeomorphism onto its image. This essentially means that the
+    manifold structure on <span class="math inline">\(S\)</span> is
+    compatible with the manifold structure on <span
+    class="math inline">\(M\)</span>. The tangent space <span
+    class="math inline">\(T_pS\)</span> is a vector subspace of <span
+    class="math inline">\(T_pM\)</span> for all <span
+    class="math inline">\(p \in S\)</span>.</p></li>
+    </ol>
+    <p><strong>Intuitive Explanation:</strong></p>
+    <p>A regular submanifold <span class="math inline">\(S\)</span> of
+    <span class="math inline">\(M\)</span> is a subset of <span
+    class="math inline">\(M\)</span> that “looks locally” like a smooth
+    submanifold of the same dimension. The local geometry of <span
+    class="math inline">\(S\)</span> is compatible with the local
+    geometry of <span class="math inline">\(M\)</span>. It is not
+    self-intersecting, and its tangent space at each point is a subspace
+    of the tangent space of <span class="math inline">\(M\)</span> at
+    that point. It is a submanifold with a compatible topology that is
+    equivalent to the subspace topology of <span
+    class="math inline">\(M\)</span>.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+    <li>A circle embedded in a plane is a regular submanifold.</li>
+    <li>A sphere embedded in <span
+    class="math inline">\(\mathbb{R}^3\)</span> is a regular
+    submanifold.</li>
+    <li>The graph of a smooth function <span class="math inline">\(f:
+    \mathbb{R}^m \to \mathbb{R}^n\)</span> is a regular submanifold of
+    <span class="math inline">\(\mathbb{R}^{m+n}\)</span>.</li>
+    <li>The set of solutions to a set of independent smooth equations is
+    a regular submanifold if the equations are independent.</li>
+    </ul>
+    <p><strong>Contrast with Immersions:</strong> An immersion <span
+    class="math inline">\(f: N \to M\)</span> is a smooth map whose
+    differential is injective at every point. The image of an immersion
+    might self-intersect; it is a submanifold only near each point. A
+    regular submanifold is a special type of immersion that is also an
+    embedding, meaning that the topological and smooth structures are
+    consistent. A regular submanifold is a particular case of an
+    immersion.</p>
+    <p>In short, a regular submanifold is a subset of a manifold that is
+    itself a manifold, has a compatible topology, and is smoothly
+    embedded within the larger manifold. It is locally a submanifold of
+    the same dimension. The inclusion map is an embedding.</p>
+    <p><strong>Another characterization: for $ S M$, and for any chart
+    <span class="math inline">\((U, \varphi)\)</span> around every <span
+    class="math inline">\(p \in S\)</span>, <span
+    class="math inline">\(\varphi(U \cap S) = \varphi(U) \cup (R^k
+    \times \{0\}^{n-k}\)</span> then <span
+    class="math inline">\(S\)</span> is a regular
+    submanifold</strong></p>
+    <p>Yes, that’s another characterization of a regular submanifold
+    <span class="math inline">\(S\)</span> of dimension <span
+    class="math inline">\(k\)</span> within an <span
+    class="math inline">\(n\)</span>-dimensional manifold <span
+    class="math inline">\(M\)</span>, where <span
+    class="math inline">\(k \le n\)</span>. This characterization uses
+    local coordinates to express the condition that <span
+    class="math inline">\(S\)</span> looks locally like <span
+    class="math inline">\(\mathbb{R}^k \times \{0\}^{n-k}\)</span>.</p>
+    <p><strong>Explanation:</strong></p>
+    <p>The condition <span class="math inline">\(\varphi(U \cap S) =
+    \varphi(U) \cap (\mathbb{R}^k \times \{0\}^{n-k})\)</span> means
+    that, in local coordinates provided by the chart <span
+    class="math inline">\((U, \varphi)\)</span> around any point <span
+    class="math inline">\(p \in S\)</span>:</p>
+    <ol type="1">
+    <li><p><strong>Intersection with Chart:</strong> The intersection of
+    the submanifold <span class="math inline">\(S\)</span> with the
+    coordinate neighborhood <span class="math inline">\(U\)</span> is
+    mapped by <span class="math inline">\(\varphi\)</span> into <span
+    class="math inline">\(\mathbb{R}^n\)</span>.</p></li>
+    <li><p><strong>Local Flatness:</strong> The image of this
+    intersection under <span class="math inline">\(\varphi\)</span> is
+    precisely the intersection of the chart’s image (<span
+    class="math inline">\(\varphi(U)\)</span>) with the subspace <span
+    class="math inline">\(\mathbb{R}^k \times \{0\}^{n-k}\)</span> in
+    <span class="math inline">\(\mathbb{R}^n\)</span>. This is a <span
+    class="math inline">\(k\)</span>-dimensional subspace of <span
+    class="math inline">\(\mathbb{R}^n\)</span>. The last <span
+    class="math inline">\(n-k\)</span> coordinates are always zero in
+    the image of <span class="math inline">\(U \cap S\)</span>.</p></li>
+    <li><p><strong>Local Coordinate Representation:</strong> This shows
+    that locally, around each point <span class="math inline">\(p \in
+    S\)</span>, the submanifold <span class="math inline">\(S\)</span>
+    looks like a <span class="math inline">\(k\)</span>-dimensional flat
+    subspace within the <span
+    class="math inline">\(n\)</span>-dimensional coordinate space. The
+    chart provides a homeomorphism between the neighborhood <span
+    class="math inline">\(U\)</span> on the manifold and the open subset
+    <span class="math inline">\(\varphi(U)\)</span> of <span
+    class="math inline">\(\mathbb{R}^n\)</span>, and this condition
+    implies that the submanifold <span class="math inline">\(S\)</span>
+    locally corresponds to a linear subspace within this <span
+    class="math inline">\(\mathbb{R}^n\)</span>.</p></li>
+    </ol>
+    <p><strong>Why this implies a regular submanifold:</strong></p>
+    <p>This local condition guarantees that <span
+    class="math inline">\(S\)</span> inherits a smooth manifold
+    structure from <span class="math inline">\(M\)</span> that is
+    compatible with the smooth structure of <span
+    class="math inline">\(M\)</span>. The local flatness means that we
+    can define charts for <span class="math inline">\(S\)</span> by
+    simply restricting the charts of <span
+    class="math inline">\(M\)</span> to <span
+    class="math inline">\(S\)</span>. The condition ensures that these
+    restricted charts form a smooth atlas for <span
+    class="math inline">\(S\)</span>, making it a smooth manifold. The
+    inclusion map of <span class="math inline">\(S\)</span> into <span
+    class="math inline">\(M\)</span> is then an embedding, which
+    satisfies the regularity condition. The regularity condition is
+    satisfied because the topology of the submanifold <span
+    class="math inline">\(S\)</span> matches that which is induced by
+    the manifold <span class="math inline">\(M\)</span>.</p>
+    <p><strong>In Summary:</strong></p>
+    <p>This characterization provides an explicit way to check if a
+    subset is a regular submanifold by examining its local coordinate
+    representation. If the local coordinate representation around every
+    point looks like a linear subspace, then the subset is a regular
+    submanifold. This condition assures that there is a smooth atlas for
+    the submanifold that is consistent with that of the parent manifold
+    <span class="math inline">\(M\)</span>. The inclusion map is an
+    embedding in this case.</p>
   </article>
 </body>
 </html>
