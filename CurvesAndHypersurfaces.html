@@ -19,6 +19,9 @@
     id="toc-vector-field-along-a-curve-in-euclidean-space-and-representations-in-the-canonical-basis">Vector
     field along a curve in Euclidean space and representations in the
     canonical basis</a></li>
+    <li><a href="#digression-into-riemannian-metric-tensor"
+    id="toc-digression-into-riemannian-metric-tensor">Digression into
+    Riemannian metric tensor</a></li>
     </ul>
   </nav>
   <article>
@@ -345,6 +348,193 @@
     vector field along the curve <span
     class="math inline">\(Y(t)\)</span> in the tangent bundle <span
     class="math inline">\(T\mathbb{E}^n\)</span>.</p>
+    <h1 id="digression-into-riemannian-metric-tensor">Digression into
+    Riemannian metric tensor</h1>
+    <p><strong>For smooth manifold <span
+    class="math inline">\(E^n\)</span>, the tangent spaces are
+    isomorphic to <span class="math inline">\(R^n\)</span> which have an
+    inner product defined. How does this lead to a Riemannian metric on
+    <span class="math inline">\(E^n\)</span></strong></p>
+    <p>The existence of an inner product on each tangent space <span
+    class="math inline">\(T_p\mathbb{E}^n \cong \mathbb{R}^n\)</span> of
+    Euclidean <span class="math inline">\(n\)</span>-space <span
+    class="math inline">\(\mathbb{E}^n\)</span> directly leads to a
+    Riemannian metric on <span
+    class="math inline">\(\mathbb{E}^n\)</span>. Here’s how:</p>
+    <ol type="1">
+    <li><p><strong>Inner Product on Tangent Spaces:</strong> The
+    standard inner product (dot product) on <span
+    class="math inline">\(\mathbb{R}^n\)</span> provides an inner
+    product on each tangent space <span
+    class="math inline">\(T_p\mathbb{E}^n\)</span>. If <span
+    class="math inline">\(v_p, w_p \in T_p\mathbb{E}^n\)</span> are two
+    tangent vectors at <span class="math inline">\(p\)</span>, their
+    inner product is denoted <span class="math inline">\(\langle v_p,
+    w_p \rangle\)</span>. Using the canonical identification of <span
+    class="math inline">\(T_p\mathbb{E}^n\)</span> with <span
+    class="math inline">\(\mathbb{R}^n\)</span>, if <span
+    class="math inline">\(v = (v^1, \dots, v^n)\)</span> and <span
+    class="math inline">\(w = (w^1, \dots, w^n)\)</span> are the
+    coordinate representations of <span
+    class="math inline">\(v_p\)</span> and <span
+    class="math inline">\(w_p\)</span> respectively, then the inner
+    product is:</p>
+    <p><span class="math inline">\(\langle v_p, w_p \rangle =
+    \sum_{i=1}^n v^i w^i = v \cdot w\)</span></p></li>
+    <li><p><strong>Riemannian Metric:</strong> A Riemannian metric <span
+    class="math inline">\(g\)</span> on a manifold <span
+    class="math inline">\(M\)</span> assigns to each point <span
+    class="math inline">\(p \in M\)</span> an inner product <span
+    class="math inline">\(g_p\)</span> on the tangent space <span
+    class="math inline">\(T_pM\)</span>. In the case of <span
+    class="math inline">\(\mathbb{E}^n\)</span>, the inner product <span
+    class="math inline">\(g_p\)</span> on <span
+    class="math inline">\(T_p\mathbb{E}^n\)</span> is simply the
+    standard dot product inherited from <span
+    class="math inline">\(\mathbb{R}^n\)</span> via the canonical
+    identification. This defines the inner product at each point on the
+    manifold.</p></li>
+    <li><p><strong>Smoothness:</strong> The inner product is the
+    standard dot product. Thus, it is smooth across the whole of <span
+    class="math inline">\(\mathbb{E}^n\)</span>. Therefore the
+    Riemannian metric <span class="math inline">\(g\)</span> is smooth
+    across the manifold <span
+    class="math inline">\(\mathbb{E}^n\)</span>. The components of the
+    metric are all constant.</p></li>
+    <li><p><strong>Coordinate Representation:</strong> In the standard
+    coordinate system of <span
+    class="math inline">\(\mathbb{E}^n\)</span>, the components of the
+    metric tensor <span class="math inline">\(g_{ij}\)</span> are given
+    by the Kronecker delta:</p></li>
+    </ol>
+    <p><span class="math inline">\(g_{ij}(p) = \delta_{ij} =
+    \begin{cases} 1 &amp; i = j \\ 0 &amp; i \ne j
+    \end{cases}\)</span></p>
+    <p>for all <span class="math inline">\(p \in \mathbb{E}^n\)</span>.
+    This is because it is the standard Euclidean metric on <span
+    class="math inline">\(\mathbb{R}^n\)</span>.</p>
+    <p>In summary, the standard dot product on <span
+    class="math inline">\(\mathbb{R}^n\)</span>, combined with the
+    canonical identification of tangent spaces with <span
+    class="math inline">\(\mathbb{R}^n\)</span>, provides a smooth
+    Riemannian metric on <span
+    class="math inline">\(\mathbb{E}^n\)</span>. This metric defines the
+    concept of lengths, angles, and distances on the manifold in a
+    coordinate-independent way. The Riemannian metric is the standard
+    Euclidean metric in this case. The components of the metric are
+    constant everywhere on the manifold. This simplicity does not occur
+    on other manifolds.</p>
+    <p><strong>The inner product is a real number. Why is <span
+    class="math inline">\(g_{ij}\)</span> a tensor?</strong></p>
+    <p>You’re right to question this; it’s a crucial point in
+    understanding Riemannian geometry. The inner product <span
+    class="math inline">\(\langle v_p, w_p \rangle\)</span> at a point
+    <span class="math inline">\(p\)</span> is indeed a real number.
+    However, the Riemannian metric <span
+    class="math inline">\(g\)</span> is not just a collection of inner
+    products at each point; it’s a <em>tensor field</em> that assigns an
+    inner product <em>smoothly</em> to each tangent space. The <span
+    class="math inline">\(g_{ij}\)</span> are the components of this
+    tensor field in a coordinate system.</p>
+    <p>Here’s why <span class="math inline">\(g_{ij}\)</span> represents
+    a tensor:</p>
+    <ol type="1">
+    <li><p><strong>Inner Product as a Bilinear Map:</strong> The inner
+    product at a point <span class="math inline">\(p\)</span> can be
+    viewed as a bilinear map:</p>
+    <p><span class="math inline">\(g_p: T_p M \times T_p M \to
+    \mathbb{R}\)</span></p>
+    <p>This map takes two tangent vectors as input and produces a real
+    number (the inner product). This is a tensor at the point <span
+    class="math inline">\(p\)</span>.</p></li>
+    <li><p><strong>Tensor Field:</strong> A Riemannian metric <span
+    class="math inline">\(g\)</span> is a smooth assignment of an inner
+    product to each tangent space: <span class="math inline">\(p \mapsto
+    g_p\)</span>. This is a tensor <em>field</em> because it smoothly
+    assigns a tensor to each point on the manifold. Smoothness is
+    essential because it guarantees the well-definedness of covariant
+    differentiation and other tensor operations.</p></li>
+    <li><p><strong>Components in a Coordinate System:</strong> In a
+    local coordinate system <span class="math inline">\((x^1, \dots,
+    x^n)\)</span>, the components <span
+    class="math inline">\(g_{ij}(p)\)</span> represent the inner product
+    of the basis vectors at <span class="math inline">\(p\)</span>:</p>
+    <p><span class="math inline">\(g_{ij}(p) = \langle
+    \frac{\partial}{\partial x^i}\Big|_p, \frac{\partial}{\partial
+    x^j}\Big|_p \rangle\)</span></p>
+    <p>These components are smooth functions of the coordinates because
+    of the smoothness of the Riemannian metric. These components
+    transform correctly under a change of coordinate systems (which is
+    the defining property of a tensor). This transformation is a tensor
+    transformation.</p></li>
+    <li><p><strong>Tensor Transformation:</strong> Under a change of
+    coordinates, the components <span
+    class="math inline">\(g_{ij}\)</span> transform according to the
+    tensor transformation law. This means that if we change from
+    coordinates <span class="math inline">\((x^1, \dots, x^n)\)</span>
+    to coordinates <span class="math inline">\((x&#39;^1, \dots,
+    x&#39;^n)\)</span>, the new components <span
+    class="math inline">\(g&#39;_{ij}\)</span> are related to the old
+    components by:</p>
+    <p><span class="math inline">\(g&#39;_{ij} = \sum_{k, l}
+    \frac{\partial x^k}{\partial x&#39;^i} \frac{\partial x^l}{\partial
+    x&#39;^j} g_{kl}\)</span></p>
+    <p>This transformation law is crucial; it ensures that the geometric
+    quantity represented by the inner product remains the same
+    regardless of the coordinate system used. It is coordinate
+    independent.</p></li>
+    </ol>
+    <p>In essence, while the inner product at a point is a scalar, the
+    Riemannian metric is a tensor field because it assigns inner
+    products smoothly across the manifold, and the components of the
+    inner product transform correctly under coordinate changes. It is
+    the smooth assignment of inner products to every tangent space, and
+    the transformation properties of these inner products, that make it
+    a tensor.</p>
+    <p><strong>The inner product which is a real number is a rank-0
+    tensor. So therefore, per your previous answer, this would be a
+    Riemannian metric tensor. Correct?</strong></p>
+    <p>No, that’s not quite correct. While the <em>value</em> of the
+    inner product at a point is a scalar (a rank-0 tensor), the
+    Riemannian metric itself is not a rank-0 tensor.</p>
+    <p>Here’s why:</p>
+    <ul>
+    <li><p><strong>Inner product at a point:</strong> The inner product
+    <span class="math inline">\(\langle v, w \rangle_p\)</span> of two
+    vectors <span class="math inline">\(v, w \in T_p M\)</span> at a
+    <em>specific point</em> <span class="math inline">\(p\)</span> is a
+    scalar (a rank-0 tensor). This scalar depends on the point and the
+    vectors.</p></li>
+    <li><p><strong>Riemannian metric:</strong> A Riemannian metric <span
+    class="math inline">\(g\)</span> is a <em>tensor field</em> that
+    assigns an inner product to each tangent space <em>smoothly</em>.
+    This means that <span class="math inline">\(g\)</span> assigns a
+    bilinear map <span class="math inline">\(g_p: T_p M \times T_p M \to
+    \mathbb{R}\)</span> to each point <span class="math inline">\(p \in
+    M\)</span>. This bilinear map is a type (0,2) tensor, not a scalar.
+    It is this assignment of tensors at each point on the manifold which
+    is a Riemannian metric.</p></li>
+    <li><p><strong>Components of the metric tensor:</strong> The
+    components <span class="math inline">\(g_{ij}(p)\)</span> in local
+    coordinates represent the inner product of the basis vectors at
+    <span class="math inline">\(p\)</span>: <span
+    class="math inline">\(g_{ij}(p) = \langle \frac{\partial}{\partial
+    x^i}, \frac{\partial}{\partial x^j} \rangle_p\)</span>. These are
+    scalar valued functions, which vary smoothly across the manifold. It
+    is the tensorial transformation property of the components that is
+    important.</p></li>
+    </ul>
+    <p>The crucial distinction is between the <em>value</em> of the
+    inner product (a scalar) and the <em>Riemannian metric itself</em>
+    (a tensor field). The Riemannian metric is a (0,2)-tensor field; its
+    components are smooth functions of position on the manifold that
+    transform according to the tensor transformation law. The tensor
+    transformation is critical in ensuring that lengths and angles are
+    consistently defined regardless of the coordinate system chosen. The
+    components are scalar-valued functions that must vary smoothly. This
+    collection of inner products, along with the smoothness requirement
+    and tensorial transformation property of the components, define the
+    Riemannian metric, which is a (0,2) tensor.</p>
   </article>
 </body>
 </html>
