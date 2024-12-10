@@ -22,6 +22,11 @@
     <li><a href="#digression-into-riemannian-metric-tensor"
     id="toc-digression-into-riemannian-metric-tensor">Digression into
     Riemannian metric tensor</a></li>
+    <li><a href="#arc-length-parameterization"
+    id="toc-arc-length-parameterization">Arc Length
+    Parameterization</a></li>
+    <li><a href="#curvature-of-a-curve"
+    id="toc-curvature-of-a-curve">Curvature of a curve</a></li>
     </ul>
   </nav>
   <article>
@@ -535,6 +540,155 @@
     collection of inner products, along with the smoothness requirement
     and tensorial transformation property of the components, define the
     Riemannian metric, which is a (0,2) tensor.</p>
+    <h1 id="arc-length-parameterization">Arc Length
+    Parameterization</h1>
+    <p><strong>Let <span class="math inline">\(\gamma(t): I \to
+    R\)</span> be a curve in <span class="math inline">\(E^n\)</span>.
+    How is the length of this curve defined? Further, how can this curve
+    be reparameterized in terms of arc length?</strong></p>
+    <p><strong>Length of a Curve in <span
+    class="math inline">\(\mathbb{E}^n\)</span></strong></p>
+    <p>The length <span class="math inline">\(L\)</span> of a smooth
+    curve <span class="math inline">\(\gamma: I \to
+    \mathbb{E}^n\)</span>, where <span class="math inline">\(I = [a,
+    b]\)</span> is a closed interval in <span
+    class="math inline">\(\mathbb{R}\)</span>, is defined using the
+    Riemannian metric of <span
+    class="math inline">\(\mathbb{E}^n\)</span> (the standard Euclidean
+    metric). The length is given by the integral of the magnitude of the
+    velocity vector:</p>
+    <p><span class="math inline">\(L = \int_a^b ||\gamma&#39;(t)|| \,
+    dt\)</span></p>
+    <p>where <span class="math inline">\(\gamma&#39;(t) =
+    \frac{d\gamma}{dt}\)</span> is the velocity vector (tangent vector
+    to the curve at <span class="math inline">\(\gamma(t)\)</span>), and
+    <span class="math inline">\(||\cdot||\)</span> denotes the Euclidean
+    norm (magnitude) of the vector in <span
+    class="math inline">\(\mathbb{R}^n\)</span>:</p>
+    <p><span class="math inline">\(||\gamma&#39;(t)|| =
+    \sqrt{\sum_{i=1}^n \left( \frac{d\gamma^i}{dt}(t)
+    \right)^2}\)</span></p>
+    <p>if <span class="math inline">\(\gamma(t) = (\gamma^1(t), \dots,
+    \gamma^n(t))\)</span> are the coordinate components of <span
+    class="math inline">\(\gamma(t)\)</span> in <span
+    class="math inline">\(\mathbb{R}^n\)</span>.</p>
+    <p><strong>Reparameterization by Arc Length</strong></p>
+    <p>To reparameterize <span class="math inline">\(\gamma(t)\)</span>
+    by arc length <span class="math inline">\(s\)</span>, we first
+    compute the arc length function:</p>
+    <p><span class="math inline">\(s(t) = \int_a^t ||\gamma&#39;(u)|| \,
+    du\)</span></p>
+    <p>This gives the arc length from <span
+    class="math inline">\(\gamma(a)\)</span> to <span
+    class="math inline">\(\gamma(t)\)</span>.</p>
+    <ol type="1">
+    <li><p><strong>Derivative of Arc Length:</strong> The derivative of
+    the arc length function with respect to <span
+    class="math inline">\(t\)</span> is:</p>
+    <p><span class="math inline">\(\frac{ds}{dt} =
+    ||\gamma&#39;(t)||\)</span> (This follows from the Fundamental
+    Theorem of Calculus). This is the speed at time <span
+    class="math inline">\(t\)</span>.</p></li>
+    </ol>
+    <p>This is a strictly monotonically increasing function if the
+    velocity of <span class="math inline">\(\gamma\)</span> is non-zero
+    for all <span class="math inline">\(t\)</span>, so it is invertible.
+    The inverse function is <span
+    class="math inline">\(t(s)\)</span>.</p>
+    <p>The reparameterization of <span
+    class="math inline">\(\gamma\)</span> by arc length is given by:</p>
+    <p><span class="math inline">\(\tilde{\gamma}(s) =
+    \gamma(t(s))\)</span></p>
+    <p>where <span class="math inline">\(t(s)\)</span> is the inverse of
+    <span class="math inline">\(s(t)\)</span>. <span
+    class="math inline">\(\tilde{\gamma}(s)\)</span> traces out the same
+    curve, but the parameter is now the arc length <span
+    class="math inline">\(s\)</span>.</p>
+    <ol start="2" type="1">
+    <li><p><strong>Derivative of Reparameterized Curve:</strong> To show
+    that the velocity of the reparameterized curve has magnitude 1, we
+    use the chain rule:</p>
+    <p><span class="math inline">\(\tilde{\gamma}&#39;(s) =
+    \frac{d\gamma}{dt}(t(s)) \frac{dt}{ds}(s)\)</span></p>
+    <p>Since <span class="math inline">\(\frac{ds}{dt} =
+    ||\gamma&#39;(t)||\)</span>, we have <span
+    class="math inline">\(\frac{dt}{ds} =
+    \frac{1}{||\gamma&#39;(t(s))||}\)</span>. Therefore:</p>
+    <p><span class="math inline">\(\tilde{\gamma}&#39;(s) =
+    \frac{\gamma&#39;(t(s))}{||\gamma&#39;(t(s))||}\)</span></p>
+    <p>Thus:</p>
+    <p><span class="math inline">\(||\tilde{\gamma}&#39;(s)|| =
+    \frac{||\gamma&#39;(t(s))||}{||\gamma&#39;(t(s))||} =
+    1\)</span></p></li>
+    </ol>
+    <p>The reparameterized curve <span
+    class="math inline">\(\tilde{\gamma}(s)\)</span> has unit speed
+    (<span class="math inline">\(||\tilde{\gamma}&#39;(s)|| =
+    1\)</span>), making <span class="math inline">\(s\)</span> the arc
+    length parameter. This process requires the velocity of the curve to
+    be non-zero.</p>
+    <h1 id="curvature-of-a-curve">Curvature of a curve</h1>
+    <p><strong>Let <span class="math inline">\(c: I \to E^n\)</span> be
+    a curve parameterized by arc length. Then we have <span
+    class="math inline">\(\Vert c’(s)\Vert = 1\)</span>. Let <span
+    class="math inline">\(T(s) = c’(s)\)</span> is vector valued
+    function. <span class="math inline">\(dT/ds\)</span> is a vector
+    valued function whose magnitude must be a measure of how much the
+    curve bends, since if <span class="math inline">\(c(s)\)</span> were
+    straight, <span class="math inline">\(\Vert dT/ds\Vert = 0\)</span>.
+    Is this correct?</strong></p>
+    <p>Yes, you’re absolutely correct. For a curve <span
+    class="math inline">\(c: I \to \mathbb{E}^n\)</span> parameterized
+    by arc length <span class="math inline">\(s\)</span>, the
+    vector-valued function <span class="math inline">\(T(s) =
+    c&#39;(s)\)</span> is the unit tangent vector to the curve at <span
+    class="math inline">\(c(s)\)</span>. The derivative <span
+    class="math inline">\(\frac{dT}{ds}(s)\)</span> measures the rate of
+    change of the tangent vector with respect to arc length, which is
+    directly related to the curvature of the curve. Here’s why:</p>
+    <ol type="1">
+    <li><p><strong>Unit Tangent Vector:</strong> Since <span
+    class="math inline">\(c(s)\)</span> is parameterized by arc length,
+    <span class="math inline">\(||T(s)|| = ||c&#39;(s)|| = 1\)</span>
+    for all <span class="math inline">\(s\)</span>. This means that
+    <span class="math inline">\(T(s)\)</span> is a unit vector.</p></li>
+    <li><p><strong>Derivative Measures Bending:</strong> The derivative
+    <span class="math inline">\(\frac{dT}{ds}(s)\)</span> represents the
+    rate at which the unit tangent vector changes as we move along the
+    curve. If the curve were a straight line, the tangent vector would
+    be constant, and <span
+    class="math inline">\(\frac{dT}{ds}(s)\)</span> would be the zero
+    vector.</p></li>
+    <li><p><strong>Curvature:</strong> The magnitude of <span
+    class="math inline">\(\frac{dT}{ds}(s)\)</span> is, in fact, the
+    curvature <span class="math inline">\(\kappa(s)\)</span> of the
+    curve at <span class="math inline">\(c(s)\)</span>:</p>
+    <p><span class="math inline">\(\kappa(s) = \left\| \frac{dT}{ds}(s)
+    \right\|\)</span></p>
+    <p>The curvature quantifies how much the curve bends at each point.
+    A higher curvature means a sharper bend. A straight line has zero
+    curvature.</p></li>
+    <li><p><strong>Osculating Plane:</strong> The vector <span
+    class="math inline">\(\frac{dT}{ds}(s)\)</span> is orthogonal to
+    <span class="math inline">\(T(s)\)</span> because <span
+    class="math inline">\(T(s)\)</span> has unit length and therefore
+    the derivative is orthogonal to <span
+    class="math inline">\(T(s)\)</span>. The vector <span
+    class="math inline">\(\frac{dT}{ds}(s)\)</span> lies in the
+    <em>osculating plane</em>, which is the plane that best approximates
+    the curve locally. The magnitude represents the rate of change in
+    the direction of the tangent vector.</p></li>
+    </ol>
+    <p>In summary, your intuition is spot on. The magnitude of <span
+    class="math inline">\(\frac{dT}{ds}(s)\)</span> gives the curvature
+    of the curve at <span class="math inline">\(c(s)\)</span>, providing
+    a quantitative measure of how much the curve is bending at that
+    point. The vector <span
+    class="math inline">\(\frac{dT}{ds}(s)\)</span> lies in the
+    osculating plane and is orthogonal to the tangent vector, pointing
+    in the direction of the curvature. It measures how much the tangent
+    vector is turning per unit arc length. The norm is a measure of how
+    fast the tangent vector is turning.</p>
   </article>
 </body>
 </html>
