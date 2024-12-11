@@ -689,6 +689,62 @@
     in the direction of the curvature. It measures how much the tangent
     vector is turning per unit arc length. The norm is a measure of how
     fast the tangent vector is turning.</p>
+    <p><strong>Provide a rigorous explanation of why <span
+    class="math inline">\(dT/ds\)</span> is orthogonal to <span
+    class="math inline">\(T(s)\)</span>.</strong></p>
+    <p>The rigorous explanation of why <span
+    class="math inline">\(\frac{dT}{ds}\)</span> is orthogonal to <span
+    class="math inline">\(T(s)\)</span> for a curve parameterized by arc
+    length relies on the fact that <span
+    class="math inline">\(T(s)\)</span> is a unit vector for all <span
+    class="math inline">\(s\)</span>.</p>
+    <p><strong>1. Unit Tangent Vector:</strong></p>
+    <p>Since the curve <span class="math inline">\(c(s)\)</span> is
+    parameterized by arc length, the tangent vector <span
+    class="math inline">\(T(s) = c&#39;(s)\)</span> has unit length for
+    all <span class="math inline">\(s\)</span>:</p>
+    <p><span class="math inline">\(||T(s)|| = 1\)</span> for all <span
+    class="math inline">\(s\)</span></p>
+    <p>This means that the dot product of <span
+    class="math inline">\(T(s)\)</span> with itself is always 1:</p>
+    <p><span class="math inline">\(T(s) \cdot T(s) = ||T(s)||^2 =
+    1\)</span></p>
+    <p><strong>2. Differentiating with Respect to <span
+    class="math inline">\(s\)</span>:</strong></p>
+    <p>Now, differentiate both sides of the equation <span
+    class="math inline">\(T(s) \cdot T(s) = 1\)</span> with respect to
+    <span class="math inline">\(s\)</span>. Using the product rule for
+    dot products, we get:</p>
+    <p><span class="math inline">\(\frac{d}{ds}(T(s) \cdot T(s)) =
+    \frac{dT}{ds}(s) \cdot T(s) + T(s) \cdot \frac{dT}{ds}(s) = 2 \left(
+    T(s) \cdot \frac{dT}{ds}(s) \right) = 0\)</span></p>
+    <p>The derivative of the constant 1 is 0.</p>
+    <p><strong>3. Orthogonality:</strong></p>
+    <p>Since <span class="math inline">\(2 \left( T(s) \cdot
+    \frac{dT}{ds}(s) \right) = 0\)</span>, we have:</p>
+    <p><span class="math inline">\(T(s) \cdot \frac{dT}{ds}(s) =
+    0\)</span></p>
+    <p>This equation shows that the dot product of <span
+    class="math inline">\(T(s)\)</span> and <span
+    class="math inline">\(\frac{dT}{ds}(s)\)</span> is zero. By the
+    definition of the dot product, this means that the vectors <span
+    class="math inline">\(T(s)\)</span> and <span
+    class="math inline">\(\frac{dT}{ds}(s)\)</span> are orthogonal
+    (perpendicular) to each other for all <span
+    class="math inline">\(s\)</span>.</p>
+    <p><strong>In Summary:</strong></p>
+    <p>The orthogonality of <span class="math inline">\(T(s)\)</span>
+    and <span class="math inline">\(\frac{dT}{ds}(s)\)</span> is a
+    direct consequence of the fact that <span
+    class="math inline">\(T(s)\)</span> has constant unit length.
+    Differentiating the equation <span class="math inline">\(T(s) \cdot
+    T(s) = 1\)</span> with respect to <span
+    class="math inline">\(s\)</span> and applying the product rule
+    immediately leads to the orthogonality condition. This is a
+    fundamental result in the differential geometry of curves. The fact
+    that the tangent vector has a constant length is crucial in showing
+    orthogonality between the tangent and its derivative. If the length
+    were not constant, then the vectors would not be orthogonal.</p>
   </article>
 </body>
 </html>
