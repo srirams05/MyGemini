@@ -27,6 +27,11 @@
     Parameterization</a></li>
     <li><a href="#curvature-of-a-curve"
     id="toc-curvature-of-a-curve">Curvature of a curve</a></li>
+    <li><a href="#covariant-derivative"
+    id="toc-covariant-derivative">Covariant Derivative</a></li>
+    <li><a href="#vector-field-along-an-open-set-in-a-hypersurface"
+    id="toc-vector-field-along-an-open-set-in-a-hypersurface">Vector
+    Field ALONG an open set in a hypersurface</a></li>
     </ul>
   </nav>
   <article>
@@ -1045,6 +1050,181 @@
     geometry. This generalization is useful for analyzing curvature in
     higher dimensions, although it is not unique in all cases. It is
     unique up to orientation.</p>
+    <h1 id="covariant-derivative">Covariant Derivative</h1>
+    <p>On the manifold <span class="math inline">\(\mathbb{E}^n\)</span>
+    (Euclidean <span class="math inline">\(n\)</span>-space), the
+    covariant derivative of a vector field <span
+    class="math inline">\(Y\)</span> with respect to another vector
+    field <span class="math inline">\(X\)</span> is simply the
+    directional derivative of <span class="math inline">\(Y\)</span>
+    along <span class="math inline">\(X\)</span>. This is because <span
+    class="math inline">\(\mathbb{E}^n\)</span> has a natural, flat
+    connection, meaning there’s a preferred way to compare tangent
+    vectors at different points. The covariant derivative is a vector
+    field.</p>
+    <p><strong>1. Vector Fields in Local Coordinates:</strong></p>
+    <p>Let’s work in the standard Cartesian coordinate system of <span
+    class="math inline">\(\mathbb{E}^n\)</span>. The vector fields <span
+    class="math inline">\(X\)</span> and <span
+    class="math inline">\(Y\)</span> can be expressed as:</p>
+    <p><span class="math inline">\(X = \sum_{i=1}^n X^i
+    \frac{\partial}{\partial x^i}\)</span> <span class="math inline">\(Y
+    = \sum_{j=1}^n Y^j \frac{\partial}{\partial x^j}\)</span></p>
+    <p>where <span class="math inline">\(X^i(x)\)</span> and <span
+    class="math inline">\(Y^j(x)\)</span> are the components of <span
+    class="math inline">\(X\)</span> and <span
+    class="math inline">\(Y\)</span> at the point <span
+    class="math inline">\(x = (x^1, \dots, x^n)\)</span>, which are
+    smooth functions of the position.</p>
+    <p><strong>2. Covariant Derivative as Directional
+    Derivative:</strong></p>
+    <p>The covariant derivative of <span
+    class="math inline">\(Y\)</span> with respect to <span
+    class="math inline">\(X\)</span>, denoted <span
+    class="math inline">\(\nabla_X Y\)</span>, is given by:</p>
+    <p><span class="math inline">\((\nabla_X Y)^i = \sum_{j=1}^n X^j
+    \frac{\partial Y^i}{\partial x^j}\)</span></p>
+    <p>This is precisely the directional derivative of the <span
+    class="math inline">\(i\)</span>-th component of <span
+    class="math inline">\(Y\)</span> along the vector field <span
+    class="math inline">\(X\)</span>. It shows how the <span
+    class="math inline">\(i\)</span>-th component of <span
+    class="math inline">\(Y\)</span> changes along the direction of
+    <span class="math inline">\(X\)</span>. This formula holds because
+    the connection is flat and the Christoffel symbols are all zero in
+    the standard coordinate system.</p>
+    <p><strong>3. Geometric Interpretation:</strong></p>
+    <p>Geometrically, <span class="math inline">\((\nabla_X
+    Y)_p\)</span> represents the rate of change of the vector field
+    <span class="math inline">\(Y\)</span> at a point <span
+    class="math inline">\(p\)</span> as we move along the vector field
+    <span class="math inline">\(X\)</span> at that point. Since <span
+    class="math inline">\(\mathbb{E}^n\)</span> is flat, this
+    directional derivative is independent of the path taken to move from
+    one point to the other. On curved manifolds, this is not the case.
+    The directional derivative would not be path-independent. In the
+    flat case of <span class="math inline">\(\mathbb{E}^n\)</span>, we
+    can obtain the covariant derivative by using the partial
+    derivatives. We can also obtain the covariant derivative by using
+    the Lie bracket. However, only in the flat case are they equal.</p>
+    <p><strong>4. Relationship to the Lie Bracket:</strong></p>
+    <p>In the case of <span class="math inline">\(\mathbb{E}^n\)</span>
+    (and in general for flat manifolds):</p>
+    <p><span class="math inline">\(\nabla_X Y = \mathcal{L}_X Y = [X,
+    Y]\)</span></p>
+    <p>where <span class="math inline">\(\mathcal{L}_X Y\)</span> is the
+    Lie derivative of <span class="math inline">\(Y\)</span> with
+    respect to <span class="math inline">\(X\)</span> (which is defined
+    by its action on smooth functions: <span
+    class="math inline">\([X,Y](f) = X(Y(f)) - Y(X(f))\)</span> ), and
+    <span class="math inline">\([X,Y]\)</span> is the Lie bracket. The
+    Lie bracket is a measure of the non-commutativity of the flows
+    associated with <span class="math inline">\(X\)</span> and <span
+    class="math inline">\(Y\)</span>. The Lie bracket measures the
+    failure of the flows to commute. This equality does not hold on
+    general curved manifolds.</p>
+    <p>In summary, on <span class="math inline">\(\mathbb{E}^n\)</span>,
+    the covariant derivative of <span class="math inline">\(Y\)</span>
+    with respect to <span class="math inline">\(X\)</span> is simply the
+    directional derivative of <span class="math inline">\(Y\)</span>
+    along <span class="math inline">\(X\)</span>. This is because <span
+    class="math inline">\(\mathbb{E}^n\)</span> is flat, and the
+    connection is the standard flat connection. This also happens to be
+    equal to the Lie derivative and the Lie bracket. These three are not
+    equal on general curved manifolds.</p>
+    <h1 id="vector-field-along-an-open-set-in-a-hypersurface">Vector
+    Field ALONG an open set in a hypersurface</h1>
+    <p><strong>I think that <span class="math inline">\(X: O \to
+    TE^n\)</span> and if <span class="math inline">\(\iota: O
+    \xhookrightarrow E^n\)</span> is the inclusion map, then <span
+    class="math inline">\(\pi \circ X = \iota\)</span>.</strong></p>
+    <p>That’s a very good and precise way to define a vector field along
+    <span class="math inline">\(O\)</span>, using the tangent bundle of
+    the ambient Euclidean space.</p>
+    <p>Let <span class="math inline">\(\pi: T\mathbb{E}^n \to
+    \mathbb{E}^n\)</span> be the canonical projection from the tangent
+    bundle of <span class="math inline">\(\mathbb{E}^n\)</span> to <span
+    class="math inline">\(\mathbb{E}^n\)</span>. Then a vector field
+    <span class="math inline">\(X\)</span> along <span
+    class="math inline">\(O \subset M \subset \mathbb{E}^n\)</span> is a
+    smooth map <span class="math inline">\(X: O \to
+    T\mathbb{E}^n\)</span> such that:</p>
+    <ol type="1">
+    <li><p><span class="math inline">\(\pi \circ X = \iota\)</span>,
+    where <span class="math inline">\(\iota: O \hookrightarrow
+    \mathbb{E}^n\)</span> is the inclusion map. This ensures that <span
+    class="math inline">\(X(p)\)</span> is a vector based at the point
+    <span class="math inline">\(p \in O\)</span>.</p></li>
+    <li><p>For all <span class="math inline">\(p \in O\)</span>, <span
+    class="math inline">\(X(p) \in T_p M\)</span>. This condition
+    ensures that the vector <span class="math inline">\(X(p)\)</span> is
+    tangent to the hypersurface <span class="math inline">\(M\)</span>
+    at <span class="math inline">\(p\)</span>.</p></li>
+    </ol>
+    <p>The smoothness of <span class="math inline">\(X\)</span> can be
+    defined in the usual way: using local coordinates on <span
+    class="math inline">\(M\)</span> and the natural coordinates on
+    <span class="math inline">\(T\mathbb{E}^n\)</span>, or by requiring
+    that <span class="math inline">\(X \circ \gamma\)</span> is smooth
+    for any smooth curve <span class="math inline">\(\gamma\)</span> in
+    <span class="math inline">\(O\)</span>.</p>
+    <p>This definition elegantly captures the idea that <span
+    class="math inline">\(X\)</span> is a vector field <em>along</em>
+    the hypersurface <span class="math inline">\(M\)</span>, residing in
+    the ambient tangent space but always remaining tangent to <span
+    class="math inline">\(M\)</span>.</p>
+    <p><strong>Not clear on how condition 2 arises.</strong></p>
+    <p>You’re right to question the clarity of condition 2. Condition 1
+    ensures that the vector <span class="math inline">\(X(p)\)</span> is
+    based at the point <span class="math inline">\(p\)</span> on the
+    hypersurface. However, it doesn’t inherently guarantee that <span
+    class="math inline">\(X(p)\)</span> lies <em>within</em> the tangent
+    space <span class="math inline">\(T_pM\)</span> of the hypersurface
+    at <span class="math inline">\(p\)</span>. Condition 2 explicitly
+    adds this crucial requirement.</p>
+    <p>Condition 2, “<span class="math inline">\(X(p) \in T_p M\)</span>
+    for all <span class="math inline">\(p \in O\)</span>”, isn’t
+    directly derivable from condition 1. It’s an independent constraint
+    that restricts the vector field to be tangent to the hypersurface.
+    We are <em>defining</em> a vector field <em>along</em> the
+    hypersurface, not just a vector field in the ambient space.</p>
+    <p>To illustrate why it’s necessary: Imagine a vector field in <span
+    class="math inline">\(\mathbb{E}^3\)</span> along a surface <span
+    class="math inline">\(M\)</span>. Condition 1 ensures each vector is
+    attached to a point on <span class="math inline">\(M\)</span>.
+    However, without condition 2, the vectors could point in any
+    direction in <span class="math inline">\(\mathbb{E}^3\)</span>,
+    including directions that are not tangent to <span
+    class="math inline">\(M\)</span>. Condition 2 forces the vectors to
+    be tangent, making it a vector field <em>along</em> the surface and
+    not just a map from the surface to the ambient tangent space.</p>
+    <p>In short, condition 2 is a fundamental requirement for the
+    definition, ensuring the vector field is intrinsically tied to the
+    geometry of the hypersurface. It’s not implicitly contained within
+    condition 1.</p>
+    <p><strong>Good explanation. In that case, isn’t condition 2
+    sufficient for the definition?</strong></p>
+    <p>You’re right to question that. Condition 2 alone is <em>not</em>
+    sufficient. While it ensures the vectors are tangent to the
+    hypersurface, it doesn’t specify where the base point of the vector
+    is located.</p>
+    <p>Consider a map <span class="math inline">\(Y: O \to
+    T\mathbb{E}^n\)</span> satisfying only condition 2 (<span
+    class="math inline">\(Y(p) \in T_pM\)</span> for all <span
+    class="math inline">\(p \in O\)</span>). This map could assign a
+    tangent vector at <span class="math inline">\(p \in O\)</span> to a
+    point <em>different</em> from <span class="math inline">\(p\)</span>
+    in <span class="math inline">\(\mathbb{E}^n\)</span>. It wouldn’t be
+    a vector field <em>along</em> the hypersurface in the intuitive
+    sense.</p>
+    <p>Condition 1 (<span class="math inline">\(\pi \circ X =
+    \iota\)</span>) is crucial because it anchors the vector <span
+    class="math inline">\(X(p)\)</span> to the point <span
+    class="math inline">\(p\)</span> on the hypersurface. It ensures the
+    vector field is truly <em>along</em> <span
+    class="math inline">\(O\)</span>, not just a collection of tangent
+    vectors scattered arbitrarily in the ambient space. Both conditions
+    are needed for a complete and rigorous definition.</p>
   </article>
 </body>
 </html>
