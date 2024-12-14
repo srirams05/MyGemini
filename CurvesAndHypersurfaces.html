@@ -1134,97 +1134,85 @@
     equal on general curved manifolds.</p>
     <h1 id="vector-field-along-an-open-set-in-a-hypersurface">Vector
     Field ALONG an open set in a hypersurface</h1>
-    <p><strong>I think that <span class="math inline">\(X: O \to
-    TE^n\)</span> and if <span class="math inline">\(\iota: O
-    \hookrightarrow E^n\)</span> is the inclusion map, then <span
-    class="math inline">\(\pi \circ X = \iota\)</span>.</strong></p>
-    <p>That’s a very good and precise way to define a vector field along
-    <span class="math inline">\(O\)</span>, using the tangent bundle of
-    the ambient Euclidean space.</p>
-    <p>Let <span class="math inline">\(\pi: T\mathbb{E}^n \to
-    \mathbb{E}^n\)</span> be the canonical projection from the tangent
-    bundle of <span class="math inline">\(\mathbb{E}^n\)</span> to <span
-    class="math inline">\(\mathbb{E}^n\)</span>. Then a vector field
-    <span class="math inline">\(X\)</span> along <span
-    class="math inline">\(O \subset M \subset \mathbb{E}^n\)</span> is a
-    smooth map <span class="math inline">\(X: O \to
-    T\mathbb{E}^n\)</span> such that:</p>
+    <p>We need to separate the definition into two cases: tangent vector
+    fields and normal vector fields. A general vector field along O
+    would be a linear combination of these.</p>
+    <p><strong>Definition 1: Tangent Vector Field along O</strong></p>
+    <p>Let <span class="math inline">\(M\)</span> be a hypersurface in
+    <span class="math inline">\(\mathbb{E}^n\)</span>, and let <span
+    class="math inline">\(O \subset M\)</span> be an open subset. A
+    <em>tangent</em> vector field <span class="math inline">\(X\)</span>
+    along <span class="math inline">\(O\)</span> is a smooth map <span
+    class="math inline">\(X: O \to T\mathbb{E}^n\)</span> such that:</p>
     <ol type="1">
-    <li><p><span class="math inline">\(\pi \circ X = \iota\)</span>,
-    where <span class="math inline">\(\iota: O \hookrightarrow
-    \mathbb{E}^n\)</span> is the inclusion map. This ensures that <span
-    class="math inline">\(X(p)\)</span> is a vector based at the point
-    <span class="math inline">\(p \in O\)</span>.</p></li>
-    <li><p>For all <span class="math inline">\(p \in O\)</span>, <span
-    class="math inline">\(X(p) \in T_p M\)</span>. This condition
-    ensures that the vector <span class="math inline">\(X(p)\)</span> is
-    tangent to the hypersurface <span class="math inline">\(M\)</span>
-    at <span class="math inline">\(p\)</span>.</p></li>
+    <li><span class="math inline">\(\pi \circ X = \iota\)</span>, where
+    <span class="math inline">\(\pi: T\mathbb{E}^n \to
+    \mathbb{E}^n\)</span> is the canonical projection and <span
+    class="math inline">\(\iota: O \hookrightarrow \mathbb{E}^n\)</span>
+    is the inclusion map.</li>
+    <li>For all <span class="math inline">\(p \in O\)</span>, <span
+    class="math inline">\(X(p) \in T_p M\)</span>.</li>
     </ol>
-    <p>The smoothness of <span class="math inline">\(X\)</span> can be
-    defined in the usual way: using local coordinates on <span
-    class="math inline">\(M\)</span> and the natural coordinates on
-    <span class="math inline">\(T\mathbb{E}^n\)</span>, or by requiring
-    that <span class="math inline">\(X \circ \gamma\)</span> is smooth
-    for any smooth curve <span class="math inline">\(\gamma\)</span> in
-    <span class="math inline">\(O\)</span>.</p>
-    <p>This definition elegantly captures the idea that <span
-    class="math inline">\(X\)</span> is a vector field <em>along</em>
-    the hypersurface <span class="math inline">\(M\)</span>, residing in
-    the ambient tangent space but always remaining tangent to <span
-    class="math inline">\(M\)</span>.</p>
-    <p><strong>Not clear on how condition 2 arises.</strong></p>
-    <p>You’re right to question the clarity of condition 2. Condition 1
-    ensures that the vector <span class="math inline">\(X(p)\)</span> is
-    based at the point <span class="math inline">\(p\)</span> on the
-    hypersurface. However, it doesn’t inherently guarantee that <span
-    class="math inline">\(X(p)\)</span> lies <em>within</em> the tangent
-    space <span class="math inline">\(T_pM\)</span> of the hypersurface
-    at <span class="math inline">\(p\)</span>. Condition 2 explicitly
-    adds this crucial requirement.</p>
-    <p>Condition 2, “<span class="math inline">\(X(p) \in T_p M\)</span>
-    for all <span class="math inline">\(p \in O\)</span>”, isn’t
-    directly derivable from condition 1. It’s an independent constraint
-    that restricts the vector field to be tangent to the hypersurface.
-    We are <em>defining</em> a vector field <em>along</em> the
-    hypersurface, not just a vector field in the ambient space.</p>
-    <p>To illustrate why it’s necessary: Imagine a vector field in <span
-    class="math inline">\(\mathbb{E}^3\)</span> along a surface <span
-    class="math inline">\(M\)</span>. Condition 1 ensures each vector is
-    attached to a point on <span class="math inline">\(M\)</span>.
-    However, without condition 2, the vectors could point in any
-    direction in <span class="math inline">\(\mathbb{E}^3\)</span>,
-    including directions that are not tangent to <span
-    class="math inline">\(M\)</span>. Condition 2 forces the vectors to
-    be tangent, making it a vector field <em>along</em> the surface and
-    not just a map from the surface to the ambient tangent space.</p>
-    <p>In short, condition 2 is a fundamental requirement for the
-    definition, ensuring the vector field is intrinsically tied to the
-    geometry of the hypersurface. It’s not implicitly contained within
-    condition 1.</p>
-    <p><strong>Good explanation. In that case, isn’t condition 2
-    sufficient for the definition?</strong></p>
-    <p>You’re right to question that. Condition 2 alone is <em>not</em>
-    sufficient. While it ensures the vectors are tangent to the
-    hypersurface, it doesn’t specify where the base point of the vector
-    is located.</p>
-    <p>Consider a map <span class="math inline">\(Y: O \to
-    T\mathbb{E}^n\)</span> satisfying only condition 2 (<span
-    class="math inline">\(Y(p) \in T_pM\)</span> for all <span
-    class="math inline">\(p \in O\)</span>). This map could assign a
-    tangent vector at <span class="math inline">\(p \in O\)</span> to a
-    point <em>different</em> from <span class="math inline">\(p\)</span>
-    in <span class="math inline">\(\mathbb{E}^n\)</span>. It wouldn’t be
-    a vector field <em>along</em> the hypersurface in the intuitive
-    sense.</p>
-    <p>Condition 1 (<span class="math inline">\(\pi \circ X =
-    \iota\)</span>) is crucial because it anchors the vector <span
-    class="math inline">\(X(p)\)</span> to the point <span
-    class="math inline">\(p\)</span> on the hypersurface. It ensures the
-    vector field is truly <em>along</em> <span
-    class="math inline">\(O\)</span>, not just a collection of tangent
-    vectors scattered arbitrarily in the ambient space. Both conditions
-    are needed for a complete and rigorous definition.</p>
+    <p><strong>Definition 2: Normal Vector Field along O</strong></p>
+    <p>Let <span class="math inline">\(M\)</span> be a hypersurface in
+    <span class="math inline">\(\mathbb{E}^n\)</span>, and let <span
+    class="math inline">\(O \subset M\)</span> be an open subset. A
+    <em>normal</em> vector field <span class="math inline">\(N\)</span>
+    along <span class="math inline">\(O\)</span> is a smooth map <span
+    class="math inline">\(N: O \to T\mathbb{E}^n\)</span> such that:</p>
+    <ol type="1">
+    <li><span class="math inline">\(\pi \circ N = \iota\)</span>, where
+    <span class="math inline">\(\pi: T\mathbb{E}^n \to
+    \mathbb{E}^n\)</span> is the canonical projection and <span
+    class="math inline">\(\iota: O \hookrightarrow \mathbb{E}^n\)</span>
+    is the inclusion map.</li>
+    <li>For all <span class="math inline">\(p \in O\)</span>, <span
+    class="math inline">\(N(p) \in (T_p M)^{\perp}\)</span>, where <span
+    class="math inline">\((T_p M)^{\perp}\)</span> denotes the
+    orthogonal complement of <span class="math inline">\(T_p M\)</span>
+    in <span class="math inline">\(\mathbb{E}^n\)</span>. This means
+    <span class="math inline">\(\langle N(p), v \rangle = 0\)</span> for
+    all <span class="math inline">\(v \in T_p M\)</span>.</li>
+    </ol>
+    <p><strong>Definition 3: General Vector Field along O
+    (Informal)</strong></p>
+    <p>A general vector field along <span
+    class="math inline">\(O\)</span> can be considered as a combination
+    of a tangent and a normal vector field, which can be locally
+    expressed as a linear combination of a tangent vector field and a
+    normal vector field. A fully rigorous definition would involve the
+    splitting of the tangent bundle of the ambient space into tangent
+    and normal bundles along <span class="math inline">\(O\)</span>,
+    which is more advanced. For a hypersurface, the normal bundle is
+    1-dimensional. A general vector field <span
+    class="math inline">\(V\)</span> along <span
+    class="math inline">\(O\)</span> could then be written as <span
+    class="math inline">\(V = X + aN\)</span>, where <span
+    class="math inline">\(X\)</span> is a tangent vector field, <span
+    class="math inline">\(N\)</span> is a unit normal vector field and
+    <span class="math inline">\(a:O \to \mathbb{R}\)</span> is a scalar
+    function. The smoothness of V would depend on the smoothness of X, N
+    and a.</p>
+    <p>The “smoothness” of X and N in Definitions 1 and 2 can be
+    rigorously defined either via local coordinates or by requiring
+    smoothness of the composition with any smooth curve in O, as
+    discussed previously.</p>
+    <p><strong>Condition 1 assures that the vector chosen by <span
+    class="math inline">\(X\)</span> is anchored at the same point <span
+    class="math inline">\(p\)</span> on which <span
+    class="math inline">\(X\)</span> acts. Is this correct?</strong></p>
+    <p>Yes, that’s precisely correct. Condition 1, <span
+    class="math inline">\(\pi \circ X = \iota\)</span>, ensures that the
+    vector <span class="math inline">\(X(p)\)</span> is based at the
+    point <span class="math inline">\(p \in O\)</span>. The projection
+    map <span class="math inline">\(\pi\)</span> takes a tangent vector
+    and returns its base point. The inclusion map <span
+    class="math inline">\(\iota\)</span> simply embeds <span
+    class="math inline">\(O\)</span> into <span
+    class="math inline">\(\mathbb{E}^n\)</span>. The condition states
+    that the base point of the vector <span
+    class="math inline">\(X(p)\)</span> is the same as the point <span
+    class="math inline">\(p\)</span> on the hypersurface.</p>
   </article>
 </body>
 </html>
