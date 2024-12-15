@@ -32,9 +32,9 @@
     <li><a href="#vector-field-along-an-open-set-in-a-hypersurface"
     id="toc-vector-field-along-an-open-set-in-a-hypersurface">Vector
     Field ALONG an open set in a hypersurface</a></li>
-    <li><a href="#local-coordinates-adapter-to-hypersurface"
-    id="toc-local-coordinates-adapter-to-hypersurface">Local coordinates
-    adapter to hypersurface</a></li>
+    <li><a href="#local-coordinates-adapted-to-hypersurface"
+    id="toc-local-coordinates-adapted-to-hypersurface">Local coordinates
+    adapted to hypersurface</a></li>
     </ul>
   </nav>
   <article>
@@ -1216,8 +1216,8 @@
     that the base point of the vector <span
     class="math inline">\(X(p)\)</span> is the same as the point <span
     class="math inline">\(p\)</span> on the hypersurface.</p>
-    <h1 id="local-coordinates-adapter-to-hypersurface">Local coordinates
-    adapter to hypersurface</h1>
+    <h1 id="local-coordinates-adapted-to-hypersurface">Local coordinates
+    adapted to hypersurface</h1>
     <p>The intuition behind a chart adapted to a hypersurface <span
     class="math inline">\(M\)</span> is that it provides a coordinate
     system that’s “naturally aligned” with the geometry of <span
@@ -1263,178 +1263,444 @@
     geometric picture. You only need the minimum number of coordinates
     to describe a point on the surface, and these coordinates directly
     relate to the surface’s local structure.</p>
-    <p><strong>How can you start with a chart on <span
-    class="math inline">\(E^n\)</span> and adapt it to <span
-    class="math inline">\(M\)</span>.</strong></p>
-    <p>You can’t directly adapt a chart on <span
-    class="math inline">\(\mathbb{E}^n\)</span> to <span
-    class="math inline">\(M\)</span> simply by restriction. The ambient
-    space chart gives you coordinates for the entire space, and
-    restricting them to <span class="math inline">\(M\)</span> doesn’t
-    automatically create a suitable coordinate system for <span
-    class="math inline">\(M\)</span>’s intrinsic <span
-    class="math inline">\(n-1\)</span> dimensional structure. You need
-    to use the geometric properties of <span
-    class="math inline">\(M\)</span> to construct an adapted chart.</p>
-    <p>Here’s the process, focusing on the most common approach using
-    the implicit function theorem:</p>
-    <p><strong>1. Begin with an Ambient Chart:</strong> Start with a
-    chart <span class="math inline">\((\tilde{O}, \tilde{u})\)</span> on
-    <span class="math inline">\(\mathbb{E}^n\)</span>, where <span
-    class="math inline">\(\tilde{u} = (\tilde{u}_1, \dots,
-    \tilde{u}_n)\)</span> are the coordinates. This chart covers a
-    region of <span class="math inline">\(\mathbb{E}^n\)</span> that
-    includes a portion of the hypersurface <span
-    class="math inline">\(M\)</span>.</p>
-    <p><strong>2. Local Representation of M:</strong> Express <span
-    class="math inline">\(M\)</span> locally as the level set of a
-    smooth function <span class="math inline">\(f: \mathbb{E}^n \to
-    \mathbb{R}\)</span> such that <span class="math inline">\(M \cap
-    \tilde{O} = \{x \in \tilde{O} : f(x) = 0\}\)</span>. We assume that
-    <span class="math inline">\(M\)</span> is a regular hypersurface, so
-    <span class="math inline">\(\nabla f(x) \neq 0\)</span> for all
-    <span class="math inline">\(x \in M \cap \tilde{O}\)</span>. This
-    regularity ensures that <span class="math inline">\(M\)</span> is
-    locally a smooth (n-1)-dimensional manifold.</p>
-    <p><strong>3. Apply the Implicit Function Theorem:</strong> Choose a
-    coordinate, say <span class="math inline">\(\tilde{u}_n\)</span>,
-    such that <span class="math inline">\(\frac{\partial f}{\partial
-    \tilde{u}_n} \neq 0\)</span> at some point <span
-    class="math inline">\(p \in M \cap \tilde{O}\)</span>. The Implicit
-    Function Theorem then guarantees that near <span
-    class="math inline">\(p\)</span>, you can solve for <span
-    class="math inline">\(\tilde{u}_n\)</span> as a function of the
-    other coordinates:</p>
-    <p><span class="math inline">\(\tilde{u}_n = g(\tilde{u}_1, \dots,
-    \tilde{u}_{n-1})\)</span></p>
-    <p><strong>4. Construct the Adapted Chart:</strong> Define a new
-    chart <span class="math inline">\((O, u)\)</span> for <span
-    class="math inline">\(M\)</span> as follows:</p>
+    <p><strong>Let <span class="math inline">\(M\)</span> be a regular
+    hypersurface in <span class="math inline">\(E^n\)</span>. Let <span
+    class="math inline">\(p \in M \subset E^n\)</span> be a point on
+    <span class="math inline">\(M\)</span>. Construct a chart on an open
+    set around <span class="math inline">\(p\)</span> which is adapted
+    to <span class="math inline">\(M\)</span></strong></p>
+    <p><strong>1. The Setup:</strong></p>
+    <p>Since <span class="math inline">\(M\)</span> is a regular
+    hypersurface in <span class="math inline">\(E^n\)</span>, for any
+    <span class="math inline">\(p \in M\)</span>, there exists an open
+    set <span class="math inline">\(U \subset E^n\)</span> containing
+    <span class="math inline">\(p\)</span>, an open set <span
+    class="math inline">\(V \subset \mathbb{R}^n\)</span>, and a smooth
+    diffeomorphism <span class="math inline">\(\phi: U \to V\)</span>
+    such that <span class="math inline">\(\phi(M \cap U) = V \cap
+    (\mathbb{R}^{n-1} \times \{0\})\)</span>.</p>
+    <p><strong>2. Constructing the Chart:</strong></p>
+    <p>We want to construct a chart <span
+    class="math inline">\((\tilde{U}, \psi)\)</span> where <span
+    class="math inline">\(\tilde{U} \subset M\)</span> is open and
+    contains <span class="math inline">\(p\)</span>, and <span
+    class="math inline">\(\psi: \tilde{U} \to \tilde{V} \subset
+    \mathbb{R}^{n-1}\)</span> is a homeomorphism onto an open set <span
+    class="math inline">\(\tilde{V}\)</span>.</p>
+    <p>Let <span class="math inline">\(\pi: \mathbb{R}^n \to
+    \mathbb{R}^{n-1}\)</span> be the projection onto the first <span
+    class="math inline">\(n-1\)</span> coordinates: <span
+    class="math inline">\(\pi(x_1, \dots, x_n) = (x_1, \dots,
+    x_{n-1})\)</span>.</p>
+    <p>Define <span class="math inline">\(\tilde{U} = M \cap U\)</span>.
+    This is an open set in <span class="math inline">\(M\)</span>
+    containing <span class="math inline">\(p\)</span>.</p>
+    <p>Now define <span class="math inline">\(\psi: \tilde{U} \to
+    \mathbb{R}^{n-1}\)</span> by <span class="math inline">\(\psi = \pi
+    \circ \phi|_{\tilde{U}}\)</span>. That is, restrict <span
+    class="math inline">\(\phi\)</span> to <span
+    class="math inline">\(\tilde{U}\)</span> and then project onto the
+    first <span class="math inline">\(n-1\)</span> coordinates. Let
+    <span class="math inline">\(\tilde{V} = \psi(\tilde{U})\)</span>.
+    Since <span class="math inline">\(\phi\)</span> is a diffeomorphism,
+    and <span class="math inline">\(\pi\)</span> when restricted to
+    <span class="math inline">\(V \cap (\mathbb{R}^{n-1} \times
+    \{0\})\)</span> is a diffeomorphism, <span
+    class="math inline">\(\tilde{V}\)</span> will be open in <span
+    class="math inline">\(\mathbb{R}^{n-1}\)</span>.</p>
+    <p><strong>3. Verification:</strong></p>
     <ul>
-    <li><strong>Coordinate Patch:</strong> <span class="math inline">\(O
-    = M \cap \tilde{O}\)</span> (in a neighborhood of <span
-    class="math inline">\(p\)</span>)</li>
-    <li><strong>Coordinate Map:</strong> <span class="math inline">\(u:
-    O \to U \subset \mathbb{R}^{n-1}\)</span>, where <span
-    class="math inline">\(U\)</span> is an open set in <span
-    class="math inline">\(\mathbb{R}^{n-1}\)</span>, defined by: <span
-    class="math inline">\(u(x) = (\tilde{u}_1(x), \dots,
-    \tilde{u}_{n-1}(x))\)</span> for <span class="math inline">\(x \in
-    O\)</span>. The value of <span
-    class="math inline">\(\tilde{u}_n(x)\)</span> is implicitly
-    determined by <span class="math inline">\(g\)</span>.</li>
+    <li><p><strong>Smoothness:</strong> <span
+    class="math inline">\(\psi\)</span> is smooth as it is a composition
+    of smooth maps (<span class="math inline">\(\pi\)</span> and the
+    restriction of <span class="math inline">\(\phi\)</span>).</p></li>
+    <li><p><strong>Homeomorphism:</strong> Because <span
+    class="math inline">\(\phi\)</span> maps <span
+    class="math inline">\(M \cap U\)</span> diffeomorphically onto <span
+    class="math inline">\(V \cap (\mathbb{R}^{n-1} \times
+    \{0\})\)</span> and <span class="math inline">\(\pi\)</span>
+    restricted to <span class="math inline">\(V \cap (\mathbb{R}^{n-1}
+    \times \{0\})\)</span> gives a diffeomorphism to an open set in
+    <span class="math inline">\(\mathbb{R}^{n-1}\)</span>, the
+    composition <span class="math inline">\(\psi\)</span> provides the
+    required homeomorphism between <span
+    class="math inline">\(\tilde{U}\)</span> and <span
+    class="math inline">\(\tilde{V}\)</span>.</p></li>
+    <li><p><strong>Open Sets:</strong> <span
+    class="math inline">\(\tilde{U}\)</span> is open in <span
+    class="math inline">\(M\)</span> by definition. <span
+    class="math inline">\(\tilde{V}\)</span> is open in <span
+    class="math inline">\(\mathbb{R}^{n-1}\)</span> as discussed
+    above.</p></li>
     </ul>
-    <p>The chart <span class="math inline">\((O, u)\)</span> is now
-    adapted to <span class="math inline">\(M\)</span> near <span
-    class="math inline">\(p\)</span>. It uses only <span
-    class="math inline">\(n-1\)</span> coordinates because the last
-    coordinate <span class="math inline">\(\tilde{u}_n\)</span> is
-    determined implicitly by the equation defining the hypersurface. It
-    represents the intrinsic geometry of <span
-    class="math inline">\(M\)</span> without any extrinsic
-    information.</p>
-    <p><strong>In short:</strong> You’re not directly adapting the
-    original chart but using it to construct a new one. The original
-    <span class="math inline">\(\tilde{u}\)</span> coordinates provide a
-    framework in <span class="math inline">\(\mathbb{E}^n\)</span>. The
-    implicit function theorem, given regularity conditions, allows you
-    to select a subset of those coordinates to parameterize the
-    hypersurface <span class="math inline">\(M\)</span>, resulting in a
-    lower dimensional chart adapted to its intrinsic structure.</p>
-    <p><strong>I am confused still. Step 1 chooses <span
-    class="math inline">\(\tilde{u}\)</span> as the chart in ambient
-    space. Step4 says to define <span class="math inline">\(u =
-    (\tilde{u_1}, \cdots, \tilde{u}_{n-1})\)</span> on the domain <span
-    class="math inline">\(O\)</span>. The application of the implicit
-    function theorem does not seem to control anything. Please
-    explain.</strong></p>
-    <p>You’re right to be confused; my previous explanation glossed over
-    a crucial point. Simply taking the first <span
-    class="math inline">\(n-1\)</span> coordinates of <span
-    class="math inline">\(\tilde{u}\)</span> doesn’t automatically
-    create an adapted chart. The implicit function theorem is vital for
-    ensuring that the resulting coordinates form a valid chart on <span
-    class="math inline">\(M\)</span>. Let me clarify:</p>
-    <p>The problem is that the set <span class="math inline">\(\{(
-    \tilde{u}_1(x), \dots, \tilde{u}_{n-1}(x)) : x \in O\}\)</span>
-    might not be a well-behaved subset of <span
-    class="math inline">\(\mathbb{R}^{n-1}\)</span>. We need to ensure
-    it’s an open set, and the map from this set to <span
-    class="math inline">\(O\)</span> is a diffeomorphism. This is where
-    the Implicit Function Theorem plays its crucial role.</p>
-    <p>Here’s a more precise explanation:</p>
+    <p>Therefore, <span class="math inline">\((\tilde{U}, \psi)\)</span>
+    is a chart on <span class="math inline">\(M\)</span> around <span
+    class="math inline">\(p\)</span>, and this chart is adapted to <span
+    class="math inline">\(M\)</span>. This construction ensures that
+    <span class="math inline">\(\psi\)</span> maps a neighborhood of
+    <span class="math inline">\(p\)</span> in <span
+    class="math inline">\(M\)</span> to an open set in <span
+    class="math inline">\(\mathbb{R}^{n-1}\)</span>, effectively
+    “flattening” the hypersurface locally.</p>
+    <p><strong>I understand the intuition. I need a rigorous explanation
+    for <span class="math inline">\(\phi(U \cap M) = V \cap (R^{n-1}
+    \times \{0\})\)</span></strong></p>
+    <p>You’re right to push for rigor. The statement <span
+    class="math inline">\(\phi(U \cap M) = V \cap (\mathbb{R}^{n-1}
+    \times \{0\})\)</span> is a <em>direct consequence</em> of the
+    definition of a regular submanifold, and thus a regular
+    hypersurface. Here’s a rigorous breakdown, referencing the
+    definition explicitly:</p>
+    <p><strong>1. Definition of a Regular Submanifold:</strong></p>
+    <p>One common definition of a regular <span
+    class="math inline">\(k\)</span>-dimensional submanifold <span
+    class="math inline">\(M\)</span> of an <span
+    class="math inline">\(n\)</span>-dimensional manifold <span
+    class="math inline">\(N\)</span> is as follows: For every point
+    <span class="math inline">\(p \in M\)</span>, there exists a chart
+    <span class="math inline">\((U, \phi)\)</span> of <span
+    class="math inline">\(N\)</span> with <span class="math inline">\(p
+    \in U\)</span> such that:</p>
+    <p><span class="math display">\[ \phi(U \cap M) = \phi(U) \cap
+    (\mathbb{R}^k \times \{0\}^{n-k}) \]</span></p>
+    <p>Here, <span class="math inline">\(\{0\}^{n-k}\)</span> denotes
+    the <span class="math inline">\((n-k)\)</span>-tuple <span
+    class="math inline">\((0, 0, ..., 0)\)</span>.</p>
+    <p><strong>2. Applying the Definition to a
+    Hypersurface:</strong></p>
+    <p>A hypersurface is simply a submanifold of codimension 1. This
+    means that for our hypersurface <span
+    class="math inline">\(M\)</span> in <span
+    class="math inline">\(E^n\)</span> (which we can treat locally as
+    <span class="math inline">\(\mathbb{R}^n\)</span>), the dimension
+    <span class="math inline">\(k\)</span> is <span
+    class="math inline">\(n-1\)</span>. Substituting this into the
+    definition above, we get:</p>
+    <p><span class="math display">\[ \phi(U \cap M) = \phi(U) \cap
+    (\mathbb{R}^{n-1} \times \{0\}) \]</span></p>
+    <p><strong>3. Defining <span
+    class="math inline">\(V\)</span>:</strong></p>
+    <p>Since <span class="math inline">\(\phi\)</span> is a
+    diffeomorphism from <span class="math inline">\(U\)</span> to an
+    open set in <span class="math inline">\(\mathbb{R}^n\)</span>, we
+    can denote <span class="math inline">\(\phi(U)\)</span> as <span
+    class="math inline">\(V\)</span>. <span
+    class="math inline">\(V\)</span> is then an open set in <span
+    class="math inline">\(\mathbb{R}^n\)</span>. Substituting <span
+    class="math inline">\(V\)</span> into the equation, we arrive at
+    precisely the statement we’re examining:</p>
+    <p><span class="math display">\[ \phi(U \cap M) = V \cap
+    (\mathbb{R}^{n-1} \times \{0\}) \]</span></p>
+    <p><strong>4. Why this definition is chosen:</strong></p>
+    <p>This definition formalizes the intuitive notion of “flattening
+    out” the submanifold locally. The chart <span
+    class="math inline">\(\phi\)</span> essentially “straightens” the
+    curved hypersurface within <span class="math inline">\(U\)</span> so
+    that it becomes a flat piece of <span
+    class="math inline">\(\mathbb{R}^{n-1}\)</span> embedded in <span
+    class="math inline">\(\mathbb{R}^n\)</span>. This flat piece is
+    represented by <span class="math inline">\(\mathbb{R}^{n-1} \times
+    \{0\}\)</span>, and its intersection with <span
+    class="math inline">\(V\)</span> gives us precisely the image of the
+    portion of the hypersurface contained in <span
+    class="math inline">\(U\)</span>.</p>
+    <p><strong>In summary:</strong> The equation <span
+    class="math inline">\(\phi(U \cap M) = V \cap (\mathbb{R}^{n-1}
+    \times \{0\})\)</span> isn’t some arbitrary condition; it’s a core
+    part of the <em>definition</em> of a regular submanifold (and hence
+    a regular hypersurface). It ensures the existence of a chart that
+    locally represents the hypersurface as a flat Euclidean space of one
+    dimension lower, which is essential for doing differential geometry
+    on the hypersurface.</p>
+    <p><strong>Provide more rigor and details on Step 2 regarding <span
+    class="math inline">\(\tilde{V} =
+    \psi(\tilde{U})\)</span>.</strong></p>
+    <p>You’re right to ask for more rigor here. The key is to carefully
+    examine the composition of mappings and the properties of
+    diffeomorphisms to establish that <span
+    class="math inline">\(\tilde{V}\)</span> is indeed an open set in
+    <span class="math inline">\(\mathbb{R}^{n-1}\)</span>.</p>
+    <p>Here’s a more detailed breakdown of Step 2, focusing on the
+    openness of <span class="math inline">\(\tilde{V}\)</span>:</p>
+    <p><strong>Step 2 (Revised and Detailed):</strong></p>
+    <p>Recall that we have:</p>
+    <ul>
+    <li><span class="math inline">\(U \subset E^n\)</span> open,
+    containing <span class="math inline">\(p\)</span>.</li>
+    <li><span class="math inline">\(\phi: U \to V \subset
+    \mathbb{R}^n\)</span> a diffeomorphism.</li>
+    <li><span class="math inline">\(\tilde{U} = M \cap U\)</span>, open
+    in <span class="math inline">\(M\)</span>.</li>
+    <li><span class="math inline">\(\pi: \mathbb{R}^n \to
+    \mathbb{R}^{n-1}\)</span> the projection onto the first <span
+    class="math inline">\(n-1\)</span> coordinates.</li>
+    <li><span class="math inline">\(\psi: \tilde{U} \to
+    \mathbb{R}^{n-1}\)</span> defined by <span
+    class="math inline">\(\psi = \pi \circ
+    \phi|_{\tilde{U}}\)</span>.</li>
+    </ul>
+    <p>We want to show that <span class="math inline">\(\tilde{V} =
+    \psi(\tilde{U})\)</span> is open in <span
+    class="math inline">\(\mathbb{R}^{n-1}\)</span>.</p>
     <ol type="1">
-    <li><p><strong>Ambient Chart:</strong> We start with a chart <span
-    class="math inline">\((\tilde{O}, \tilde{u})\)</span> on <span
-    class="math inline">\(\mathbb{E}^n\)</span>, with coordinates <span
-    class="math inline">\(\tilde{u} = (\tilde{u}_1, \dots,
-    \tilde{u}_n)\)</span>.</p></li>
-    <li><p><strong>Implicit Function Theorem (Crucial Step):</strong>
-    The key is that the implicit function theorem is not merely used to
-    express <span class="math inline">\(\tilde{u}_n\)</span> in terms of
-    the other coordinates; it guarantees the <em>existence</em> of a
-    well-defined local parametrization of <span
-    class="math inline">\(M\)</span> near a point <span
-    class="math inline">\(p\)</span>. Because <span
-    class="math inline">\(M\)</span> is a hypersurface, we can locally
-    represent it near <span class="math inline">\(p\)</span> as the zero
-    set of a function <span class="math inline">\(f\)</span>. The
-    Implicit Function Theorem, given a non-zero partial derivative
-    (e.g., <span class="math inline">\(\frac{\partial f}{\partial
-    \tilde{u}_n}(p) \neq 0\)</span>), allows us to solve for <span
-    class="math inline">\(\tilde{u}_n\)</span> as a smooth function of
-    the other coordinates <em>in a neighborhood of p</em> and,
-    crucially, shows this function defines a diffeomorphism between this
-    neighborhood and a region of <span
+    <li><p><strong>Image of <span
+    class="math inline">\(\tilde{U}\)</span> under <span
+    class="math inline">\(\phi\)</span>:</strong> Since <span
+    class="math inline">\(\phi\)</span> is a diffeomorphism, it’s an
+    open map. This means that <span
+    class="math inline">\(\phi(\tilde{U}) = \phi(M \cap U)\)</span> is
+    open <em>in the subspace topology of</em> <span
+    class="math inline">\(\phi(U) = V\)</span>. Critically, we know from
+    the definition of a regular submanifold (as discussed earlier) that
+    <span class="math inline">\(\phi(M \cap U) = V \cap
+    (\mathbb{R}^{n-1} \times \{0\})\)</span>.</p></li>
+    <li><p><strong>Projection of <span class="math inline">\(V \cap
+    (\mathbb{R}^{n-1} \times \{0\})\)</span>:</strong> The projection
+    map <span class="math inline">\(\pi\)</span> restricted to <span
+    class="math inline">\(\mathbb{R}^{n-1} \times \{0\}\)</span> is
+    simply the identity map onto <span
+    class="math inline">\(\mathbb{R}^{n-1}\)</span>, and hence a
+    homeomorphism (indeed, a diffeomorphism). Let’s denote this
+    restricted projection as <span class="math inline">\(\pi&#39;:
+    \mathbb{R}^{n-1} \times \{0\} \to
+    \mathbb{R}^{n-1}\)</span>.</p></li>
+    <li><p><strong><span class="math inline">\(\tilde{V}\)</span> is
+    open:</strong> We have <span class="math inline">\(\tilde{V} =
+    \psi(\tilde{U}) = \pi(\phi(\tilde{U})) = \pi(V \cap
+    (\mathbb{R}^{n-1} \times \{0\}))\)</span>. Because <span
+    class="math inline">\(V \cap (\mathbb{R}^{n-1} \times
+    \{0\})\)</span> can be thought of as an open subset of <span
+    class="math inline">\(\mathbb{R}^{n-1} \times \{0\}\)</span>, and
+    <span class="math inline">\(\pi&#39;\)</span> (the restriction of
+    <span class="math inline">\(\pi\)</span>) is a homeomorphism
+    (diffeomorphism, in fact), the image <span
+    class="math inline">\(\tilde{V}\)</span> must be open in <span
     class="math inline">\(\mathbb{R}^{n-1}\)</span>.</p></li>
-    <li><p><strong>Constructing the Adapted Chart (Corrected):</strong>
-    Let’s denote the solution given by the Implicit Function Theorem
-    as:</p>
-    <p><span class="math inline">\(\tilde{u}_n = g(\tilde{u}_1, \dots,
-    \tilde{u}_{n-1})\)</span></p></li>
     </ol>
-    <p>This holds in a small neighborhood of <span
+    <p><strong>In essence:</strong></p>
+    <p>The argument hinges on the fact that <span
+    class="math inline">\(\phi\)</span> maps <span
+    class="math inline">\(\tilde{U}\)</span> to an open set
+    <em>within</em> <span class="math inline">\(V \cap (\mathbb{R}^{n-1}
+    \times \{0\})\)</span>, and the projection <span
+    class="math inline">\(\pi\)</span>, when restricted to <span
+    class="math inline">\(\mathbb{R}^{n-1} \times \{0\}\)</span>, is a
+    diffeomorphism onto <span
+    class="math inline">\(\mathbb{R}^{n-1}\)</span>. Therefore, the
+    composition of these maps, which is <span
+    class="math inline">\(\psi\)</span>, maps <span
+    class="math inline">\(\tilde{U}\)</span> onto an open set <span
+    class="math inline">\(\tilde{V}\)</span> in <span
+    class="math inline">\(\mathbb{R}^{n-1}\)</span>. This makes <span
+    class="math inline">\((\tilde{U}, \psi)\)</span> a valid chart.</p>
+    <p><strong>What is the intuition behind the adapted chart <span
+    class="math inline">\((\tilde{U}, \psi)\)</span>? It has <span
+    class="math inline">\((n-1)\)</span> coordinates as expected. Can we
+    think of a grid being painted onto <span
+    class="math inline">\(M\)</span>?</strong></p>
+    <p>Yes, the intuition of a painted grid is excellent! The adapted
+    chart <span class="math inline">\((\tilde{U}, \psi)\)</span>
+    essentially provides a way to “paint” a local <span
+    class="math inline">\((n-1)\)</span>-dimensional coordinate grid
+    onto the <span class="math inline">\(n\)</span>-dimensional
+    hypersurface <span class="math inline">\(M\)</span>.</p>
+    <p>Here’s how to visualize it:</p>
+    <ol type="1">
+    <li><p><strong>The Hypersurface:</strong> Imagine <span
+    class="math inline">\(M\)</span> as a curved surface (if <span
+    class="math inline">\(n=3\)</span>) or a higher-dimensional analogue
+    embedded in a higher-dimensional space.</p></li>
+    <li><p><strong>The Neighborhood <span
+    class="math inline">\(\tilde{U}\)</span>:</strong> <span
+    class="math inline">\(\tilde{U}\)</span> is a small patch of this
+    hypersurface around the point <span
+    class="math inline">\(p\)</span>. Think of it as the region where we
+    want to paint our grid.</p></li>
+    <li><p><strong>The Chart Map <span
+    class="math inline">\(\psi\)</span>:</strong> The chart map <span
+    class="math inline">\(\psi: \tilde{U} \to \tilde{V} \subset
+    \mathbb{R}^{n-1}\)</span> acts like the painting process. It assigns
+    to each point on the patch <span
+    class="math inline">\(\tilde{U}\)</span> a unique set of <span
+    class="math inline">\((n-1)\)</span> coordinates, which are just the
+    coordinates in <span
+    class="math inline">\(\mathbb{R}^{n-1}\)</span>.</p></li>
+    <li><p><strong>The Coordinate Grid:</strong> The coordinates
+    assigned by <span class="math inline">\(\psi\)</span> form a grid on
+    <span class="math inline">\(\tilde{U}\)</span>. If you were to draw
+    lines of constant coordinates (like lines of latitude and longitude
+    on a globe), you would get a grid that conforms to the curvature of
+    the hypersurface within <span
+    class="math inline">\(\tilde{U}\)</span>.</p></li>
+    <li><p><strong>Flattening:</strong> Crucially, because <span
+    class="math inline">\(\psi\)</span> is a homeomorphism (and part of
+    a smooth structure, meaning it’s compatible with other charts), this
+    grid is “smooth” and doesn’t get crumpled or folded. It locally
+    “flattens” the curved hypersurface, allowing us to use the standard
+    calculus of <span class="math inline">\(\mathbb{R}^{n-1}\)</span> to
+    analyze the geometry of <span class="math inline">\(M\)</span>
+    within <span class="math inline">\(\tilde{U}\)</span>.</p></li>
+    </ol>
+    <p><strong>Example (Surface in 3D):</strong></p>
+    <p>If <span class="math inline">\(M\)</span> is a 2D surface in
+    <span class="math inline">\(\mathbb{R}^3\)</span>, then <span
+    class="math inline">\(\psi\)</span> maps a patch of the surface to a
+    region in <span class="math inline">\(\mathbb{R}^2\)</span>. Imagine
+    drawing a grid on a piece of paper (representing <span
+    class="math inline">\(\mathbb{R}^2\)</span>) and then smoothly
+    gluing that paper onto the surface. The lines of the grid, now on
+    the surface, become the coordinate lines of the chart, and they
+    provide a local coordinate system for the surface patch.</p>
+    <p><strong>Why <span class="math inline">\((n-1)\)</span>
+    coordinates?</strong></p>
+    <p>A hypersurface has dimension <span
+    class="math inline">\((n-1)\)</span>, meaning it locally looks like
+    <span class="math inline">\(\mathbb{R}^{n-1}\)</span>. Therefore, we
+    only need <span class="math inline">\((n-1)\)</span> coordinates to
+    specify a point within a small neighborhood on the hypersurface. The
+    adapted chart reflects this inherent dimensionality.</p>
+    <p>So, the intuition of “painting a grid” is very much valid! The
+    adapted chart provides a systematic and rigorous way to define a
+    local coordinate system that respects the curvature of the
+    hypersurface.</p>
+    <p><strong>For an arbitrary point <span class="math inline">\(p \in
+    M \subset E^n\)</span>, we can choose any chart <span
+    class="math inline">\((U,\phi)\)</span> around <span
+    class="math inline">\(p\)</span> to construct the adapted chart
+    <span class="math inline">\((\tilde{U}, \psi)\)</span>. Is this
+    correct?</strong></p>
+    <p>No, that’s not entirely correct. You can’t choose <em>any</em>
+    chart <span class="math inline">\((U, \phi)\)</span> around <span
     class="math inline">\(p\)</span> in <span
-    class="math inline">\(\mathbb{E}^n\)</span>. Now, we define our
-    chart for <span class="math inline">\(M\)</span>:</p>
+    class="math inline">\(E^n\)</span> to construct an adapted chart for
+    <span class="math inline">\(M\)</span>. The chart <span
+    class="math inline">\((U, \phi)\)</span> must satisfy the specific
+    condition that “flattens” the hypersurface locally, as we’ve
+    discussed:</p>
+    <p><span class="math display">\[ \phi(U \cap M) = \phi(U) \cap
+    (\mathbb{R}^{n-1} \times \{0\}) \]</span></p>
+    <p>Or, if we define <span class="math inline">\(V =
+    \phi(U)\)</span>:</p>
+    <p><span class="math display">\[ \phi(U \cap M) = V \cap
+    (\mathbb{R}^{n-1} \times \{0\}) \]</span></p>
+    <p>This condition is crucial because it ensures that the image of
+    the hypersurface under <span class="math inline">\(\phi\)</span>
+    lies in a hyperplane (<span class="math inline">\(\mathbb{R}^{n-1}
+    \times \{0\}\)</span>), which allows us to use the first <span
+    class="math inline">\(n-1\)</span> coordinates as local coordinates
+    on <span class="math inline">\(M\)</span>.</p>
+    <p>If a chart <span class="math inline">\((U, \phi)\)</span>
+    <em>doesn’t</em> satisfy this condition, then <span
+    class="math inline">\(\phi(U \cap M)\)</span> might be a more
+    complicated subset of <span
+    class="math inline">\(\mathbb{R}^n\)</span>, and we wouldn’t be able
+    to define a chart for <span class="math inline">\(M\)</span> with
+    <span class="math inline">\(n-1\)</span> coordinates simply by
+    projecting onto the first <span class="math inline">\(n-1\)</span>
+    components.</p>
+    <p><strong>Why not any chart?</strong></p>
+    <p>Imagine a surface <span class="math inline">\(M\)</span> in <span
+    class="math inline">\(\mathbb{R}^3\)</span>. A general chart <span
+    class="math inline">\((U, \phi)\)</span> for <span
+    class="math inline">\(\mathbb{R}^3\)</span> just smoothly maps a
+    region <span class="math inline">\(U\)</span> of <span
+    class="math inline">\(\mathbb{R}^3\)</span> to a region <span
+    class="math inline">\(V\)</span> of <span
+    class="math inline">\(\mathbb{R}^3\)</span>. There’s no guarantee
+    that the image of the surface patch <span class="math inline">\(U
+    \cap M\)</span> will lie in a plane. It could be a curved surface in
+    <span class="math inline">\(V\)</span>. Therefore, you can’t just
+    project onto the first two coordinates to get a chart for <span
+    class="math inline">\(M\)</span>. You need a chart that specifically
+    “flattens” the surface locally.</p>
+    <p><strong>In summary:</strong> The existence of a chart <span
+    class="math inline">\((U, \phi)\)</span> satisfying the flattening
+    condition is guaranteed by the definition of a regular submanifold.
+    However, an <em>arbitrary</em> chart for the ambient space <span
+    class="math inline">\(E^n\)</span> will not necessarily work for
+    constructing an adapted chart for the hypersurface <span
+    class="math inline">\(M\)</span>. You must choose a chart that
+    satisfies the specific flattening condition.</p>
+    <p><strong>The existence of the chart <span
+    class="math inline">\((U, \phi)\)</span> is clear. How can one find
+    such a chart</strong></p>
+    <p>You’re right that the existence is guaranteed by the definition,
+    but finding an explicit chart <span class="math inline">\((U,
+    \phi)\)</span> can be challenging and depends heavily on how the
+    hypersurface <span class="math inline">\(M\)</span> is defined.
+    There’s no single, universally applicable method. Here are some
+    common approaches:</p>
+    <p><strong>1. Implicit Definition:</strong></p>
+    <p>If <span class="math inline">\(M\)</span> is defined implicitly
+    as the zero set of a smooth function <span class="math inline">\(f:
+    E^n \to \mathbb{R}\)</span> (i.e., <span class="math inline">\(M =
+    \{x \in E^n | f(x) = 0\}\)</span>), and if the gradient <span
+    class="math inline">\(\nabla f\)</span> is non-zero on <span
+    class="math inline">\(M\)</span>, then the Implicit Function Theorem
+    provides a way to construct the chart. The theorem guarantees that
+    locally, you can express one coordinate as a function of the others,
+    effectively “flattening” the hypersurface.</p>
     <ul>
-    <li><p><strong>Coordinate Patch:</strong> <span
-    class="math inline">\(O = \{ x \in \tilde{O} \cap M:  \text{The
-    implicit function theorem holds near } x\}\)</span>. This O is a
-    small open set of M containing <span
-    class="math inline">\(p\)</span>.</p></li>
-    <li><p><strong>Coordinate Map:</strong> The crucial change is in how
-    we define the map <span class="math inline">\(u\)</span>. We use the
-    implicit function to define a map from the first n-1 coordinates to
-    <span class="math inline">\(O\)</span>:</p>
-    <p><span class="math inline">\(u: U \subset \mathbb{R}^{n-1} \to O
-    \subset M\)</span> <span class="math inline">\(u(u_1, ..., u_{n-1})
-    = (\tilde{u}^{-1}(u_1, ..., u_{n-1}, g(u_1, ...,
-    u_{n-1})))\)</span></p></li>
+    <li><strong>Example:</strong> Consider the unit sphere <span
+    class="math inline">\(S^2\)</span> in <span
+    class="math inline">\(\mathbb{R}^3\)</span> defined by <span
+    class="math inline">\(f(x, y, z) = x^2 + y^2 + z^2 - 1 = 0\)</span>.
+    If we take a point <span class="math inline">\(p = (x_0, y_0,
+    z_0)\)</span> on <span class="math inline">\(S^2\)</span> where
+    <span class="math inline">\(z_0 \neq 0\)</span>, the Implicit
+    Function Theorem tells us that near <span
+    class="math inline">\(p\)</span>, we can express <span
+    class="math inline">\(z\)</span> as a function of <span
+    class="math inline">\(x\)</span> and <span
+    class="math inline">\(y\)</span>, say <span class="math inline">\(z
+    = g(x, y)\)</span>. Then the map <span class="math inline">\(\phi(x,
+    y, z) = (x, y, z - g(x, y))\)</span> is a chart that flattens the
+    sphere locally, mapping the portion of <span
+    class="math inline">\(S^2\)</span> near <span
+    class="math inline">\(p\)</span> to the <span
+    class="math inline">\(xy\)</span>-plane.</li>
     </ul>
-    <p>where <span class="math inline">\(U\)</span> is the image of O
-    under the projection of the first (n-1) coordinates of <span
-    class="math inline">\(\tilde{u}\)</span>. The map <span
-    class="math inline">\(u\)</span> is a diffeomorphism between <span
-    class="math inline">\(U\)</span> and <span
-    class="math inline">\(O\)</span> because of the implicit function
-    theorem; it is the restriction of <span
-    class="math inline">\(\tilde{u}\)</span> onto M composed with a
-    local diffeomorphism.</p>
-    <p>The chart <span class="math inline">\((O, u)\)</span> is now
-    adapted to <span class="math inline">\(M\)</span>. The implicit
-    function theorem ensures this is a valid coordinate chart on <span
-    class="math inline">\(M\)</span> because it shows that we have a
-    smooth, invertible transformation from a region in <span
-    class="math inline">\(\mathbb{R}^{n-1}\)</span> to a neighborhood on
-    <span class="math inline">\(M\)</span>.</p>
-    <p>The key is that the Implicit Function Theorem doesn’t just give
-    us an equation; it guarantees the <em>smooth invertibility</em>
-    necessary for a valid coordinate chart on the hypersurface. We use
-    that invertibility to define the mapping <span
-    class="math inline">\(u\)</span>. Without the implicit function
-    theorem, we couldn’t guarantee that this mapping would be a
-    diffeomorphism, which is necessary for it to be a valid chart.</p>
+    <p><strong>2. Graph of a Function:</strong></p>
+    <p>If <span class="math inline">\(M\)</span> is locally the graph of
+    a smooth function <span class="math inline">\(g: \mathbb{R}^{n-1}
+    \to \mathbb{R}\)</span>, meaning <span
+    class="math inline">\(M\)</span> can be represented near <span
+    class="math inline">\(p\)</span> as the set of points <span
+    class="math inline">\((x_1, \dots, x_{n-1}, g(x_1, \dots,
+    x_{n-1}))\)</span>, then a chart can be constructed directly:</p>
+    <ul>
+    <li><strong>The Chart:</strong> <span
+    class="math inline">\(\phi(x_1, \dots, x_n) = (x_1, \dots, x_{n-1},
+    x_n - g(x_1, \dots, x_{n-1}))\)</span>. This chart maps the graph of
+    <span class="math inline">\(g\)</span> to the hyperplane <span
+    class="math inline">\(\mathbb{R}^{n-1} \times \{0\}\)</span>.</li>
+    </ul>
+    <p><strong>3. Parameterization:</strong></p>
+    <p>If <span class="math inline">\(M\)</span> is given by a regular
+    parameterization, <span class="math inline">\(\mathbf{x}: \Omega
+    \subset \mathbb{R}^{n-1} \to M \subset E^n\)</span>, where <span
+    class="math inline">\(\Omega\)</span> is open, then the
+    parameterization itself can often be adapted to form a chart. This
+    requires verifying that the parameterization is a homeomorphism onto
+    its image and that the image is open in <span
+    class="math inline">\(M\)</span>.</p>
+    <p><strong>4. Level Sets of Submersions:</strong></p>
+    <p>More generally, if <span class="math inline">\(M\)</span> is a
+    regular level set of a smooth submersion <span
+    class="math inline">\(F: E^n \to \mathbb{R}^{n-k}\)</span> (where
+    <span class="math inline">\(M\)</span> has dimension <span
+    class="math inline">\(k\)</span>), then the preimage theorem
+    combined with the inverse function theorem can be used to create
+    charts that locally flatten <span class="math inline">\(M\)</span>.
+    For the hypersurface case, <span
+    class="math inline">\(k=n-1\)</span>.</p>
+    <p><strong>5. Combination of Methods:</strong> Often, a combination
+    of these techniques is necessary.</p>
+    <p><strong>Important Note:</strong> Finding an explicit chart can be
+    computationally intensive or even impossible to do in closed form
+    for complicated hypersurfaces. However, the theoretical guarantee of
+    the existence of such charts is crucial for developing the theory of
+    differential geometry.</p>
   </article>
 </body>
 </html>
