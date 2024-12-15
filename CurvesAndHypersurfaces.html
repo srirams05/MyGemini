@@ -32,6 +32,9 @@
     <li><a href="#vector-field-along-an-open-set-in-a-hypersurface"
     id="toc-vector-field-along-an-open-set-in-a-hypersurface">Vector
     Field ALONG an open set in a hypersurface</a></li>
+    <li><a href="#local-coordinates-adapter-to-hypersurface"
+    id="toc-local-coordinates-adapter-to-hypersurface">Local coordinates
+    adapter to hypersurface</a></li>
     </ul>
   </nav>
   <article>
@@ -1213,6 +1216,225 @@
     that the base point of the vector <span
     class="math inline">\(X(p)\)</span> is the same as the point <span
     class="math inline">\(p\)</span> on the hypersurface.</p>
+    <h1 id="local-coordinates-adapter-to-hypersurface">Local coordinates
+    adapter to hypersurface</h1>
+    <p>The intuition behind a chart adapted to a hypersurface <span
+    class="math inline">\(M\)</span> is that it provides a coordinate
+    system that’s “naturally aligned” with the geometry of <span
+    class="math inline">\(M\)</span>. A standard chart on the ambient
+    space <span class="math inline">\(\mathbb{E}^n\)</span> treats <span
+    class="math inline">\(M\)</span> as just a subset; it doesn’t
+    inherently capture the intrinsic dimensionality and structure of
+    <span class="math inline">\(M\)</span>. An adapted chart, however,
+    does.</p>
+    <p>Here’s the key intuition:</p>
+    <ul>
+    <li><p><strong>Intrinsic Dimensionality:</strong> A hypersurface
+    <span class="math inline">\(M\)</span> in <span
+    class="math inline">\(\mathbb{E}^n\)</span> has dimension <span
+    class="math inline">\(n-1\)</span>. An adapted chart uses only <span
+    class="math inline">\(n-1\)</span> coordinates to describe points on
+    <span class="math inline">\(M\)</span>, reflecting this intrinsic
+    dimensionality. In contrast, a chart on <span
+    class="math inline">\(\mathbb{E}^n\)</span> would use <span
+    class="math inline">\(n\)</span> coordinates, even when restricted
+    to <span class="math inline">\(M\)</span>, which carries extra,
+    extrinsic information that’s unnecessary to describe the geometry of
+    <span class="math inline">\(M\)</span> alone.</p></li>
+    <li><p><strong>Tangential Coordinates:</strong> Intuitively, the
+    coordinates in an adapted chart are chosen to lie “along” the
+    surface. They essentially measure distances along directions tangent
+    to the surface. Think of drawing a coordinate grid directly onto the
+    surface; these are your adapted coordinates. This is in contrast to
+    a standard coordinate system where the coordinates may not align
+    with the surface; they’re “extrinsic” coordinates.</p></li>
+    <li><p><strong>Simplification of Calculations:</strong> Using an
+    adapted chart simplifies calculations involving objects
+    intrinsically related to <span class="math inline">\(M\)</span>,
+    such as tangent vectors, normal vectors, and the first fundamental
+    form. Calculations become much cleaner because you’re working
+    directly with coordinates that are naturally suited to the surface’s
+    geometry. You avoid the redundancy of an extra coordinate that adds
+    nothing meaningful to the surface’s geometry.</p></li>
+    </ul>
+    <p>In essence, an adapted chart gives you a coordinate system that’s
+    perfectly suited to working with the intrinsic geometry of the
+    hypersurface, allowing for efficient calculations and a clearer
+    geometric picture. You only need the minimum number of coordinates
+    to describe a point on the surface, and these coordinates directly
+    relate to the surface’s local structure.</p>
+    <p><strong>How can you start with a chart on <span
+    class="math inline">\(E^n\)</span> and adapt it to <span
+    class="math inline">\(M\)</span>.</strong></p>
+    <p>You can’t directly adapt a chart on <span
+    class="math inline">\(\mathbb{E}^n\)</span> to <span
+    class="math inline">\(M\)</span> simply by restriction. The ambient
+    space chart gives you coordinates for the entire space, and
+    restricting them to <span class="math inline">\(M\)</span> doesn’t
+    automatically create a suitable coordinate system for <span
+    class="math inline">\(M\)</span>’s intrinsic <span
+    class="math inline">\(n-1\)</span> dimensional structure. You need
+    to use the geometric properties of <span
+    class="math inline">\(M\)</span> to construct an adapted chart.</p>
+    <p>Here’s the process, focusing on the most common approach using
+    the implicit function theorem:</p>
+    <p><strong>1. Begin with an Ambient Chart:</strong> Start with a
+    chart <span class="math inline">\((\tilde{O}, \tilde{u})\)</span> on
+    <span class="math inline">\(\mathbb{E}^n\)</span>, where <span
+    class="math inline">\(\tilde{u} = (\tilde{u}_1, \dots,
+    \tilde{u}_n)\)</span> are the coordinates. This chart covers a
+    region of <span class="math inline">\(\mathbb{E}^n\)</span> that
+    includes a portion of the hypersurface <span
+    class="math inline">\(M\)</span>.</p>
+    <p><strong>2. Local Representation of M:</strong> Express <span
+    class="math inline">\(M\)</span> locally as the level set of a
+    smooth function <span class="math inline">\(f: \mathbb{E}^n \to
+    \mathbb{R}\)</span> such that <span class="math inline">\(M \cap
+    \tilde{O} = \{x \in \tilde{O} : f(x) = 0\}\)</span>. We assume that
+    <span class="math inline">\(M\)</span> is a regular hypersurface, so
+    <span class="math inline">\(\nabla f(x) \neq 0\)</span> for all
+    <span class="math inline">\(x \in M \cap \tilde{O}\)</span>. This
+    regularity ensures that <span class="math inline">\(M\)</span> is
+    locally a smooth (n-1)-dimensional manifold.</p>
+    <p><strong>3. Apply the Implicit Function Theorem:</strong> Choose a
+    coordinate, say <span class="math inline">\(\tilde{u}_n\)</span>,
+    such that <span class="math inline">\(\frac{\partial f}{\partial
+    \tilde{u}_n} \neq 0\)</span> at some point <span
+    class="math inline">\(p \in M \cap \tilde{O}\)</span>. The Implicit
+    Function Theorem then guarantees that near <span
+    class="math inline">\(p\)</span>, you can solve for <span
+    class="math inline">\(\tilde{u}_n\)</span> as a function of the
+    other coordinates:</p>
+    <p><span class="math inline">\(\tilde{u}_n = g(\tilde{u}_1, \dots,
+    \tilde{u}_{n-1})\)</span></p>
+    <p><strong>4. Construct the Adapted Chart:</strong> Define a new
+    chart <span class="math inline">\((O, u)\)</span> for <span
+    class="math inline">\(M\)</span> as follows:</p>
+    <ul>
+    <li><strong>Coordinate Patch:</strong> <span class="math inline">\(O
+    = M \cap \tilde{O}\)</span> (in a neighborhood of <span
+    class="math inline">\(p\)</span>)</li>
+    <li><strong>Coordinate Map:</strong> <span class="math inline">\(u:
+    O \to U \subset \mathbb{R}^{n-1}\)</span>, where <span
+    class="math inline">\(U\)</span> is an open set in <span
+    class="math inline">\(\mathbb{R}^{n-1}\)</span>, defined by: <span
+    class="math inline">\(u(x) = (\tilde{u}_1(x), \dots,
+    \tilde{u}_{n-1}(x))\)</span> for <span class="math inline">\(x \in
+    O\)</span>. The value of <span
+    class="math inline">\(\tilde{u}_n(x)\)</span> is implicitly
+    determined by <span class="math inline">\(g\)</span>.</li>
+    </ul>
+    <p>The chart <span class="math inline">\((O, u)\)</span> is now
+    adapted to <span class="math inline">\(M\)</span> near <span
+    class="math inline">\(p\)</span>. It uses only <span
+    class="math inline">\(n-1\)</span> coordinates because the last
+    coordinate <span class="math inline">\(\tilde{u}_n\)</span> is
+    determined implicitly by the equation defining the hypersurface. It
+    represents the intrinsic geometry of <span
+    class="math inline">\(M\)</span> without any extrinsic
+    information.</p>
+    <p><strong>In short:</strong> You’re not directly adapting the
+    original chart but using it to construct a new one. The original
+    <span class="math inline">\(\tilde{u}\)</span> coordinates provide a
+    framework in <span class="math inline">\(\mathbb{E}^n\)</span>. The
+    implicit function theorem, given regularity conditions, allows you
+    to select a subset of those coordinates to parameterize the
+    hypersurface <span class="math inline">\(M\)</span>, resulting in a
+    lower dimensional chart adapted to its intrinsic structure.</p>
+    <p><strong>I am confused still. Step 1 chooses <span
+    class="math inline">\(\tilde{u}\)</span> as the chart in ambient
+    space. Step4 says to define <span class="math inline">\(u =
+    (\tilde{u_1}, \cdots, \tilde{u}_{n-1})\)</span> on the domain <span
+    class="math inline">\(O\)</span>. The application of the implicit
+    function theorem does not seem to control anything. Please
+    explain.</strong></p>
+    <p>You’re right to be confused; my previous explanation glossed over
+    a crucial point. Simply taking the first <span
+    class="math inline">\(n-1\)</span> coordinates of <span
+    class="math inline">\(\tilde{u}\)</span> doesn’t automatically
+    create an adapted chart. The implicit function theorem is vital for
+    ensuring that the resulting coordinates form a valid chart on <span
+    class="math inline">\(M\)</span>. Let me clarify:</p>
+    <p>The problem is that the set <span class="math inline">\(\{(
+    \tilde{u}_1(x), \dots, \tilde{u}_{n-1}(x)) : x \in O\}\)</span>
+    might not be a well-behaved subset of <span
+    class="math inline">\(\mathbb{R}^{n-1}\)</span>. We need to ensure
+    it’s an open set, and the map from this set to <span
+    class="math inline">\(O\)</span> is a diffeomorphism. This is where
+    the Implicit Function Theorem plays its crucial role.</p>
+    <p>Here’s a more precise explanation:</p>
+    <ol type="1">
+    <li><p><strong>Ambient Chart:</strong> We start with a chart <span
+    class="math inline">\((\tilde{O}, \tilde{u})\)</span> on <span
+    class="math inline">\(\mathbb{E}^n\)</span>, with coordinates <span
+    class="math inline">\(\tilde{u} = (\tilde{u}_1, \dots,
+    \tilde{u}_n)\)</span>.</p></li>
+    <li><p><strong>Implicit Function Theorem (Crucial Step):</strong>
+    The key is that the implicit function theorem is not merely used to
+    express <span class="math inline">\(\tilde{u}_n\)</span> in terms of
+    the other coordinates; it guarantees the <em>existence</em> of a
+    well-defined local parametrization of <span
+    class="math inline">\(M\)</span> near a point <span
+    class="math inline">\(p\)</span>. Because <span
+    class="math inline">\(M\)</span> is a hypersurface, we can locally
+    represent it near <span class="math inline">\(p\)</span> as the zero
+    set of a function <span class="math inline">\(f\)</span>. The
+    Implicit Function Theorem, given a non-zero partial derivative
+    (e.g., <span class="math inline">\(\frac{\partial f}{\partial
+    \tilde{u}_n}(p) \neq 0\)</span>), allows us to solve for <span
+    class="math inline">\(\tilde{u}_n\)</span> as a smooth function of
+    the other coordinates <em>in a neighborhood of p</em> and,
+    crucially, shows this function defines a diffeomorphism between this
+    neighborhood and a region of <span
+    class="math inline">\(\mathbb{R}^{n-1}\)</span>.</p></li>
+    <li><p><strong>Constructing the Adapted Chart (Corrected):</strong>
+    Let’s denote the solution given by the Implicit Function Theorem
+    as:</p>
+    <p><span class="math inline">\(\tilde{u}_n = g(\tilde{u}_1, \dots,
+    \tilde{u}_{n-1})\)</span></p></li>
+    </ol>
+    <p>This holds in a small neighborhood of <span
+    class="math inline">\(p\)</span> in <span
+    class="math inline">\(\mathbb{E}^n\)</span>. Now, we define our
+    chart for <span class="math inline">\(M\)</span>:</p>
+    <ul>
+    <li><p><strong>Coordinate Patch:</strong> <span
+    class="math inline">\(O = \{ x \in \tilde{O} \cap M:  \text{The
+    implicit function theorem holds near } x\}\)</span>. This O is a
+    small open set of M containing <span
+    class="math inline">\(p\)</span>.</p></li>
+    <li><p><strong>Coordinate Map:</strong> The crucial change is in how
+    we define the map <span class="math inline">\(u\)</span>. We use the
+    implicit function to define a map from the first n-1 coordinates to
+    <span class="math inline">\(O\)</span>:</p>
+    <p><span class="math inline">\(u: U \subset \mathbb{R}^{n-1} \to O
+    \subset M\)</span> <span class="math inline">\(u(u_1, ..., u_{n-1})
+    = (\tilde{u}^{-1}(u_1, ..., u_{n-1}, g(u_1, ...,
+    u_{n-1})))\)</span></p></li>
+    </ul>
+    <p>where <span class="math inline">\(U\)</span> is the image of O
+    under the projection of the first (n-1) coordinates of <span
+    class="math inline">\(\tilde{u}\)</span>. The map <span
+    class="math inline">\(u\)</span> is a diffeomorphism between <span
+    class="math inline">\(U\)</span> and <span
+    class="math inline">\(O\)</span> because of the implicit function
+    theorem; it is the restriction of <span
+    class="math inline">\(\tilde{u}\)</span> onto M composed with a
+    local diffeomorphism.</p>
+    <p>The chart <span class="math inline">\((O, u)\)</span> is now
+    adapted to <span class="math inline">\(M\)</span>. The implicit
+    function theorem ensures this is a valid coordinate chart on <span
+    class="math inline">\(M\)</span> because it shows that we have a
+    smooth, invertible transformation from a region in <span
+    class="math inline">\(\mathbb{R}^{n-1}\)</span> to a neighborhood on
+    <span class="math inline">\(M\)</span>.</p>
+    <p>The key is that the Implicit Function Theorem doesn’t just give
+    us an equation; it guarantees the <em>smooth invertibility</em>
+    necessary for a valid coordinate chart on the hypersurface. We use
+    that invertibility to define the mapping <span
+    class="math inline">\(u\)</span>. Without the implicit function
+    theorem, we couldn’t guarantee that this mapping would be a
+    diffeomorphism, which is necessary for it to be a valid chart.</p>
   </article>
 </body>
 </html>
