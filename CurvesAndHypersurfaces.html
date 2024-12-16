@@ -49,6 +49,8 @@
     adapted to hypersurface</a></li>
     <li><a href="#shape-operator" id="toc-shape-operator">Shape
     Operator</a></li>
+    <li><a href="#metric-on-hypersurface-m"
+    id="toc-metric-on-hypersurface-m">Metric on hypersurface M</a></li>
     </ul>
   </nav>
   <article>
@@ -2370,6 +2372,112 @@
     class="math inline">\(v_p\)</span>, and this change is entirely a
     rotation within the tangent plane, reflecting the curvature of the
     hypersurface.</p>
+    <h1 id="metric-on-hypersurface-m">Metric on hypersurface M</h1>
+    <p><strong>For the setup as above, <span class="math inline">\(T_p M
+    \subset T_p E^n\)</span>. There is the standard inner product
+    defined on <span class="math inline">\(E^n\)</span> at <span
+    class="math inline">\(p \in M\)</span>. Is there a notion of an
+    inner product on <span class="math inline">\(M\)</span> which is a
+    restriction of the standard inner product at <span
+    class="math inline">\(p\)</span>?</strong></p>
+    <p>Yes, absolutely. The standard inner product on <span
+    class="math inline">\(E^n\)</span> induces a natural inner product
+    on the tangent space <span class="math inline">\(T_pM\)</span> of
+    the hypersurface <span class="math inline">\(M\)</span>. Since <span
+    class="math inline">\(T_pM\)</span> is a subspace of <span
+    class="math inline">\(T_pE^n\)</span>, we can simply restrict the
+    inner product on <span class="math inline">\(E^n\)</span> to vectors
+    in <span class="math inline">\(T_pM\)</span>. This is well-defined
+    because the inner product of two vectors in <span
+    class="math inline">\(T_pM\)</span> (which are also vectors in <span
+    class="math inline">\(T_pE^n\)</span>) is just a scalar.</p>
+    <p>More formally, let <span class="math inline">\(\langle \cdot,
+    \cdot \rangle_{E^n}\)</span> denote the standard inner product on
+    <span class="math inline">\(E^n\)</span>. We define the inner
+    product <span class="math inline">\(\langle \cdot, \cdot
+    \rangle_{M}\)</span> on <span class="math inline">\(T_pM\)</span> as
+    follows:</p>
+    <p>For any <span class="math inline">\(u, v \in T_pM\)</span>,</p>
+    <p><span class="math display">\[\langle u, v \rangle_M = \langle u,
+    v \rangle_{E^n}.\]</span></p>
+    <p>Since <span class="math inline">\(u\)</span> and <span
+    class="math inline">\(v\)</span> are also vectors in <span
+    class="math inline">\(T_pE^n\)</span>, the right-hand side is
+    well-defined and gives a scalar. This restricted inner product
+    inherits all the properties of the inner product on <span
+    class="math inline">\(E^n\)</span>, such as bilinearity, symmetry,
+    and positive-definiteness. It’s called the <em>induced metric</em>
+    or the <em>first fundamental form</em> on <span
+    class="math inline">\(M\)</span>. This induced metric is what allows
+    us to measure lengths of tangent vectors and angles between them,
+    effectively giving <span class="math inline">\(M\)</span> its own
+    geometric structure inherited from the ambient space <span
+    class="math inline">\(E^n\)</span>.</p>
+    <p><strong>If we use charts or local coordinates adapted to <span
+    class="math inline">\(M\)</span>, can <span
+    class="math inline">\(\langle \cdot, \cdot \rangle_M\)</span> be
+    defined without referring to the ambient space?</strong></p>
+    <p>Yes, you can define the induced metric on <span
+    class="math inline">\(M\)</span> using local coordinates without
+    explicitly referring back to the ambient space <span
+    class="math inline">\(E^n\)</span>. Here’s how:</p>
+    <ol type="1">
+    <li><p><strong>Local Coordinates:</strong> Let <span
+    class="math inline">\((U, \phi)\)</span> be a chart on <span
+    class="math inline">\(M\)</span> around <span
+    class="math inline">\(p\)</span>, where <span
+    class="math inline">\(U\)</span> is an open set in <span
+    class="math inline">\(M\)</span> containing <span
+    class="math inline">\(p\)</span> and <span
+    class="math inline">\(\phi: U \to \mathbb{R}^{n-1}\)</span> is a
+    diffeomorphism onto an open set in <span
+    class="math inline">\(\mathbb{R}^{n-1}\)</span> (since <span
+    class="math inline">\(M\)</span> is a hypersurface in <span
+    class="math inline">\(E^n\)</span>). Let <span
+    class="math inline">\(x^1, \dots, x^{n-1}\)</span> be the local
+    coordinates given by <span
+    class="math inline">\(\phi\)</span>.</p></li>
+    <li><p><strong>Coordinate Basis:</strong> At each point <span
+    class="math inline">\(q \in U\)</span>, the tangent space <span
+    class="math inline">\(T_qM\)</span> has a basis given by the
+    coordinate vectors <span class="math inline">\(\partial/\partial
+    x^1|_q, \dots, \partial/\partial x^{n-1}|_q\)</span>.</p></li>
+    <li><p><strong>Metric Coefficients:</strong> The metric tensor <span
+    class="math inline">\(g\)</span> on <span
+    class="math inline">\(M\)</span> is represented in local coordinates
+    by its components <span class="math inline">\(g_{ij}\)</span>. These
+    components are defined as: <span class="math display">\[g_{ij}(q) =
+    \left\langle \frac{\partial}{\partial x^i}\bigg|_q,
+    \frac{\partial}{\partial x^j}\bigg|_q \right\rangle_M\]</span> for
+    <span class="math inline">\(i, j = 1, \dots, n-1\)</span>.</p></li>
+    <li><p><strong>Inner Product in Coordinates:</strong> Now, given two
+    tangent vectors <span class="math inline">\(u, v \in T_qM\)</span>,
+    we can express them in the coordinate basis: <span
+    class="math display">\[u = \sum_{i=1}^{n-1} u^i
+    \frac{\partial}{\partial x^i}\bigg|_q, \qquad v = \sum_{j=1}^{n-1}
+    v^j \frac{\partial}{\partial x^j}\bigg|_q\]</span> The inner product
+    of <span class="math inline">\(u\)</span> and <span
+    class="math inline">\(v\)</span> is then given by <span
+    class="math display">\[\langle u, v \rangle_M = \sum_{i=1}^{n-1}
+    \sum_{j=1}^{n-1} u^i v^j g_{ij}(q).\]</span></p></li>
+    </ol>
+    <p>So, once you have the metric coefficients <span
+    class="math inline">\(g_{ij}\)</span>, you can compute inner
+    products entirely within the local coordinate system without needing
+    to refer to the ambient space <span
+    class="math inline">\(E^n\)</span>. The <span
+    class="math inline">\(g_{ij}\)</span> themselves encode how the
+    hypersurface is embedded in <span
+    class="math inline">\(E^n\)</span>, but once you have them, the
+    intrinsic geometry of <span class="math inline">\(M\)</span> is
+    completely determined by them.</p>
+    <p>In other words, you can perform geometric calculations on <span
+    class="math inline">\(M\)</span> using only these <span
+    class="math inline">\(g_{ij}\)</span>. You don’t need to think about
+    the fact that <span class="math inline">\(M\)</span> “lives” inside
+    <span class="math inline">\(E^n\)</span> to determine how <span
+    class="math inline">\(M\)</span> curves. This is a core idea of
+    intrinsic geometry.</p>
   </article>
 </body>
 </html>
