@@ -27,11 +27,12 @@
     Parameterization</a></li>
     <li><a href="#curvature-of-a-curve"
     id="toc-curvature-of-a-curve">Curvature of a curve</a></li>
-    <li><a href="#covariant-derivative"
-    id="toc-covariant-derivative">Covariant Derivative</a></li>
-    <li><a href="#more-on-covariant-derivative"
-    id="toc-more-on-covariant-derivative">More on Covariant
-    Derivative</a></li>
+    <li><a href="#covariant-derivative-1"
+    id="toc-covariant-derivative-1">Covariant Derivative 1</a></li>
+    <li><a href="#covariant-derivative-2"
+    id="toc-covariant-derivative-2">Covariant Derivative 2</a></li>
+    <li><a href="#covariant-derivative-3"
+    id="toc-covariant-derivative-3">Covariant Derivative 3</a></li>
     <li><a href="#vector-field-along-an-open-set-in-a-hypersurface"
     id="toc-vector-field-along-an-open-set-in-a-hypersurface">Vector
     Field ALONG an open set in a hypersurface</a></li>
@@ -1056,7 +1057,7 @@
     geometry. This generalization is useful for analyzing curvature in
     higher dimensions, although it is not unique in all cases. It is
     unique up to orientation.</p>
-    <h1 id="covariant-derivative">Covariant Derivative</h1>
+    <h1 id="covariant-derivative-1">Covariant Derivative 1</h1>
     <p>On the manifold <span class="math inline">\(\mathbb{E}^n\)</span>
     (Euclidean <span class="math inline">\(n\)</span>-space), the
     covariant derivative of a vector field <span
@@ -1138,8 +1139,7 @@
     connection is the standard flat connection. This also happens to be
     equal to the Lie derivative and the Lie bracket. These three are not
     equal on general curved manifolds.</p>
-    <h1 id="more-on-covariant-derivative">More on Covariant
-    Derivative</h1>
+    <h1 id="covariant-derivative-2">Covariant Derivative 2</h1>
     <p><strong>Consider the manifold <span
     class="math inline">\(E^n\)</span>. Let <span
     class="math inline">\(Y\)</span> be a vector field defined on <span
@@ -1295,6 +1295,155 @@
     class="math inline">\(Y\)</span> is changing as we move in the
     direction specified by <span class="math inline">\(X\)</span> at
     each point on the curve.</p>
+    <h1 id="covariant-derivative-3">Covariant Derivative 3</h1>
+    <p>Let’s break down the expression for the covariant derivative in
+    <span class="math inline">\(E^n\)</span> in more detail using the
+    concept of derivations and directional derivartives:</p>
+    <p>We have the vector fields:</p>
+    <ul>
+    <li><span class="math inline">\(X = \sum_{j=1}^n X^j
+    \frac{\partial}{\partial x^j}\)</span></li>
+    <li><span class="math inline">\(Y = \sum_{i=1}^n Y^i
+    \frac{\partial}{\partial x^i}\)</span></li>
+    </ul>
+    <p>Our goal is to compute <span class="math inline">\(\nabla_X
+    Y\)</span>.</p>
+    <ol type="1">
+    <li><strong>Definition in <span
+    class="math inline">\(\mathbf{E^n}\)</span>:</strong></li>
+    </ol>
+    <p>As discussed, in <span class="math inline">\(E^n\)</span> with
+    the standard flat connection and Cartesian coordinates, we
+    <em>define</em> the covariant derivative as:</p>
+    <p><span class="math inline">\(\nabla_X Y = \sum_{i=1}^n X(Y^i)
+    \frac{\partial}{\partial x^i}\)</span></p>
+    <p>This is our starting point, specific to <span
+    class="math inline">\(E^n\)</span>.</p>
+    <ol start="2" type="1">
+    <li><strong><span class="math inline">\(\mathbf{X}\)</span> acting
+    on <span class="math inline">\(\mathbf{Y^i}\)</span>:</strong></li>
+    </ol>
+    <p>The term <span class="math inline">\(X(Y^i)\)</span> represents
+    the vector field <span class="math inline">\(X\)</span> acting as a
+    derivation on the smooth component function <span
+    class="math inline">\(Y^i\)</span>. Recall that <span
+    class="math inline">\(X\)</span> acting on a smooth function <span
+    class="math inline">\(f\)</span> is given by:</p>
+    <p><span class="math inline">\(X(f) = \sum_{j=1}^n X^j
+    \frac{\partial f}{\partial x^j}\)</span></p>
+    <p>So, replacing <span class="math inline">\(f\)</span> with <span
+    class="math inline">\(Y^i\)</span>, we have:</p>
+    <p><span class="math inline">\(X(Y^i) = \sum_{j=1}^n X^j
+    \frac{\partial Y^i}{\partial x^j}\)</span></p>
+    <ol start="3" type="1">
+    <li><strong>Substituting back:</strong></li>
+    </ol>
+    <p>Now, we substitute this expression back into the definition of
+    the covariant derivative:</p>
+    <p><span class="math inline">\(\nabla_X Y = \sum_{i=1}^n \left(
+    \sum_{j=1}^n X^j \frac{\partial Y^i}{\partial x^j} \right)
+    \frac{\partial}{\partial x^i}\)</span></p>
+    <ol start="4" type="1">
+    <li><strong>Combining the sums:</strong></li>
+    </ol>
+    <p>We can combine the summation symbols:</p>
+    <p><span class="math inline">\(\nabla_X Y = \sum_{i=1}^n
+    \sum_{j=1}^n X^j \frac{\partial Y^i}{\partial x^j}
+    \frac{\partial}{\partial x^i}\)</span></p>
+    <p>This can also be written as:</p>
+    <p><span class="math inline">\(\nabla_X Y = \sum_{i,j=1}^n X^j
+    \frac{\partial Y^i}{\partial x^j} \frac{\partial}{\partial
+    x^i}\)</span></p>
+    <p>This final expression gives us the covariant derivative of <span
+    class="math inline">\(Y\)</span> along <span
+    class="math inline">\(X\)</span> in <span
+    class="math inline">\(E^n\)</span>. The key takeaway is that in
+    <span class="math inline">\(E^n\)</span>, the covariant derivative
+    simplifies to the directional derivative of the components of <span
+    class="math inline">\(Y\)</span> in the direction of <span
+    class="math inline">\(X\)</span>, multiplied by the basis vectors.
+    This simplification occurs because the connection is flat, and the
+    basis vectors are covariantly constant (<span
+    class="math inline">\(\nabla_X (\frac{\partial}{\partial x^i}) =
+    0\)</span>). This breakdown should make the expression clearer and
+    avoid any circular reasoning.</p>
+    <p><strong>This is the same as the Lie derivative of <span
+    class="math inline">\(Y\)</span> with respect to <span
+    class="math inline">\(X\)</span> in coordinate form.
+    Correct?</strong></p>
+    <p>You are right to notice the similarity! In the specific case of
+    <span class="math inline">\(E^n\)</span> with the standard flat
+    connection and using Cartesian coordinates, the coordinate
+    expressions for the covariant derivative <span
+    class="math inline">\(\nabla_X Y\)</span> and the Lie derivative
+    <span class="math inline">\(\mathcal{L}_X Y\)</span> are indeed the
+    same.</p>
+    <p>However, it’s <em>crucially important</em> to understand that
+    they are conceptually distinct objects, and this equality of
+    coordinate expressions is a special case, not a general rule.</p>
+    <p>Here’s why:</p>
+    <ul>
+    <li><p><strong>Covariant Derivative (<span
+    class="math inline">\(\nabla_X Y\)</span>):</strong> The covariant
+    derivative measures how a vector field <span
+    class="math inline">\(Y\)</span> changes as we move along a curve
+    whose tangent vector is given by <span
+    class="math inline">\(X\)</span>. It fundamentally depends on a
+    <em>connection</em>, which tells us how to compare vectors in
+    different tangent spaces. In <span
+    class="math inline">\(E^n\)</span>, we are implicitly using the
+    trivial flat connection.</p></li>
+    <li><p><strong>Lie Derivative (<span
+    class="math inline">\(\mathcal{L}_X Y\)</span>):</strong> The Lie
+    derivative measures the change in <span
+    class="math inline">\(Y\)</span> along the flow generated by <span
+    class="math inline">\(X\)</span>. It’s an intrinsic operation that
+    doesn’t require a connection. It tells us how <span
+    class="math inline">\(Y\)</span> changes when we “drag” it along the
+    integral curves of <span class="math inline">\(X\)</span>.</p></li>
+    </ul>
+    <p><strong>Why the expressions are the same in <span
+    class="math inline">\(\mathbf{E^n}\)</span> with Cartesian
+    coordinates:</strong></p>
+    <p>In Cartesian coordinates on <span
+    class="math inline">\(E^n\)</span>, the components of the Lie
+    derivative are given by:</p>
+    <p><span class="math inline">\((\mathcal{L}_X Y)^i = \sum_{j=1}^n
+    \left( X^j \frac{\partial Y^i}{\partial x^j} - Y^j \frac{\partial
+    X^i}{\partial x^j} \right)\)</span></p>
+    <p>If we compute the covariant derivative using our earlier
+    formula:</p>
+    <p><span class="math inline">\((\nabla_X Y)^i = \sum_{j=1}^n X^j
+    \frac{\partial Y^i}{\partial x^j}\)</span></p>
+    <p>The difference between the two is:</p>
+    <p><span class="math inline">\((\mathcal{L}_X Y)^i - (\nabla_X Y)^i
+    = - \sum_{j=1}^n Y^j \frac{\partial X^i}{\partial x^j} = - (\nabla_Y
+    X)^i\)</span></p>
+    <p>In other words:</p>
+    <p><span class="math inline">\(\mathcal{L}_X Y = \nabla_X Y -
+    \nabla_Y X\)</span></p>
+    <p>This relationship is true in general (for a torsion-free
+    connection). In <span class="math inline">\(E^n\)</span>, with the
+    standard coordinates and flat connection, if we choose <span
+    class="math inline">\(X\)</span> such that <span
+    class="math inline">\(\nabla_Y X = 0\)</span> (i.e., <span
+    class="math inline">\(X\)</span> is covariantly constant), then the
+    two derivatives are the same. This is the case when <span
+    class="math inline">\(X\)</span> has constant components in
+    Cartesian coordinates, like <span
+    class="math inline">\(X=\frac{\partial}{\partial x^k}\)</span> for
+    some <span class="math inline">\(k\)</span>. For more general vector
+    fields, the two derivatives won’t necessarily be equal.</p>
+    <p><strong>Key takeaway:</strong> While the coordinate expressions
+    happen to coincide in <span class="math inline">\(E^n\)</span> with
+    Cartesian coordinates and constant component vector fields, don’t be
+    fooled! The Lie derivative and the covariant derivative are distinct
+    concepts with different geometric interpretations. This equality is
+    a result of the specific flat geometry of <span
+    class="math inline">\(E^n\)</span> and the choice of coordinates. On
+    a general manifold with a non-flat connection, the coordinate
+    expressions will be different, and the conceptual differences will
+    be much more apparent.</p>
     <h1 id="vector-field-along-an-open-set-in-a-hypersurface">Vector
     Field ALONG an open set in a hypersurface</h1>
     <p>We need to separate the definition into two cases: tangent vector
