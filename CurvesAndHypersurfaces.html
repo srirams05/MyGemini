@@ -29,6 +29,9 @@
     id="toc-curvature-of-a-curve">Curvature of a curve</a></li>
     <li><a href="#covariant-derivative"
     id="toc-covariant-derivative">Covariant Derivative</a></li>
+    <li><a href="#more-on-covariant-derivative"
+    id="toc-more-on-covariant-derivative">More on Covariant
+    Derivative</a></li>
     <li><a href="#vector-field-along-an-open-set-in-a-hypersurface"
     id="toc-vector-field-along-an-open-set-in-a-hypersurface">Vector
     Field ALONG an open set in a hypersurface</a></li>
@@ -1135,6 +1138,163 @@
     connection is the standard flat connection. This also happens to be
     equal to the Lie derivative and the Lie bracket. These three are not
     equal on general curved manifolds.</p>
+    <h1 id="more-on-covariant-derivative">More on Covariant
+    Derivative</h1>
+    <p><strong>Consider the manifold <span
+    class="math inline">\(E^n\)</span>. Let <span
+    class="math inline">\(Y\)</span> be a vector field defined on <span
+    class="math inline">\(E^n\)</span>. Consider a curve <span
+    class="math inline">\(c(t): I \to E^n\)</span>. Let <span
+    class="math inline">\(X\)</span> be a vector field along <span
+    class="math inline">\(c(t)\)</span>; it assigns a specific tangent
+    vector <span class="math inline">\(X_p = v_p = dc(t)/dt
+    |_p\)</span>. We are interested in how the vector field <span
+    class="math inline">\(Y\)</span> changes as we move along the curve
+    <span class="math inline">\(c(t)\)</span> defined by <span
+    class="math inline">\(X\)</span>. Does this concept make sense and
+    if so, formalize this with details.</strong></p>
+    <p>Yes, this concept makes perfect sense. It’s the core idea behind
+    the <strong>covariant derivative</strong> of a vector field along a
+    curve. Here’s a formalization:</p>
+    <ol type="1">
+    <li><p><strong>Vector Field along a Curve:</strong> As you stated, a
+    vector field <span class="math inline">\(X\)</span> along a curve
+    <span class="math inline">\(c(t)\)</span> in <span
+    class="math inline">\(E^n\)</span> assigns a tangent vector <span
+    class="math inline">\(X_{c(t)} \in T_{c(t)}E^n\)</span> to each
+    point <span class="math inline">\(c(t)\)</span> on the curve.
+    Importantly, <span class="math inline">\(X\)</span> doesn’t need to
+    be defined on all of <span class="math inline">\(E^n\)</span>, only
+    along the image of <span class="math inline">\(c\)</span>. The
+    velocity vector field of the curve, <span
+    class="math inline">\(\frac{dc}{dt}\)</span>, is a specific example
+    of a vector field along <span
+    class="math inline">\(c\)</span>.</p></li>
+    <li><p><strong>The Vector Field <em>Y</em>:</strong> <span
+    class="math inline">\(Y\)</span> is a vector field defined on an
+    open subset of <span class="math inline">\(E^n\)</span> that
+    contains the image of <span class="math inline">\(c(t)\)</span>. For
+    each point <span class="math inline">\(p\)</span> in this subset,
+    <span class="math inline">\(Y\)</span> assigns a tangent vector
+    <span class="math inline">\(Y_p \in T_pE^n\)</span>.</p></li>
+    <li><p><strong>Change of <em>Y</em> along <em>c</em>:</strong> We
+    want to understand how <span class="math inline">\(Y\)</span>
+    changes as we move along <span class="math inline">\(c(t)\)</span>.
+    Since <span class="math inline">\(X = \frac{dc}{dt}\)</span> is the
+    velocity vector field of the curve, it tells us how we are moving.
+    The change of <span class="math inline">\(Y\)</span> along <span
+    class="math inline">\(c\)</span> is given by the <strong>covariant
+    derivative</strong> of <span class="math inline">\(Y\)</span> along
+    <span class="math inline">\(X\)</span>, denoted by <span
+    class="math inline">\(\nabla_X Y\)</span>.</p></li>
+    <li><p><strong>Covariant Derivative in <span
+    class="math inline">\(E^n\)</span></strong>: In <span
+    class="math inline">\(E^n\)</span>, which has a flat connection, the
+    covariant derivative is simply the directional derivative. If we
+    express <span class="math inline">\(Y\)</span> in standard Cartesian
+    coordinates as <span class="math inline">\(Y = \sum_{i=1}^n Y^i
+    \frac{\partial}{\partial x^i}\)</span>, and <span
+    class="math inline">\(c(t) = (c^1(t), \dots, c^n(t))\)</span>,
+    then:</p>
+    <p><span class="math display">\[ \nabla_X Y = \frac{d}{dt} Y(c(t)) =
+    \sum_{i=1}^n \frac{d}{dt} (Y^i(c(t))) \frac{\partial}{\partial x^i}
+    =  \sum_{i,j=1}^n \frac{\partial Y^i}{\partial x^j}
+    \frac{dc^j}{dt}  \frac{\partial}{\partial x^i} \]</span></p>
+    <p>In other words, we evaluate <span
+    class="math inline">\(Y\)</span> along the curve <span
+    class="math inline">\(c(t)\)</span> to get <span
+    class="math inline">\(Y(c(t))\)</span>, and then we differentiate
+    this vector-valued function with respect to <span
+    class="math inline">\(t\)</span>.</p></li>
+    <li><p><strong>Example:</strong> Let <span class="math inline">\(Y =
+    x \frac{\partial}{\partial x} + y \frac{\partial}{\partial
+    y}\)</span> in <span class="math inline">\(E^2\)</span>, and let
+    <span class="math inline">\(c(t) = (t, t^2)\)</span>. Then <span
+    class="math inline">\(X = \frac{dc}{dt} = \frac{\partial}{\partial
+    x} + 2t \frac{\partial}{\partial y}\)</span>. We have <span
+    class="math inline">\(Y(c(t)) = t\frac{\partial}{\partial x} + t^2
+    \frac{\partial}{\partial y}\)</span>. Thus,</p>
+    <p><span class="math display">\[ \nabla_X Y =
+    \frac{d}{dt}(t\frac{\partial}{\partial x} + t^2
+    \frac{\partial}{\partial y}) = \frac{\partial}{\partial x} + 2t
+    \frac{\partial}{\partial y} \]</span></p></li>
+    </ol>
+    <p>In summary, the covariant derivative <span
+    class="math inline">\(\nabla_X Y\)</span> precisely formalizes the
+    notion of how the vector field <span
+    class="math inline">\(Y\)</span> changes along the curve <span
+    class="math inline">\(c(t)\)</span> whose velocity vector field is
+    <span class="math inline">\(X\)</span>. In <span
+    class="math inline">\(E^n\)</span>, the covariant derivative
+    simplifies to the ordinary derivative of the vector components of
+    <span class="math inline">\(Y(c(t))\)</span>.</p>
+    <p><strong>Does this apply if <span class="math inline">\(X\)</span>
+    assigns a tangent vector which is not the velocity vector of the
+    curve <span class="math inline">\(c(t)\)</span>?</strong></p>
+    <p>Yes, the covariant derivative <span
+    class="math inline">\(\nabla_X Y\)</span> is still defined even if
+    <span class="math inline">\(X\)</span> is a general vector field
+    along <span class="math inline">\(c(t)\)</span> and not specifically
+    the velocity vector field <span
+    class="math inline">\(dc/dt\)</span>. However, the interpretation
+    changes slightly.</p>
+    <p>When <span class="math inline">\(X = dc/dt\)</span>, <span
+    class="math inline">\(\nabla_X Y\)</span> captures the change in
+    <span class="math inline">\(Y\)</span> as we move <em>along the
+    curve with its inherent parameterization</em>.</p>
+    <p>When <span class="math inline">\(X\)</span> is an arbitrary
+    vector field along <span class="math inline">\(c\)</span>, <span
+    class="math inline">\(\nabla_X Y\)</span> still represents a rate of
+    change of <span class="math inline">\(Y\)</span>, but now it’s a
+    directional derivative of <span class="math inline">\(Y\)</span> in
+    the direction of <span class="math inline">\(X\)</span> at each
+    point on <span class="math inline">\(c(t)\)</span>. This direction
+    is not necessarily tangent to the curve’s velocity. Think of it like
+    measuring the change in <span class="math inline">\(Y\)</span> as
+    you move along a path “influenced” by <span
+    class="math inline">\(X\)</span> at each point on <span
+    class="math inline">\(c\)</span>.</p>
+    <p>The formula for <span class="math inline">\(\nabla_X Y\)</span>
+    in <span class="math inline">\(E^n\)</span> remains the same:</p>
+    <p><span class="math display">\[ \nabla_X Y = \sum_{i,j=1}^n
+    \frac{\partial Y^i}{\partial x^j} X^j  \frac{\partial}{\partial x^i}
+    \]</span></p>
+    <p>where <span class="math inline">\(X = \sum_{j=1}^n X^j
+    \frac{\partial}{\partial x^j}\)</span>. Notice that now the <span
+    class="math inline">\(X^j\)</span> components are not necessarily
+    <span class="math inline">\(dc^j/dt\)</span>, but rather the
+    components of the given vector field <span
+    class="math inline">\(X\)</span> along <span
+    class="math inline">\(c\)</span>.</p>
+    <p><strong>Example:</strong></p>
+    <p>Let’s use the same <span class="math inline">\(Y\)</span> and
+    <span class="math inline">\(c(t)\)</span> as before: <span
+    class="math inline">\(Y = x \frac{\partial}{\partial x} + y
+    \frac{\partial}{\partial y}\)</span> and <span
+    class="math inline">\(c(t) = (t, t^2)\)</span>. But now, let <span
+    class="math inline">\(X = 2t \frac{\partial}{\partial x} +
+    \frac{\partial}{\partial y}\)</span>. This <span
+    class="math inline">\(X\)</span> is still a vector field along <span
+    class="math inline">\(c\)</span>, but it’s not <span
+    class="math inline">\(dc/dt\)</span>. Then:</p>
+    <p><span class="math inline">\(Y(c(t)) = t \frac{\partial}{\partial
+    x} + t^2 \frac{\partial}{\partial y}\)</span>, and</p>
+    <p><span class="math display">\[ \nabla_X Y = \sum_{i,j=1}^2
+    \frac{\partial Y^i}{\partial x^j} X^j \frac{\partial}{\partial x^i}
+    = \frac{\partial Y^1}{\partial x} X^1 \frac{\partial}{\partial x}
+    +  \frac{\partial Y^2}{\partial y} X^2 \frac{\partial}{\partial y} =
+    (1)(2t) \frac{\partial}{\partial x} + (1)(1)
+    \frac{\partial}{\partial y} = 2t \frac{\partial}{\partial x} +
+    \frac{\partial}{\partial y} \]</span></p>
+    <p>So, even though <span class="math inline">\(X\)</span> is not the
+    velocity of <span class="math inline">\(c\)</span>, <span
+    class="math inline">\(\nabla_X Y\)</span> still gives us a
+    meaningful directional derivative of <span
+    class="math inline">\(Y\)</span> at each point along <span
+    class="math inline">\(c\)</span>. It indicates how <span
+    class="math inline">\(Y\)</span> is changing as we move in the
+    direction specified by <span class="math inline">\(X\)</span> at
+    each point on the curve.</p>
     <h1 id="vector-field-along-an-open-set-in-a-hypersurface">Vector
     Field ALONG an open set in a hypersurface</h1>
     <p>We need to separate the definition into two cases: tangent vector
@@ -1701,6 +1861,7 @@
     for complicated hypersurfaces. However, the theoretical guarantee of
     the existence of such charts is crucial for developing the theory of
     differential geometry.</p>
+    <p>Good explanation. Why is $X , = _X , + , _X $</p>
   </article>
 </body>
 </html>
