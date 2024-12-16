@@ -35,6 +35,12 @@
     id="toc-covariant-derivative-3">Covariant Derivative 3</a></li>
     <li><a href="#covariant-derivative-4"
     id="toc-covariant-derivative-4">Covariant Derivative 4</a></li>
+    <li><a href="#covariant-derivatrive-5---product-rule"
+    id="toc-covariant-derivatrive-5---product-rule">Covariant
+    Derivatrive 5 - Product Rule</a></li>
+    <li><a href="#covariant-derivative-6---metric-compatibility"
+    id="toc-covariant-derivative-6---metric-compatibility">Covariant
+    Derivative 6 - Metric compatibility</a></li>
     <li><a href="#vector-field-along-an-open-set-in-a-hypersurface"
     id="toc-vector-field-along-an-open-set-in-a-hypersurface">Vector
     Field ALONG an open set in a hypersurface</a></li>
@@ -1317,7 +1323,7 @@
     <p>As discussed, in <span class="math inline">\(E^n\)</span> with
     the standard flat connection and Cartesian coordinates, we
     <em>define</em> the covariant derivative as:</p>
-    <p><span class="math inline">\(\nabla_X Y = \sum_{i=1}^n X(Y^i)
+    <p><span class="math inline">\(\nabla_X Y := \sum_{i=1}^n X(Y^i)
     \frac{\partial}{\partial x^i}\)</span></p>
     <p>This is our starting point, specific to <span
     class="math inline">\(E^n\)</span>.</p>
@@ -1447,6 +1453,245 @@
     a general manifold with a non-flat connection, the coordinate
     expressions will be different, and the conceptual differences will
     be much more apparent.</p>
+    <p><strong>Clearly, <span class="math inline">\(\nabla_X Y\)</span>
+    is also a vector field. Correct?</strong></p>
+    <p>Yes, you are absolutely correct. <span
+    class="math inline">\(\nabla_X Y\)</span> is a vector field. It
+    assigns a tangent vector to each point on the manifold (or at least
+    to the points where both <span class="math inline">\(X\)</span> and
+    <span class="math inline">\(Y\)</span> are defined, and in the
+    context of <span class="math inline">\(X\)</span> being a vector
+    field along a curve, to each point on the curve).</p>
+    <h1 id="covariant-derivatrive-5---product-rule">Covariant
+    Derivatrive 5 - Product Rule</h1>
+    <p><strong>Let <span class="math inline">\(f\)</span> be a <span
+    class="math inline">\(C^{\infty} (E^n)\)</span> function. What is
+    the expression for <span class="math inline">\(\nabla_X
+    (fY)\)</span>? Provide details</strong></p>
+    <p>Here’s the derivation of the expression for <span
+    class="math inline">\(\nabla_X(fY)\)</span>, where <span
+    class="math inline">\(f\)</span> is a smooth function and <span
+    class="math inline">\(X\)</span> and <span
+    class="math inline">\(Y\)</span> are vector fields on <span
+    class="math inline">\(E^n\)</span>:</p>
+    <ol type="1">
+    <li><strong>Definition in <span
+    class="math inline">\(\mathbf{E^n}\)</span>:</strong></li>
+    </ol>
+    <p>Recall that in <span class="math inline">\(E^n\)</span> with
+    Cartesian coordinates, the covariant derivative is defined as:</p>
+    <p><span class="math inline">\(\nabla_X Y = \sum_{i=1}^n X(Y^i)
+    \frac{\partial}{\partial x^i} = \sum_{i, j=1}^n X^j \frac{\partial
+    Y^i}{\partial x^j} \frac{\partial}{\partial x^i}\)</span></p>
+    <ol start="2" type="1">
+    <li><strong>Applying to <span
+    class="math inline">\(\mathbf{fY}\)</span>:</strong></li>
+    </ol>
+    <p>Now, let’s replace <span class="math inline">\(Y\)</span> with
+    <span class="math inline">\(fY\)</span>:</p>
+    <p><span class="math inline">\(\nabla_X (fY) = \sum_{i=1}^n
+    X((fY)^i) \frac{\partial}{\partial x^i}\)</span></p>
+    <p>The components of <span class="math inline">\(fY\)</span> are
+    given by <span class="math inline">\((fY)^i = f Y^i\)</span>.
+    So,</p>
+    <p><span class="math inline">\(\nabla_X (fY) = \sum_{i=1}^n X(fY^i)
+    \frac{\partial}{\partial x^i}\)</span></p>
+    <ol start="3" type="1">
+    <li><strong>Product Rule for Derivations:</strong></li>
+    </ol>
+    <p><span class="math inline">\(X\)</span> acts as a derivation,
+    which means it satisfies the product rule: <span
+    class="math inline">\(X(gh) = X(g)h + gX(h)\)</span> for any smooth
+    functions <span class="math inline">\(g\)</span> and <span
+    class="math inline">\(h\)</span>. Applying this to <span
+    class="math inline">\(fY^i\)</span>:</p>
+    <p><span class="math inline">\(X(fY^i) = X(f)Y^i +
+    fX(Y^i)\)</span></p>
+    <ol start="4" type="1">
+    <li><strong>Substituting Back:</strong></li>
+    </ol>
+    <p>Substituting this back into our expression for the covariant
+    derivative:</p>
+    <p><span class="math inline">\(\nabla_X (fY) = \sum_{i=1}^n \left(
+    X(f)Y^i + fX(Y^i) \right) \frac{\partial}{\partial x^i}\)</span></p>
+    <ol start="5" type="1">
+    <li><strong>Separating Terms:</strong></li>
+    </ol>
+    <p>We can separate the terms in the summation:</p>
+    <p><span class="math inline">\(\nabla_X (fY) = \sum_{i=1}^n X(f)Y^i
+    \frac{\partial}{\partial x^i} + \sum_{i=1}^n fX(Y^i)
+    \frac{\partial}{\partial x^i}\)</span></p>
+    <ol start="6" type="1">
+    <li><strong>Recognizing <span
+    class="math inline">\(\mathbf{Y}\)</span> and <span
+    class="math inline">\(\mathbf{\nabla_X Y}\)</span>:</strong></li>
+    </ol>
+    <p>Notice that the first term is just <span
+    class="math inline">\(X(f)\)</span> multiplied by the vector field
+    <span class="math inline">\(Y\)</span>, and the second term is <span
+    class="math inline">\(f\)</span> multiplied by the covariant
+    derivative <span class="math inline">\(\nabla_X Y\)</span>:</p>
+    <p><span class="math inline">\(\nabla_X (fY) = X(f)Y + f\nabla_X
+    Y\)</span></p>
+    <p>Therefore, we have the final expression:</p>
+    <p><span class="math inline">\(\nabla_X (fY) = X(f)Y + f\nabla_X
+    Y\)</span></p>
+    <p>This result shows that the covariant derivative satisfies a
+    Leibniz-like rule (product rule) with respect to scalar
+    multiplication. This property is one of the defining characteristics
+    of a connection.</p>
+    <h1 id="covariant-derivative-6---metric-compatibility">Covariant
+    Derivative 6 - Metric compatibility</h1>
+    <p><strong>Let <span class="math inline">\(X,Y,Z\)</span> be vector
+    fields on <span class="math inline">\(E^n\)</span>. Consider <span
+    class="math inline">\(X \langle Y, Z \rangle\)</span>. At a point
+    <span class="math inline">\(p \in E^n\)</span>, the inner product
+    evaluates to a real number. If <span
+    class="math inline">\(p\)</span> is allowed to vary then the inner
+    product is a scalar valued function on <span
+    class="math inline">\(E^n\)</span> which is smooth. Then the term
+    <span class="math inline">\(X \langle Y, Z \rangle\)</span> can be
+    viewed as the directional derivative of the inner product function
+    in the direction of <span class="math inline">\(X\)</span>. Is this
+    correct?</strong></p>
+    <p>Yes, you are absolutely correct. <span
+    class="math inline">\(X\langle Y, Z \rangle\)</span> can indeed be
+    interpreted as the directional derivative of the scalar function
+    <span class="math inline">\(\langle Y, Z \rangle\)</span> in the
+    direction of the vector field <span
+    class="math inline">\(X\)</span>.</p>
+    <p>Here’s a more detailed breakdown:</p>
+    <ol type="1">
+    <li><p><strong>Inner Product as a Smooth Function:</strong> As you
+    correctly pointed out, the inner product <span
+    class="math inline">\(\langle Y, Z \rangle\)</span> at a point <span
+    class="math inline">\(p\)</span> gives a real number. As <span
+    class="math inline">\(p\)</span> varies, <span
+    class="math inline">\(\langle Y, Z \rangle\)</span> defines a smooth
+    scalar function on <span class="math inline">\(E^n\)</span> (or at
+    least wherever <span class="math inline">\(Y\)</span> and <span
+    class="math inline">\(Z\)</span> are defined). Let’s call this
+    function <span class="math inline">\(g(p) = \langle Y_p, Z_p
+    \rangle\)</span>.</p></li>
+    <li><p><strong><span class="math inline">\(\mathbf{X}\)</span> as a
+    Derivation:</strong> A vector field <span
+    class="math inline">\(X\)</span> on <span
+    class="math inline">\(E^n\)</span> can be viewed as a derivation,
+    which means it acts on smooth functions to produce other smooth
+    functions. The action of <span class="math inline">\(X\)</span> on a
+    smooth function <span class="math inline">\(f\)</span> at a point
+    <span class="math inline">\(p\)</span> is given by:</p>
+    <p><span class="math inline">\((Xf)(p) = X_p(f)\)</span></p>
+    <p>where <span class="math inline">\(X_p\)</span> is the tangent
+    vector of <span class="math inline">\(X\)</span> at <span
+    class="math inline">\(p\)</span>, and it acts on <span
+    class="math inline">\(f\)</span> as a directional
+    derivative.</p></li>
+    <li><p><strong>Directional Derivative:</strong> Thus, when we write
+    <span class="math inline">\(X\langle Y, Z \rangle\)</span>, we are
+    effectively taking the directional derivative of the scalar function
+    <span class="math inline">\(g(p) = \langle Y, Z \rangle\)</span> in
+    the direction of <span class="math inline">\(X\)</span>. At a point
+    <span class="math inline">\(p\)</span>, this is:</p>
+    <p><span class="math inline">\((X\langle Y, Z \rangle)(p) =
+    X_p(\langle Y, Z \rangle) = X_p(g)\)</span></p>
+    <p>This tells us how the value of the inner product <span
+    class="math inline">\(\langle Y, Z \rangle\)</span> changes as we
+    move infinitesimally from <span class="math inline">\(p\)</span> in
+    the direction specified by <span
+    class="math inline">\(X_p\)</span>.</p></li>
+    </ol>
+    <p>In coordinates, this can be expressed as:</p>
+    <p><span class="math inline">\(X\langle Y, Z \rangle = \sum_{i=1}^n
+    X^i \frac{\partial}{\partial x^i} \langle Y, Z \rangle =
+    \sum_{i,j=1}^n X^i \frac{\partial}{\partial x^i} (Y^j Z^j)\)</span>
+    (using the standard inner product in Cartesian coordinates)</p>
+    <p>So your interpretation is perfectly accurate, both conceptually
+    and in terms of its coordinate expression.</p>
+    <p><strong>Prove this: <span class="math inline">\(X \langle Y, Z
+    \rangle = \langle \nabla_X Y, Z \rangle + \langle Y, \nabla_X Z
+    \rangle\)</span>. Provide details.</strong></p>
+    <p>You’re asking for a proof of the metric compatibility property of
+    the covariant derivative, specifically in <span
+    class="math inline">\(E^n\)</span> with the standard flat
+    connection. Here’s the proof:</p>
+    <ol type="1">
+    <li><strong>Coordinate Expressions:</strong></li>
+    </ol>
+    <p>Let’s express our vector fields in Cartesian coordinates:</p>
+    <ul>
+    <li><span class="math inline">\(X = \sum_{i=1}^n X^i
+    \frac{\partial}{\partial x^i}\)</span></li>
+    <li><span class="math inline">\(Y = \sum_{j=1}^n Y^j
+    \frac{\partial}{\partial x^j}\)</span></li>
+    <li><span class="math inline">\(Z = \sum_{k=1}^n Z^k
+    \frac{\partial}{\partial x^k}\)</span></li>
+    </ul>
+    <p>The standard inner product in these coordinates is:</p>
+    <p><span class="math inline">\(\langle Y, Z \rangle = \sum_{j=1}^n
+    Y^j Z^j\)</span></p>
+    <ol start="2" type="1">
+    <li><strong>Left-Hand Side:</strong></li>
+    </ol>
+    <p>We want to compute <span class="math inline">\(X\langle Y, Z
+    \rangle\)</span>. As discussed before, <span
+    class="math inline">\(X\)</span> acts as a derivation:</p>
+    <p><span class="math inline">\(X\langle Y, Z \rangle = \sum_{i=1}^n
+    X^i \frac{\partial}{\partial x^i} \left( \sum_{j=1}^n Y^j Z^j
+    \right)\)</span></p>
+    <p>Using the product rule for differentiation:</p>
+    <p><span class="math inline">\(X\langle Y, Z \rangle =
+    \sum_{i,j=1}^n X^i \left( \frac{\partial Y^j}{\partial x^i} Z^j +
+    Y^j \frac{\partial Z^j}{\partial x^i} \right) =  \sum_{i,j=1}^n  X^i
+    \frac{\partial Y^j}{\partial x^i} Z^j +  \sum_{i,j=1}^n X^i Y^j
+    \frac{\partial Z^j}{\partial x^i}\)</span></p>
+    <ol start="3" type="1">
+    <li><strong>Right-Hand Side:</strong></li>
+    </ol>
+    <p>Now let’s compute <span class="math inline">\(\langle \nabla_X Y,
+    Z \rangle + \langle Y, \nabla_X Z \rangle\)</span>. Recall the
+    expression for the covariant derivative in <span
+    class="math inline">\(E^n\)</span>:</p>
+    <p><span class="math inline">\(\nabla_X Y = \sum_{i,j=1}^n X^i
+    \frac{\partial Y^j}{\partial x^i} \frac{\partial}{\partial
+    x^j}\)</span></p>
+    <p>So,</p>
+    <p><span class="math inline">\(\langle \nabla_X Y, Z \rangle =
+    \left\langle \sum_{i,j=1}^n X^i \frac{\partial Y^j}{\partial x^i}
+    \frac{\partial}{\partial x^j} , \sum_{k=1}^n Z^k
+    \frac{\partial}{\partial x^k} \right\rangle\)</span></p>
+    <p>Since <span class="math inline">\(\langle
+    \frac{\partial}{\partial x^j}, \frac{\partial}{\partial x^k} \rangle
+    = \delta_{jk}\)</span> (Kronecker delta), this simplifies to:</p>
+    <p><span class="math inline">\(\langle \nabla_X Y, Z \rangle =
+    \sum_{i,j=1}^n X^i \frac{\partial Y^j}{\partial x^i}
+    Z^j\)</span></p>
+    <p>Similarly,</p>
+    <p><span class="math inline">\(\langle Y, \nabla_X Z \rangle =
+    \sum_{i,j=1}^n X^i Y^j \frac{\partial Z^j}{\partial
+    x^i}\)</span></p>
+    <ol start="4" type="1">
+    <li><strong>Comparison:</strong></li>
+    </ol>
+    <p>Comparing the expressions we obtained for the left-hand side and
+    the right-hand side:</p>
+    <p><span class="math inline">\(X\langle Y, Z \rangle =
+    \sum_{i,j=1}^n  X^i \frac{\partial Y^j}{\partial x^i} Z^j
+    +  \sum_{i,j=1}^n X^i Y^j \frac{\partial Z^j}{\partial
+    x^i}\)</span></p>
+    <p><span class="math inline">\(\langle \nabla_X Y, Z \rangle +
+    \langle Y, \nabla_X Z \rangle = \sum_{i,j=1}^n X^i \frac{\partial
+    Y^j}{\partial x^i} Z^j + \sum_{i,j=1}^n X^i Y^j \frac{\partial
+    Z^j}{\partial x^i}\)</span></p>
+    <p>The expressions are identical. Therefore, we have proven
+    that:</p>
+    <p><span class="math inline">\(X\langle Y, Z \rangle = \langle
+    \nabla_X Y, Z \rangle + \langle Y, \nabla_X Z \rangle\)</span></p>
+    <p>This property is called <em>metric compatibility</em>. It means
+    that the covariant derivative preserves the inner product. This is a
+    consequence of our definition of the covariant derivative in <span
+    class="math inline">\(E^n\)</span> and the fact that the connection
+    is flat.</p>
     <h1 id="vector-field-along-an-open-set-in-a-hypersurface">Vector
     Field ALONG an open set in a hypersurface</h1>
     <p>We need to separate the definition into two cases: tangent vector
