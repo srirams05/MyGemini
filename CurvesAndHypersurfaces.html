@@ -47,6 +47,8 @@
     <li><a href="#local-coordinates-adapted-to-hypersurface"
     id="toc-local-coordinates-adapted-to-hypersurface">Local coordinates
     adapted to hypersurface</a></li>
+    <li><a href="#shape-operator" id="toc-shape-operator">Shape
+    Operator</a></li>
     </ul>
   </nav>
   <article>
@@ -2258,7 +2260,116 @@
     for complicated hypersurfaces. However, the theoretical guarantee of
     the existence of such charts is crucial for developing the theory of
     differential geometry.</p>
-    <p>Good explanation. Why is $X , = _X , + , _X $</p>
+    <h1 id="shape-operator">Shape Operator</h1>
+    <p><strong>consider a hypersurface <span class="math inline">\(M
+    \subset E^n\)</span>. Let <span class="math inline">\(N\)</span> be
+    a unit normal vector field along an open set <span
+    class="math inline">\(U \subset M\)</span> containing <span
+    class="math inline">\(p\)</span>. For any tangent vector <span
+    class="math inline">\(v_p \in T_pM\)</span>, we have the covariant
+    derivative <span class="math inline">\(\nabla_{v_p} N\)</span>. It
+    appears that <span class="math inline">\(\nabla_{v_p} N \in
+    T_pM\)</span>. Is this correct? If so, prove this with
+    details.</strong></p>
+    <p>Yes, you are correct. <span class="math inline">\(\nabla_{v_p} N
+    \in T_pM\)</span>. Here’s a detailed proof:</p>
+    <p>Since <span class="math inline">\(N\)</span> is a unit normal
+    vector field, we have <span class="math inline">\(\langle N, N
+    \rangle = 1\)</span> on <span class="math inline">\(U\)</span>. We
+    can take the covariant derivative of this equation along any tangent
+    vector <span class="math inline">\(v_p \in T_pM\)</span>. Recall
+    that the covariant derivative is compatible with the metric, meaning
+    <span class="math display">\[v_p \langle N, N \rangle = \langle
+    \nabla_{v_p} N, N \rangle + \langle N, \nabla_{v_p} N
+    \rangle.\]</span> Since <span class="math inline">\(v_p \langle N, N
+    \rangle = v_p(1) = 0\)</span> and the inner product is symmetric, we
+    have <span class="math display">\[2 \langle \nabla_{v_p} N, N
+    \rangle = 0,\]</span> which implies <span
+    class="math display">\[\langle \nabla_{v_p} N, N \rangle =
+    0.\]</span> This means that <span class="math inline">\(\nabla_{v_p}
+    N\)</span> is orthogonal to <span class="math inline">\(N\)</span>
+    at <span class="math inline">\(p\)</span>. Since <span
+    class="math inline">\(N\)</span> is the unit normal vector to the
+    hypersurface <span class="math inline">\(M\)</span> at <span
+    class="math inline">\(p\)</span>, any vector orthogonal to <span
+    class="math inline">\(N\)</span> at <span
+    class="math inline">\(p\)</span> must be tangent to <span
+    class="math inline">\(M\)</span> at <span
+    class="math inline">\(p\)</span>. Therefore, <span
+    class="math inline">\(\nabla_{v_p} N \in T_pM\)</span>.</p>
+    <p>So, to summarize, the fact that <span
+    class="math inline">\(N\)</span> is a <em>unit</em> normal vector
+    field is crucial. The unit length condition <span
+    class="math inline">\(\langle N, N \rangle = 1\)</span> allows us to
+    take the covariant derivative and show that <span
+    class="math inline">\(\nabla_{v_p} N\)</span> is orthogonal to <span
+    class="math inline">\(N\)</span>, hence tangent to <span
+    class="math inline">\(M\)</span> at <span
+    class="math inline">\(p\)</span>.</p>
+    <p><strong><span class="math inline">\(v_p\)</span> is arbitrarily
+    chosen above. What is the intuition behind <span
+    class="math inline">\(\nabla_{v_p} N\)</span>?</strong></p>
+    <p>The intuition behind <span class="math inline">\(\nabla_{v_p}
+    N\)</span> is how the normal vector <span
+    class="math inline">\(N\)</span> changes as you move along the
+    hypersurface <span class="math inline">\(M\)</span> in the direction
+    of the tangent vector <span class="math inline">\(v_p\)</span>.
+    Since <span class="math inline">\(N\)</span> is a unit vector, its
+    magnitude cannot change. Therefore, the change is entirely reflected
+    in the <em>direction</em> of <span
+    class="math inline">\(N\)</span>.</p>
+    <p>More specifically:</p>
+    <ol type="1">
+    <li><p><strong>Curvature:</strong> <span
+    class="math inline">\(\nabla_{v_p} N\)</span> captures how the
+    hypersurface <span class="math inline">\(M\)</span> curves in the
+    direction of <span class="math inline">\(v_p\)</span>. If <span
+    class="math inline">\(M\)</span> is flat in the direction of <span
+    class="math inline">\(v_p\)</span>, then <span
+    class="math inline">\(N\)</span> doesn’t change as you move in that
+    direction, so <span class="math inline">\(\nabla_{v_p} N =
+    0\)</span>. If <span class="math inline">\(M\)</span> curves, <span
+    class="math inline">\(N\)</span> will change direction, and <span
+    class="math inline">\(\nabla_{v_p} N\)</span> quantifies this
+    change.</p></li>
+    <li><p><strong>Tangential Component:</strong> Crucially, as we
+    proved, <span class="math inline">\(\nabla_{v_p} N\)</span> lies in
+    the tangent space <span class="math inline">\(T_pM\)</span>. This is
+    because we’re looking at how <span class="math inline">\(N\)</span>
+    changes <em>as seen by someone “living” on the hypersurface</em>.
+    They can only perceive changes in directions tangent to the
+    surface.</p></li>
+    <li><p><strong>Shape Operator:</strong> <span
+    class="math inline">\(-\nabla_{v_p} N\)</span> defines the <em>shape
+    operator</em> (or Weingarten map), denoted by <span
+    class="math inline">\(S(v_p)\)</span>. The shape operator is a
+    linear map from <span class="math inline">\(T_pM\)</span> to <span
+    class="math inline">\(T_pM\)</span>. It’s a fundamental object in
+    differential geometry, encoding all the information about the
+    curvature of <span class="math inline">\(M\)</span> at <span
+    class="math inline">\(p\)</span>.</p></li>
+    <li><p><strong>Example (Sphere):</strong> Imagine <span
+    class="math inline">\(M\)</span> is a sphere in <span
+    class="math inline">\(\mathbb{R}^3\)</span>. The outward-pointing
+    unit normal <span class="math inline">\(N\)</span> at a point <span
+    class="math inline">\(p\)</span> is just the radial vector from the
+    center of the sphere to <span class="math inline">\(p\)</span>. As
+    you move along any great circle (a geodesic on the sphere,
+    representing a “straight line” on the surface), the normal <span
+    class="math inline">\(N\)</span> rotates towards the center of the
+    great circle. This rotation is precisely what <span
+    class="math inline">\(\nabla_{v_p} N\)</span> captures. In this
+    case, <span class="math inline">\(S(v_p) = -\nabla_{v_p} N =
+    \frac{1}{r} v_p\)</span>, where <span
+    class="math inline">\(r\)</span> is the radius of the sphere,
+    indicating constant curvature.</p></li>
+    </ol>
+    <p>In summary, <span class="math inline">\(\nabla_{v_p} N\)</span>
+    tells you how the normal vector field changes as you infinitesimally
+    move along the hypersurface in the direction of <span
+    class="math inline">\(v_p\)</span>, and this change is entirely a
+    rotation within the tangent plane, reflecting the curvature of the
+    hypersurface.</p>
   </article>
 </body>
 </html>
