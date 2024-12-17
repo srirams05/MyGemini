@@ -51,6 +51,8 @@
     Operator</a></li>
     <li><a href="#metric-on-hypersurface-m"
     id="toc-metric-on-hypersurface-m">Metric on hypersurface M</a></li>
+    <li><a href="#shape-operator-2" id="toc-shape-operator-2">Shape
+    Operator 2</a></li>
     </ul>
   </nav>
   <article>
@@ -2478,6 +2480,220 @@
     <span class="math inline">\(E^n\)</span> to determine how <span
     class="math inline">\(M\)</span> curves. This is a core idea of
     intrinsic geometry.</p>
+    <h1 id="shape-operator-2">Shape Operator 2</h1>
+    <p><strong>For the setup above, the shape operator <span
+    class="math inline">\(S_{N_p}\)</span> is adjoint with respect to
+    <span class="math inline">\(\langle \cdot, \cdot \rangle_p\)</span>.
+    What does this mean?</strong></p>
+    <p>The statement that the shape operator <span
+    class="math inline">\(S_{N_p}\)</span> at a point <span
+    class="math inline">\(p\)</span> on the hypersurface <span
+    class="math inline">\(M\)</span> is self-adjoint with respect to the
+    inner product <span class="math inline">\(\langle \cdot, \cdot
+    \rangle_p\)</span> (which is the induced metric on <span
+    class="math inline">\(T_pM\)</span>) means the following:</p>
+    <p>For any two tangent vectors <span class="math inline">\(u, v \in
+    T_pM\)</span>,</p>
+    <p><span class="math display">\[\langle S_{N_p}(u), v \rangle_p =
+    \langle u, S_{N_p}(v) \rangle_p\]</span></p>
+    <p>In other words, the shape operator is symmetric with respect to
+    the inner product. This is a crucial property of the shape operator
+    and has important consequences for the study of the curvature of
+    hypersurfaces.</p>
+    <p>Here’s why this is significant:</p>
+    <ol type="1">
+    <li><p><strong>Real Eigenvalues and Orthogonal
+    Eigenvectors:</strong> Because <span
+    class="math inline">\(S_{N_p}\)</span> is a self-adjoint operator on
+    a finite-dimensional vector space (<span
+    class="math inline">\(T_pM\)</span>) with an inner product, it is
+    guaranteed to have real eigenvalues and an orthonormal basis of
+    eigenvectors. These eigenvalues are called the <em>principal
+    curvatures</em> of <span class="math inline">\(M\)</span> at <span
+    class="math inline">\(p\)</span>, and the eigenvectors are the
+    <em>principal directions</em>.</p></li>
+    <li><p><strong>Diagonalization:</strong> The self-adjointness of
+    <span class="math inline">\(S_{N_p}\)</span> means that in the basis
+    of principal directions, the matrix representation of <span
+    class="math inline">\(S_{N_p}\)</span> is diagonal, with the
+    principal curvatures along the diagonal.</p></li>
+    <li><p><strong>Geometric Interpretation:</strong> The principal
+    curvatures measure the amount of bending of the hypersurface in the
+    principal directions. The fact that they are real and that we can
+    find an orthonormal basis of principal directions means that we can
+    decompose the curvature of <span class="math inline">\(M\)</span> at
+    <span class="math inline">\(p\)</span> into these orthogonal
+    components.</p></li>
+    </ol>
+    <p>So, the self-adjointness of the shape operator is a fundamental
+    property that makes it possible to analyze the curvature of
+    hypersurfaces in a very convenient and geometrically meaningful
+    way.</p>
+    <p><strong>With a chart adapted to <span
+    class="math inline">\(M\)</span>, does this mean that the
+    representation of <span class="math inline">\(S_{N_p}\)</span> in
+    the adapted chart local coordinates is a symmetric
+    matrix?</strong></p>
+    <p>Yes, precisely. If you choose local coordinates <span
+    class="math inline">\(x^1, \dots, x^{n-1}\)</span> adapted to the
+    hypersurface <span class="math inline">\(M\)</span> around a point
+    <span class="math inline">\(p\)</span>, and you represent the shape
+    operator <span class="math inline">\(S_{N_p}\)</span> as a matrix
+    with respect to the basis <span
+    class="math inline">\(\frac{\partial}{\partial x^1}|_p, ...,
+    \frac{\partial}{\partial x^{n-1}}|_p\)</span> of <span
+    class="math inline">\(T_pM\)</span>, then the resulting matrix will
+    be a symmetric matrix.</p>
+    <p>Here’s why:</p>
+    <p>The components of the matrix representation of <span
+    class="math inline">\(S_{N_p}\)</span> are given by:</p>
+    <p><span class="math display">\[(S_{N_p})_{ij} = \left\langle
+    S_{N_p}\left(\frac{\partial}{\partial x^i}|_p\right),
+    \frac{\partial}{\partial x^j}|_p \right\rangle_p\]</span></p>
+    <p>Since <span class="math inline">\(S_{N_p}\)</span> is
+    self-adjoint, we have:</p>
+    <p><span class="math display">\[\left\langle
+    S_{N_p}\left(\frac{\partial}{\partial x^i}|_p\right),
+    \frac{\partial}{\partial x^j}|_p \right\rangle_p = \left\langle
+    \frac{\partial}{\partial x^i}|_p,
+    S_{N_p}\left(\frac{\partial}{\partial x^j}|_p\right)
+    \right\rangle_p\]</span></p>
+    <p>This means <span class="math inline">\((S_{N_p})_{ij} =
+    (S_{N_p})_{ji}\)</span>, which is the definition of a symmetric
+    matrix.</p>
+    <p>Therefore, the self-adjointness of <span
+    class="math inline">\(S_{N_p}\)</span> directly translates to the
+    symmetry of its matrix representation in a coordinate basis adapted
+    to <span class="math inline">\(M\)</span>. This is why you can
+    always diagonalize the matrix of the shape operator using an
+    orthogonal matrix, as is guaranteed for any real symmetric
+    matrix.</p>
+    <p><strong>Provide more detail on the expression for the <span
+    class="math inline">\((i,j)\)</span>-th component of the
+    matrix.</strong></p>
+    <p>Let’s break down the expression for the <span
+    class="math inline">\((i, j)\)</span>-th component of the matrix
+    representation of the shape operator <span
+    class="math inline">\(S_{N_p}\)</span> in more detail.</p>
+    <ol type="1">
+    <li><p><strong>Coordinate Basis:</strong> We have a chart <span
+    class="math inline">\((U, \phi)\)</span> adapted to the hypersurface
+    <span class="math inline">\(M\)</span> around the point <span
+    class="math inline">\(p\)</span>. This gives us local coordinates
+    <span class="math inline">\(x^1, \dots, x^{n-1}\)</span>, and a
+    corresponding basis for the tangent space <span
+    class="math inline">\(T_pM\)</span>: <span
+    class="math inline">\(\frac{\partial}{\partial x^1}|_p, \dots,
+    \frac{\partial}{\partial x^{n-1}}|_p\)</span>.</p></li>
+    <li><p><strong>Shape Operator:</strong> The shape operator <span
+    class="math inline">\(S_{N_p}: T_pM \to T_pM\)</span> is defined as
+    <span class="math inline">\(S_{N_p}(v) = -\nabla_v N\)</span>, where
+    <span class="math inline">\(N\)</span> is a unit normal vector field
+    to <span class="math inline">\(M\)</span>. Remember, this covariant
+    derivative <span class="math inline">\(\nabla_v N\)</span> is taken
+    in the ambient space <span class="math inline">\(E^n\)</span>, but
+    the result lies in <span
+    class="math inline">\(T_pM\)</span>.</p></li>
+    <li><p><strong>Matrix Components:</strong> To represent <span
+    class="math inline">\(S_{N_p}\)</span> as a matrix, we need to see
+    how it acts on the basis vectors. The <span
+    class="math inline">\((i, j)\)</span>-th component of the matrix is
+    given by the inner product of the shape operator applied to the
+    <span class="math inline">\(i\)</span>-th basis vector with the
+    <span class="math inline">\(j\)</span>-th basis vector:</p>
+    <p><span class="math display">\[(S_{N_p})_{ij} = \left\langle
+    S_{N_p}\left(\frac{\partial}{\partial x^i}|_p\right),
+    \frac{\partial}{\partial x^j}|_p \right\rangle_p = \left\langle
+    -\nabla_{\frac{\partial}{\partial x^i}|_p} N,
+    \frac{\partial}{\partial x^j}|_p \right\rangle_p\]</span></p></li>
+    <li><p><strong>Calculating the Covariant Derivative:</strong> The
+    term <span class="math inline">\(\nabla_{\frac{\partial}{\partial
+    x^i}|_p} N\)</span> represents how the normal vector field <span
+    class="math inline">\(N\)</span> changes as you move along the
+    coordinate curve <span class="math inline">\(x^i\)</span>. This is
+    calculated in the ambient space <span
+    class="math inline">\(E^n\)</span>, and then projected onto <span
+    class="math inline">\(T_pM\)</span>.</p></li>
+    <li><p><strong>Induced Metric:</strong> The inner product <span
+    class="math inline">\(\langle \cdot, \cdot \rangle_p\)</span> is the
+    induced metric on <span class="math inline">\(T_pM\)</span>,
+    inherited from the standard inner product in <span
+    class="math inline">\(E^n\)</span>.</p></li>
+    <li><p><strong>Putting it Together:</strong> So, to calculate <span
+    class="math inline">\((S_{N_p})_{ij}\)</span>, you would:</p>
+    <ul>
+    <li>Take the covariant derivative of the normal vector field <span
+    class="math inline">\(N\)</span> in the direction of <span
+    class="math inline">\(\frac{\partial}{\partial x^i}|_p\)</span>.
+    This involves calculating the directional derivative of the
+    components of <span class="math inline">\(N\)</span> in the ambient
+    space and then projecting the result onto <span
+    class="math inline">\(T_pM\)</span>.</li>
+    <li>Take the inner product (using the induced metric) of the
+    resulting tangent vector with <span
+    class="math inline">\(\frac{\partial}{\partial
+    x^j}|_p\)</span>.</li>
+    </ul></li>
+    </ol>
+    <p>This process gives you the <span class="math inline">\((i,
+    j)\)</span>-th component of the matrix representation of the shape
+    operator in the given coordinate basis. Because <span
+    class="math inline">\(S_{N_p}\)</span> is self-adjoint, the
+    resulting matrix will always be symmetric.</p>
+    <p><strong>I have forgotten my linear algebra. Why in Step 3 do you
+    need to take the inner product?</strong></p>
+    <p>The reason we take the inner product in Step 3 is to extract the
+    <em>components</em> of the vector <span
+    class="math inline">\(S_{N_p}(\frac{\partial}{\partial
+    x^i}|_p)\)</span> with respect to the basis vectors. Let’s break
+    this down with a general linear algebra analogy.</p>
+    <p>Suppose you have a linear transformation <span
+    class="math inline">\(T: V \to V\)</span>, where <span
+    class="math inline">\(V\)</span> is a vector space with an inner
+    product <span class="math inline">\(\langle \cdot, \cdot
+    \rangle\)</span>. Let <span class="math inline">\(\{e_1, \dots,
+    e_n\}\)</span> be an orthonormal basis for <span
+    class="math inline">\(V\)</span>. We want to represent <span
+    class="math inline">\(T\)</span> as a matrix <span
+    class="math inline">\(A\)</span> with respect to this basis.</p>
+    <p>The <span class="math inline">\(j\)</span>-th column of the
+    matrix <span class="math inline">\(A\)</span> represents the vector
+    <span class="math inline">\(T(e_j)\)</span> expressed in the basis
+    <span class="math inline">\(\{e_1, \dots, e_n\}\)</span>. So, we
+    have:</p>
+    <p><span class="math display">\[T(e_j) = \sum_{i=1}^n A_{ij}
+    e_i\]</span></p>
+    <p>Now, to find the component <span
+    class="math inline">\(A_{ij}\)</span>, we take the inner product of
+    both sides with <span class="math inline">\(e_i\)</span>:</p>
+    <p><span class="math display">\[\langle T(e_j), e_i \rangle =
+    \left\langle \sum_{k=1}^n A_{kj} e_k, e_i \right\rangle =
+    \sum_{k=1}^n A_{kj} \langle e_k, e_i \rangle\]</span></p>
+    <p>Since the basis is orthonormal, <span
+    class="math inline">\(\langle e_k, e_i \rangle =
+    \delta_{ki}\)</span> (Kronecker delta, which is 1 if <span
+    class="math inline">\(k=i\)</span> and 0 otherwise). Therefore,</p>
+    <p><span class="math display">\[\langle T(e_j), e_i \rangle =
+    A_{ij}\]</span></p>
+    <p>So, the inner product <span class="math inline">\(\langle T(e_j),
+    e_i \rangle\)</span> gives us exactly the <span
+    class="math inline">\((i, j)\)</span>-th entry of the matrix
+    representation of <span class="math inline">\(T\)</span>.</p>
+    <p>In the case of the shape operator, <span
+    class="math inline">\(T\)</span> is <span
+    class="math inline">\(S_{N_p}\)</span>, <span
+    class="math inline">\(V\)</span> is <span
+    class="math inline">\(T_pM\)</span>, the basis vectors are <span
+    class="math inline">\(\frac{\partial}{\partial x^i}|_p\)</span>, and
+    the inner product is the induced metric. Even if the basis isn’t
+    orthonormal (as is usually the case with coordinate bases on
+    manifolds), the principle remains the same. The inner product allows
+    you to project the transformed vector <span
+    class="math inline">\(S_{N_p}(\frac{\partial}{\partial
+    x^i}|_p)\)</span> onto the basis vector <span
+    class="math inline">\(\frac{\partial}{\partial x^j}|_p\)</span> to
+    extract the corresponding matrix component <span
+    class="math inline">\((S_{N_p})_{ij}\)</span>.</p>
   </article>
 </body>
 </html>
