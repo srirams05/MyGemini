@@ -41,6 +41,9 @@
     <li><a href="#covariant-derivative-6---metric-compatibility"
     id="toc-covariant-derivative-6---metric-compatibility">Covariant
     Derivative 6 - Metric compatibility</a></li>
+    <li><a href="#covariant-derivative-7---metric-compatibility-2"
+    id="toc-covariant-derivative-7---metric-compatibility-2">Covariant
+    Derivative 7 - Metric compatibility 2</a></li>
     <li><a href="#vector-field-along-an-open-set-in-a-hypersurface"
     id="toc-vector-field-along-an-open-set-in-a-hypersurface">Vector
     Field ALONG an open set in a hypersurface</a></li>
@@ -53,6 +56,9 @@
     id="toc-metric-on-hypersurface-m">Metric on hypersurface M</a></li>
     <li><a href="#shape-operator-2" id="toc-shape-operator-2">Shape
     Operator 2</a></li>
+    <li><a href="#self-adjointness-of-shape-operator"
+    id="toc-self-adjointness-of-shape-operator">Self Adjointness of
+    Shape Operator</a></li>
     </ul>
   </nav>
   <article>
@@ -1698,6 +1704,59 @@
     consequence of our definition of the covariant derivative in <span
     class="math inline">\(E^n\)</span> and the fact that the connection
     is flat.</p>
+    <h1 id="covariant-derivative-7---metric-compatibility-2">Covariant
+    Derivative 7 - Metric compatibility 2</h1>
+    <ol type="1">
+    <li><p><strong>Local Coordinates:</strong> Let <span
+    class="math inline">\(x^1, \dots, x^n\)</span> be local coordinates
+    in <span class="math inline">\(E^n\)</span>. We use Cartesian
+    coordinates, so the metric components are constants.</p></li>
+    <li><p><strong>Coordinate Basis Vectors:</strong> Let <span
+    class="math inline">\(\partial_i = \frac{\partial}{\partial
+    x^i}\)</span> for <span class="math inline">\(i=1, \dots, n\)</span>
+    be the coordinate basis vectors.</p></li>
+    <li><p><strong>Expressing Vector Fields:</strong> We express <span
+    class="math inline">\(X\)</span>, <span
+    class="math inline">\(Y\)</span>, and <span
+    class="math inline">\(Z\)</span> in terms of the basis vectors:</p>
+    <p><span class="math inline">\(X = \sum_{i=1}^n X^i
+    \partial_i\)</span> <span class="math inline">\(Y = \sum_{j=1}^n Y^j
+    \partial_j\)</span> <span class="math inline">\(Z = \sum_{k=1}^n Z^k
+    \partial_k\)</span></p></li>
+    <li><p><strong>Inner Product in Coordinates:</strong> The Euclidean
+    inner product is:</p>
+    <p><span class="math inline">\(\langle X, Y \rangle = \sum_{i=1}^n
+    X^i Y^i\)</span> (because the metric tensor is the identity
+    matrix).</p></li>
+    <li><p><strong>Directional Derivative:</strong> The directional
+    derivative of a scalar function <span
+    class="math inline">\(f\)</span> along <span
+    class="math inline">\(Z\)</span> is:</p>
+    <p><span class="math inline">\(Zf = \sum_{k=1}^n Z^k \frac{\partial
+    f}{\partial x^k}\)</span></p></li>
+    <li><p><strong>Covariant Derivative:</strong> In Euclidean space,
+    the covariant derivative is the partial derivative:</p>
+    <p><span class="math inline">\(\nabla_Z X = \sum_{k=1}^n Z^k
+    \nabla_{\partial_k} \left( \sum_{i=1}^n X^i \partial_i \right) =
+    \sum_{i=1}^n \sum_{k=1}^n Z^k \frac{\partial X^i}{\partial x^k}
+    \partial_i\)</span></p></li>
+    <li><p><strong>Putting It Together:</strong> We compute <span
+    class="math inline">\(Z \langle X, Y \rangle\)</span>:</p>
+    <p><span class="math inline">\(Z\langle X, Y \rangle = \sum_{k=1}^n
+    Z^k \frac{\partial}{\partial x^k} \left( \sum_{i=1}^n X^i Y^i
+    \right) = \sum_{i=1}^n \sum_{k=1}^n Z^k \left( \frac{\partial
+    X^i}{\partial x^k} Y^i + X^i \frac{\partial Y^i}{\partial x^k}
+    \right)\)</span></p>
+    <p><span class="math inline">\(Z\langle X, Y \rangle =  \sum_{i=1}^n
+    \sum_{k=1}^n Z^k \frac{\partial X^i}{\partial x^k} Y^i +
+    \sum_{i=1}^n \sum_{k=1}^n Z^k X^i \frac{\partial Y^i}{\partial
+    x^k}\)</span></p></li>
+    <li><p><strong>Relating to Covariant Derivatives:</strong> We can
+    see this is equivalent to:</p>
+    <p><span class="math inline">\(Z\langle X, Y \rangle = \langle
+    \nabla_Z X, Y \rangle + \langle X, \nabla_Z Y
+    \rangle\)</span></p></li>
+    </ol>
     <h1 id="vector-field-along-an-open-set-in-a-hypersurface">Vector
     Field ALONG an open set in a hypersurface</h1>
     <p>We need to separate the definition into two cases: tangent vector
@@ -2694,6 +2753,88 @@
     class="math inline">\(\frac{\partial}{\partial x^j}|_p\)</span> to
     extract the corresponding matrix component <span
     class="math inline">\((S_{N_p})_{ij}\)</span>.</p>
+    <h1 id="self-adjointness-of-shape-operator">Self Adjointness of
+    Shape Operator</h1>
+    <p><strong>1. Definitions and Setup:</strong></p>
+    <ul>
+    <li><strong>Hypersurface:</strong> <span
+    class="math inline">\(M\)</span> is a hypersurface in <span
+    class="math inline">\(E^n\)</span>.</li>
+    <li><strong>Tangent and Normal Vectors:</strong> <span
+    class="math inline">\(X\)</span> and <span
+    class="math inline">\(Y\)</span> are vector fields tangent to <span
+    class="math inline">\(M\)</span>. <span
+    class="math inline">\(N\)</span> is a unit normal vector field on
+    <span class="math inline">\(M\)</span>.</li>
+    <li><strong>Covariant Derivative in <span
+    class="math inline">\(E^n\)</span>:</strong> <span
+    class="math inline">\(\nabla\)</span> is the covariant derivative in
+    <span class="math inline">\(E^n\)</span>. In this context, it acts
+    as the directional derivative.</li>
+    <li><strong>Shape Operator:</strong> The shape operator <span
+    class="math inline">\(S\)</span> is defined by <span
+    class="math inline">\(S(X) = -\nabla_X N\)</span>.</li>
+    <li><strong>Goal:</strong> To show <span
+    class="math inline">\(\langle S(X), Y \rangle = \langle X, S(Y)
+    \rangle\)</span>, where <span class="math inline">\(\langle \cdot,
+    \cdot \rangle\)</span> is the inner product in <span
+    class="math inline">\(E^n\)</span>.</li>
+    </ul>
+    <p><strong>2. The Proof:</strong></p>
+    <p>Since <span class="math inline">\(X\)</span> and <span
+    class="math inline">\(Y\)</span> are tangent to <span
+    class="math inline">\(M\)</span>, and <span
+    class="math inline">\(N\)</span> is normal to <span
+    class="math inline">\(M\)</span>, we have:</p>
+    <p><strong>(1)</strong> <span class="math inline">\(\langle N, X
+    \rangle = 0\)</span> <span class="math inline">\(\langle N, Y
+    \rangle = 0\)</span></p>
+    <p>Taking the directional derivative of the equations in (1):</p>
+    <p><strong>(2)</strong> <span class="math inline">\(Y\langle N, X
+    \rangle = \langle \nabla_Y N, X \rangle + \langle N, \nabla_Y X
+    \rangle = 0\)</span></p>
+    <p><strong>(3)</strong> <span class="math inline">\(X\langle N, Y
+    \rangle = \langle \nabla_X N, Y \rangle + \langle N, \nabla_X Y
+    \rangle = 0\)</span></p>
+    <p>Subtracting equation (3) from equation (2):</p>
+    <p><strong>(4)</strong> <span class="math inline">\(\langle \nabla_Y
+    N, X \rangle + \langle N, \nabla_Y X \rangle - \left(\langle
+    \nabla_X N, Y \rangle + \langle N, \nabla_X Y \rangle\right) =
+    0\)</span></p>
+    <p><strong>(5)</strong> <span class="math inline">\(\langle \nabla_Y
+    N, X \rangle - \langle \nabla_X N, Y \rangle = \langle N, \nabla_X Y
+    \rangle - \langle N, \nabla_Y X \rangle\)</span></p>
+    <p><strong>(6)</strong> <span class="math inline">\(\langle \nabla_Y
+    N, X \rangle - \langle \nabla_X N, Y \rangle = \langle N, \nabla_X Y
+    - \nabla_Y X \rangle\)</span></p>
+    <p>The term <span class="math inline">\(\nabla_X Y - \nabla_Y
+    X\)</span> is the Lie bracket <span
+    class="math inline">\([X,Y]\)</span>. Since <span
+    class="math inline">\(X\)</span> and <span
+    class="math inline">\(Y\)</span> are tangent to <span
+    class="math inline">\(M\)</span>, their Lie bracket <span
+    class="math inline">\([X,Y]\)</span> is also tangent to <span
+    class="math inline">\(M\)</span>. Because <span
+    class="math inline">\(N\)</span> is normal to <span
+    class="math inline">\(M\)</span>:</p>
+    <p><strong>(7)</strong> <span class="math inline">\(\langle N, [X,
+    Y] \rangle = 0\)</span></p>
+    <p>Therefore, from (6) and (7):</p>
+    <p><strong>(8)</strong> <span class="math inline">\(\langle \nabla_Y
+    N, X \rangle - \langle \nabla_X N, Y \rangle = 0\)</span></p>
+    <p>Using the definition of the shape operator:</p>
+    <p><strong>(9)</strong> <span class="math inline">\(\langle -S(Y), X
+    \rangle - \langle -S(X), Y \rangle = 0\)</span></p>
+    <p><strong>(10)</strong> <span class="math inline">\(-\langle S(Y),
+    X \rangle + \langle S(X), Y \rangle = 0\)</span></p>
+    <p><strong>(11)</strong> <span class="math inline">\(\langle S(X), Y
+    \rangle = \langle X, S(Y) \rangle\)</span></p>
+    <p>This proves the shape operator <span
+    class="math inline">\(S\)</span> is self-adjoint. This version uses
+    the more standard notation for directional derivatives of scalar
+    functions in <span class="math inline">\(E^n\)</span> while
+    maintaining the rigorous covariant derivative notation for vector
+    fields.</p>
   </article>
 </body>
 </html>
