@@ -59,6 +59,8 @@
     <li><a href="#self-adjointness-of-shape-operator"
     id="toc-self-adjointness-of-shape-operator">Self Adjointness of
     Shape Operator</a></li>
+    <li><a href="#second-fundamental-form"
+    id="toc-second-fundamental-form">Second Fundamental form</a></li>
     </ul>
   </nav>
   <article>
@@ -2867,6 +2869,172 @@
     <p>This version is more rigorous and avoids the ambiguity of using
     the same symbols for both the tangent vectors and their
     extensions.</p>
+    <h1 id="second-fundamental-form">Second Fundamental form</h1>
+    <p><strong><span class="math inline">\(E^n\)</span> is the ambient
+    Euclidean space. Let <span class="math inline">\(M \in E^n\)</span>
+    be a hypersurface. For a point <span class="math inline">\(p \in
+    M\)</span>, what is the definition of the second fundamental form at
+    <span class="math inline">\(p\)</span>.</strong></p>
+    <p>Let <span class="math inline">\(M\)</span> be a hypersurface in
+    <span class="math inline">\(E^n\)</span>. Let <span
+    class="math inline">\(p \in M\)</span>. The second fundamental form
+    is a symmetric bilinear form defined on the tangent space <span
+    class="math inline">\(T_pM\)</span> of <span
+    class="math inline">\(M\)</span> at <span
+    class="math inline">\(p\)</span>, with values in the normal space
+    <span class="math inline">\(N_pM\)</span>. Here’s how it’s
+    defined:</p>
+    <ol type="1">
+    <li><p><strong>Tangent Space and Normal Space:</strong> The tangent
+    space <span class="math inline">\(T_pM\)</span> is the set of all
+    tangent vectors to <span class="math inline">\(M\)</span> at <span
+    class="math inline">\(p\)</span>. Since <span
+    class="math inline">\(M\)</span> is a hypersurface in <span
+    class="math inline">\(E^n\)</span>, the normal space <span
+    class="math inline">\(N_pM\)</span> is one-dimensional. Let <span
+    class="math inline">\(N\)</span> be a unit normal vector field
+    defined in a neighborhood of <span class="math inline">\(p\)</span>,
+    and <span class="math inline">\(N_p\)</span> be its value at <span
+    class="math inline">\(p\)</span>.</p></li>
+    <li><p><strong>Covariant Derivative and Shape Operator:</strong> For
+    each tangent vector <span class="math inline">\(\mathbf{v} \in
+    T_pM\)</span>, the covariant derivative of <span
+    class="math inline">\(N\)</span> in the direction of <span
+    class="math inline">\(\mathbf{v}\)</span> is given by <span
+    class="math inline">\(\nabla_\mathbf{v} N\)</span>. Since <span
+    class="math inline">\(N\)</span> is a unit vector field, <span
+    class="math inline">\(\nabla_\mathbf{v} N\)</span> is orthogonal to
+    <span class="math inline">\(N\)</span>, and thus it must be
+    tangential to <span class="math inline">\(M\)</span>. We define the
+    shape operator <span class="math inline">\(S\)</span> at <span
+    class="math inline">\(p\)</span> as follows:</p></li>
+    </ol>
+    <p><span class="math display">\[S_p(\mathbf{v}) = -\nabla_\mathbf{v}
+    N\]</span></p>
+    <p>Note the negative sign. The shape operator is a linear map from
+    <span class="math inline">\(T_pM\)</span> to <span
+    class="math inline">\(T_pM\)</span>. In Euclidean space, the
+    covariant derivative is simply the directional derivative.</p>
+    <ol start="3" type="1">
+    <li><strong>Second Fundamental Form:</strong> The second fundamental
+    form <span class="math inline">\(II_p\)</span> at <span
+    class="math inline">\(p\)</span> is defined as:</li>
+    </ol>
+    <p><span class="math display">\[II_p(\mathbf{v}, \mathbf{w}) =
+    \langle S_p(\mathbf{v}), \mathbf{w} \rangle\]</span></p>
+    <p>for any <span class="math inline">\(\mathbf{v}, \mathbf{w} \in
+    T_pM\)</span>, where <span class="math inline">\(\langle \cdot,
+    \cdot \rangle\)</span> is the inner product in <span
+    class="math inline">\(E^n\)</span>. Because <span
+    class="math inline">\(S_p\)</span> is a linear map, <span
+    class="math inline">\(II_p\)</span> is bilinear. The second
+    fundamental form can also be written as:</p>
+    <p><span class="math display">\[II_p(\mathbf{v}, \mathbf{w}) =
+    \langle -\nabla_\mathbf{v} N, \mathbf{w} \rangle\]</span></p>
+    <p>Alternatively, using a local parametrization <span
+    class="math inline">\(\mathbf{x}(u^1, \dots, u^{n-1})\)</span> of
+    <span class="math inline">\(M\)</span> near <span
+    class="math inline">\(p\)</span>, the second fundamental form can be
+    expressed in terms of the coefficients of the second fundamental
+    form <span class="math inline">\(b_{ij}\)</span> as:</p>
+    <p><span class="math display">\[II_p = b_{ij} du^i du^j\]</span></p>
+    <p>where <span class="math inline">\(b_{ij} = \langle
+    \mathbf{x}_{ij}, N_p \rangle\)</span> and <span
+    class="math inline">\(\mathbf{x}_{ij} = \frac{\partial^2
+    \mathbf{x}}{\partial u^i \partial u^j}\)</span>.</p>
+    <p>It’s important to note that the second fundamental form is
+    symmetric, i.e., <span class="math inline">\(II_p(\mathbf{v},
+    \mathbf{w}) = II_p(\mathbf{w}, \mathbf{v})\)</span>. This follows
+    from the symmetry of the shape operator, which is proven using the
+    fact that the hypersurface is embedded in Euclidean space and the
+    connection is symmetric.</p>
+    <p><strong>At <span class="math inline">\(p\)</span>, the second
+    fundamental form takes two vectors in <span
+    class="math inline">\(T_pM\)</span> and generates a real number.
+    Correct?</strong></p>
+    <p>Yes, that is correct. The second fundamental form <span
+    class="math inline">\(II_p\)</span> at a point <span
+    class="math inline">\(p\)</span> on a hypersurface <span
+    class="math inline">\(M\)</span> takes two tangent vectors <span
+    class="math inline">\(\mathbf{v}, \mathbf{w} \in T_pM\)</span> as
+    input and produces a scalar value, which is a real number. This
+    scalar value is obtained by taking the inner product of the shape
+    operator applied to one vector (<span
+    class="math inline">\(S_p(\mathbf{v})\)</span>) with the other
+    vector (<span class="math inline">\(\mathbf{w}\)</span>), both of
+    which reside in the tangent space <span
+    class="math inline">\(T_pM\)</span>. So, <span
+    class="math inline">\(II_p: T_pM \times T_pM \to
+    \mathbb{R}\)</span>.</p>
+    <p><strong>Given the second fundamental form at <span
+    class="math inline">\(p \in M\)</span>, how to recover the shape
+    operator and metric tensor?</strong></p>
+    <p>You can recover the shape operator from the second fundamental
+    form if you also know the metric tensor (also called the first
+    fundamental form). You cannot recover <em>both</em> the shape
+    operator <em>and</em> the metric tensor from the second fundamental
+    form alone. Here’s why and how:</p>
+    <p><strong>1. Recovering the Shape Operator (given the second
+    fundamental form and the metric tensor):</strong></p>
+    <ul>
+    <li><p><strong>The Metric Tensor:</strong> The metric tensor <span
+    class="math inline">\(g_p\)</span> at <span
+    class="math inline">\(p\)</span> is a symmetric, positive-definite
+    bilinear form on <span class="math inline">\(T_pM\)</span>. It takes
+    two tangent vectors and returns a real number, effectively defining
+    an inner product on the tangent space. <span
+    class="math inline">\(g_p(\mathbf{v}, \mathbf{w}) = \langle
+    \mathbf{v}, \mathbf{w} \rangle\)</span>. It’s represented by a
+    matrix <span class="math inline">\((g_{ij})\)</span> in a given
+    basis of <span class="math inline">\(T_pM\)</span>.</p></li>
+    <li><p><strong>Relationship between <span
+    class="math inline">\(II_p\)</span>, <span
+    class="math inline">\(S_p\)</span>, and <span
+    class="math inline">\(g_p\)</span>:</strong> The second fundamental
+    form, shape operator, and metric tensor are related by the following
+    equation:</p></li>
+    </ul>
+    <p><span class="math display">\[II_p(\mathbf{v}, \mathbf{w}) =
+    g_p(S_p(\mathbf{v}), \mathbf{w})\]</span></p>
+    <ul>
+    <li><strong>Recovering <span
+    class="math inline">\(S_p\)</span>:</strong> In a given basis <span
+    class="math inline">\(\{\mathbf{e}_i\}\)</span> of <span
+    class="math inline">\(T_pM\)</span>, let <span
+    class="math inline">\(II_p(\mathbf{e}_i, \mathbf{e}_j) =
+    b_{ij}\)</span> be the components of the second fundamental form,
+    and let <span class="math inline">\(g_p(\mathbf{e}_i, \mathbf{e}_j)
+    = g_{ij}\)</span> be the components of the metric tensor. Then the
+    components <span class="math inline">\((S^i_j)\)</span> of the shape
+    operator <span class="math inline">\(S_p\)</span> satisfy:</li>
+    </ul>
+    <p><span class="math display">\[b_{ij} = g_{ik}S^k_j\]</span></p>
+    <p>This is a system of linear equations. Since <span
+    class="math inline">\(g_p\)</span> is positive-definite, the matrix
+    <span class="math inline">\((g_{ij})\)</span> is invertible. Let
+    <span class="math inline">\((g^{ij})\)</span> denote the components
+    of the inverse matrix of <span
+    class="math inline">\((g_{ij})\)</span>. We can then solve for the
+    shape operator components:</p>
+    <p><span class="math display">\[S^k_j = g^{ik}b_{ij}\]</span></p>
+    <p><strong>2. Why you can’t recover the metric tensor from the
+    second fundamental form alone:</strong></p>
+    <p>The second fundamental form essentially tells you about the
+    <em>curvature</em> of the hypersurface at a point. Multiple surfaces
+    can have the same curvature at a point but different intrinsic
+    geometries (different metric tensors). Therefore, the second
+    fundamental form alone doesn’t contain enough information to
+    determine the metric tensor. You need additional information about
+    the intrinsic geometry of the surface.</p>
+    <p><strong>Example:</strong></p>
+    <p>Imagine a flat sheet of paper and a cylinder rolled from a
+    similar sheet. At a point on the cylinder, you can choose a tangent
+    plane that locally looks identical to the tangent plane of the flat
+    paper. The second fundamental form can be made to be locally zero
+    (or identical) in both cases. But the intrinsic geometries are
+    different: the paper is flat, while the cylinder is curved. This
+    difference is captured by the metric tensor, which would be
+    different for the flat paper and the cylinder.</p>
   </article>
 </body>
 </html>
