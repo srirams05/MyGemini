@@ -2780,61 +2780,83 @@
     \cdot \rangle\)</span> is the inner product in <span
     class="math inline">\(E^n\)</span>.</li>
     </ul>
-    <p><strong>2. The Proof:</strong></p>
-    <p>Since <span class="math inline">\(X\)</span> and <span
-    class="math inline">\(Y\)</span> are tangent to <span
-    class="math inline">\(M\)</span>, and <span
-    class="math inline">\(N\)</span> is normal to <span
-    class="math inline">\(M\)</span>, we have:</p>
-    <p><strong>(1)</strong> <span class="math inline">\(\langle N, X
-    \rangle = 0\)</span> <span class="math inline">\(\langle N, Y
-    \rangle = 0\)</span></p>
-    <p>Taking the directional derivative of the equations in (1):</p>
-    <p><strong>(2)</strong> <span class="math inline">\(Y\langle N, X
-    \rangle = \langle \nabla_Y N, X \rangle + \langle N, \nabla_Y X
-    \rangle = 0\)</span></p>
-    <p><strong>(3)</strong> <span class="math inline">\(X\langle N, Y
-    \rangle = \langle \nabla_X N, Y \rangle + \langle N, \nabla_X Y
-    \rangle = 0\)</span></p>
-    <p>Subtracting equation (3) from equation (2):</p>
-    <p><strong>(4)</strong> <span class="math inline">\(\langle \nabla_Y
-    N, X \rangle + \langle N, \nabla_Y X \rangle - \left(\langle
-    \nabla_X N, Y \rangle + \langle N, \nabla_X Y \rangle\right) =
-    0\)</span></p>
-    <p><strong>(5)</strong> <span class="math inline">\(\langle \nabla_Y
-    N, X \rangle - \langle \nabla_X N, Y \rangle = \langle N, \nabla_X Y
-    \rangle - \langle N, \nabla_Y X \rangle\)</span></p>
-    <p><strong>(6)</strong> <span class="math inline">\(\langle \nabla_Y
-    N, X \rangle - \langle \nabla_X N, Y \rangle = \langle N, \nabla_X Y
-    - \nabla_Y X \rangle\)</span></p>
-    <p>The term <span class="math inline">\(\nabla_X Y - \nabla_Y
-    X\)</span> is the Lie bracket <span
-    class="math inline">\([X,Y]\)</span>. Since <span
-    class="math inline">\(X\)</span> and <span
-    class="math inline">\(Y\)</span> are tangent to <span
-    class="math inline">\(M\)</span>, their Lie bracket <span
-    class="math inline">\([X,Y]\)</span> is also tangent to <span
-    class="math inline">\(M\)</span>. Because <span
-    class="math inline">\(N\)</span> is normal to <span
-    class="math inline">\(M\)</span>:</p>
-    <p><strong>(7)</strong> <span class="math inline">\(\langle N, [X,
-    Y] \rangle = 0\)</span></p>
-    <p>Therefore, from (6) and (7):</p>
-    <p><strong>(8)</strong> <span class="math inline">\(\langle \nabla_Y
-    N, X \rangle - \langle \nabla_X N, Y \rangle = 0\)</span></p>
-    <p>Using the definition of the shape operator:</p>
-    <p><strong>(9)</strong> <span class="math inline">\(\langle -S(Y), X
-    \rangle - \langle -S(X), Y \rangle = 0\)</span></p>
-    <p><strong>(10)</strong> <span class="math inline">\(-\langle S(Y),
-    X \rangle + \langle S(X), Y \rangle = 0\)</span></p>
-    <p><strong>(11)</strong> <span class="math inline">\(\langle S(X), Y
-    \rangle = \langle X, S(Y) \rangle\)</span></p>
-    <p>This proves the shape operator <span
-    class="math inline">\(S\)</span> is self-adjoint. This version uses
-    the more standard notation for directional derivatives of scalar
-    functions in <span class="math inline">\(E^n\)</span> while
-    maintaining the rigorous covariant derivative notation for vector
-    fields.</p>
+    <p>You’re right to suggest that – using different names for the
+    extensions makes the argument clearer and avoids potential
+    confusion. Here’s the revised version with distinct names for the
+    extensions:</p>
+    <ol type="1">
+    <li><p><strong>Extensions:</strong> Extend <span
+    class="math inline">\(X_p\)</span> and <span
+    class="math inline">\(Y_p\)</span> to smooth vector fields <span
+    class="math inline">\(\tilde{X}\)</span> and <span
+    class="math inline">\(\tilde{Y}\)</span> defined in a neighborhood
+    of <span class="math inline">\(p\)</span> in <span
+    class="math inline">\(E^n\)</span>, such that <span
+    class="math inline">\(\tilde{X}(p) = X_p\)</span> and <span
+    class="math inline">\(\tilde{Y}(p) = Y_p\)</span>.</p></li>
+    <li><p><strong>Tangency at p:</strong> Because <span
+    class="math inline">\(\tilde{X}(p) = X_p\)</span> and <span
+    class="math inline">\(\tilde{Y}(p) = Y_p\)</span>, and <span
+    class="math inline">\(X_p\)</span> and <span
+    class="math inline">\(Y_p\)</span> are tangent to <span
+    class="math inline">\(M\)</span> at <span
+    class="math inline">\(p\)</span>, we have <span
+    class="math inline">\(\langle \tilde{X}(p), N(p) \rangle =
+    0\)</span> and <span class="math inline">\(\langle \tilde{Y}(p),
+    N(p) \rangle = 0\)</span>.</p></li>
+    <li><p><strong>Covariant Derivatives in E^n:</strong> We apply the
+    covariant derivative in <span class="math inline">\(E^n\)</span> to
+    <span class="math inline">\(\langle \tilde{X}, N \rangle\)</span>
+    and <span class="math inline">\(\langle \tilde{Y}, N
+    \rangle\)</span>: <span class="math inline">\(\nabla_{\tilde{Y}}
+    \langle \tilde{X}, N \rangle = \langle \nabla_{\tilde{Y}} \tilde{X},
+    N \rangle + \langle \tilde{X}, \nabla_{\tilde{Y}} N \rangle\)</span>
+    <span class="math inline">\(\nabla_{\tilde{X}} \langle \tilde{Y}, N
+    \rangle = \langle \nabla_{\tilde{X}} \tilde{Y}, N \rangle + \langle
+    \tilde{Y}, \nabla_{\tilde{X}} N \rangle\)</span></p></li>
+    <li><p><strong>Evaluating at p:</strong> Since <span
+    class="math inline">\(\langle \tilde{X}, N \rangle\)</span> and
+    <span class="math inline">\(\langle \tilde{Y}, N \rangle\)</span>
+    are both zero at <span class="math inline">\(p\)</span>, their
+    derivatives are also zero at <span class="math inline">\(p\)</span>.
+    Therefore: <span class="math inline">\(\langle \nabla_{\tilde{Y}}
+    \tilde{X}|_p, N_p \rangle + \langle X_p, \nabla_{\tilde{Y}} N|_p
+    \rangle = 0\)</span> <span class="math inline">\(\langle
+    \nabla_{\tilde{X}} \tilde{Y}|_p, N_p \rangle + \langle Y_p,
+    \nabla_{\tilde{X}} N|_p \rangle = 0\)</span></p></li>
+    <li><p><strong>Subtraction and Lie Bracket:</strong> Subtracting the
+    first equation from the second: <span class="math inline">\(\langle
+    \nabla_{\tilde{X}} \tilde{Y}|_p - \nabla_{\tilde{Y}} \tilde{X}|_p,
+    N_p \rangle + \langle Y_p, S_{N_p}(X_p) \rangle - \langle X_p,
+    S_{N_p}(Y_p) \rangle = 0\)</span> The term <span
+    class="math inline">\(\nabla_{\tilde{X}} \tilde{Y}|_p -
+    \nabla_{\tilde{Y}} \tilde{X}|_p\)</span> is the Lie bracket <span
+    class="math inline">\([\tilde{X}, \tilde{Y}]|_p\)</span>. Crucially,
+    even though <span class="math inline">\(\tilde{X}\)</span> and <span
+    class="math inline">\(\tilde{Y}\)</span> are not necessarily tangent
+    to <span class="math inline">\(M\)</span>, their Lie bracket at
+    <span class="math inline">\(p\)</span>, <span
+    class="math inline">\([\tilde{X}, \tilde{Y}]|_p\)</span>,
+    <em>is</em> tangent to <span class="math inline">\(M\)</span>. This
+    is because the Lie bracket of two vector fields at a point depends
+    only on the values of the vector fields along any curve through that
+    point, and we can choose a curve lying in <span
+    class="math inline">\(M\)</span>. Since <span
+    class="math inline">\([\tilde{X}, \tilde{Y}]|_p\)</span> is tangent
+    to <span class="math inline">\(M\)</span>, it’s orthogonal to <span
+    class="math inline">\(N_p\)</span>. Therefore, <span
+    class="math inline">\(\langle [\tilde{X}, \tilde{Y}]|_p, N_p \rangle
+    = 0\)</span>.</p></li>
+    <li><p><strong>Conclusion:</strong> This leaves us with: <span
+    class="math inline">\(\langle Y_p, S_{N_p}(X_p) \rangle - \langle
+    X_p, S_{N_p}(Y_p) \rangle = 0\)</span>, so <span
+    class="math inline">\(\langle Y_p, S_{N_p}(X_p) \rangle = \langle
+    X_p, S_{N_p}(Y_p) \rangle\)</span> Thus, <span
+    class="math inline">\(S_{N_p}\)</span> is self-adjoint.</p></li>
+    </ol>
+    <p>This version is more rigorous and avoids the ambiguity of using
+    the same symbols for both the tangent vectors and their
+    extensions.</p>
   </article>
 </body>
 </html>
