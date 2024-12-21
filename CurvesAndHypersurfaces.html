@@ -61,6 +61,15 @@
     Shape Operator</a></li>
     <li><a href="#second-fundamental-form"
     id="toc-second-fundamental-form">Second Fundamental form</a></li>
+    <li><a href="#mean-curvature-at-a-point"
+    id="toc-mean-curvature-at-a-point">Mean Curvature at a
+    point</a></li>
+    <li><a href="#gauss-curvature-at-a-point"
+    id="toc-gauss-curvature-at-a-point">Gauss curvature at a
+    point</a></li>
+    <li><a href="#example-to-illustrate-curvature-measures"
+    id="toc-example-to-illustrate-curvature-measures">Example to
+    illustrate Curvature measures</a></li>
     </ul>
   </nav>
   <article>
@@ -3035,6 +3044,201 @@
     different: the paper is flat, while the cylinder is curved. This
     difference is captured by the metric tensor, which would be
     different for the flat paper and the cylinder.</p>
+    <h1 id="mean-curvature-at-a-point">Mean Curvature at a point</h1>
+    <p><strong>What is the mean curvature at point <span
+    class="math inline">\(p \in M\)</span>. Let <span
+    class="math inline">\(N_p\)</span> be the unit normal
+    vector.</strong></p>
+    <p>The mean curvature <span class="math inline">\(H(p)\)</span> at a
+    point <span class="math inline">\(p \in M\)</span> is defined as the
+    average of the principal curvatures at that point. There are a few
+    equivalent ways to express this:</p>
+    <ol type="1">
+    <li><strong>Using Principal Curvatures:</strong> Let <span
+    class="math inline">\(k_1, k_2, ..., k_{n-1}\)</span> be the
+    principal curvatures at <span class="math inline">\(p\)</span>.
+    These are the eigenvalues of the shape operator <span
+    class="math inline">\(S_p\)</span>. Then the mean curvature is:</li>
+    </ol>
+    <p><span class="math display">\[H(p) = \frac{1}{n-1}
+    \sum_{i=1}^{n-1} k_i = \frac{1}{n-1} \text{tr}(S_p)\]</span></p>
+    <p>where <span class="math inline">\(\text{tr}(S_p)\)</span> is the
+    trace of the shape operator.</p>
+    <ol start="2" type="1">
+    <li><strong>Using the Shape Operator and Metric Tensor:</strong> Let
+    <span class="math inline">\(\{\mathbf{e}_1, \mathbf{e}_2, ...,
+    \mathbf{e}_{n-1}\}\)</span> be an orthonormal basis for <span
+    class="math inline">\(T_pM\)</span> with respect to the metric
+    tensor <span class="math inline">\(g_p\)</span>. Then:</li>
+    </ol>
+    <p><span class="math display">\[H(p) = \frac{1}{n-1}
+    \sum_{i=1}^{n-1} \langle S_p(\mathbf{e}_i), \mathbf{e}_i
+    \rangle\]</span></p>
+    <p>If the basis is not orthonormal, we have:</p>
+    <p><span class="math display">\[ H(p) = \frac{1}{n-1} g^{ij} \langle
+    S_p(\mathbf{e}_i), \mathbf{e}_j \rangle = \frac{1}{n-1} g^{ij}
+    b_{ij} \]</span></p>
+    <p>where <span class="math inline">\(g^{ij}\)</span> are the
+    components of the inverse matrix of the metric tensor <span
+    class="math inline">\((g_{ij})\)</span> and <span
+    class="math inline">\(b_{ij}\)</span> are the components of the
+    second fundamental form.</p>
+    <ol start="3" type="1">
+    <li><strong>Using the Second Fundamental Form and Metric
+    Tensor:</strong> As hinted at above, you can directly compute the
+    mean curvature using the components of the second fundamental form
+    <span class="math inline">\(b_{ij}\)</span> and the inverse of the
+    metric tensor <span class="math inline">\(g^{ij}\)</span>:</li>
+    </ol>
+    <p><span class="math display">\[H(p) = \frac{1}{n-1}
+    g^{ij}b_{ij}\]</span></p>
+    <p>This formula is particularly useful for calculations in specific
+    coordinate systems.</p>
+    <p>In summary, the mean curvature is a measure of how the
+    hypersurface bends at a point. It’s a scalar quantity, and its sign
+    can indicate the direction of the bending relative to the chosen
+    unit normal vector <span class="math inline">\(N_p\)</span>.</p>
+    <h1 id="gauss-curvature-at-a-point">Gauss curvature at a point</h1>
+    <p><strong>What is the Gauss curvature at <span
+    class="math inline">\(p\)</span></strong></p>
+    <p>The Gauss curvature <span class="math inline">\(K(p)\)</span> at
+    a point <span class="math inline">\(p\)</span> on a hypersurface
+    <span class="math inline">\(M \subset E^n\)</span> is the
+    determinant of the shape operator <span
+    class="math inline">\(S_p\)</span>. Since the shape operator maps
+    <span class="math inline">\(T_pM\)</span> to itself, and <span
+    class="math inline">\(T_pM\)</span> has dimension <span
+    class="math inline">\(n-1\)</span>, the Gauss curvature is the
+    product of the <span class="math inline">\(n-1\)</span> principal
+    curvatures.</p>
+    <ol type="1">
+    <li><strong>Using Principal Curvatures:</strong> Let <span
+    class="math inline">\(k_1, k_2, \dots, k_{n-1}\)</span> be the
+    principal curvatures at <span class="math inline">\(p\)</span>.
+    These are the eigenvalues of the shape operator <span
+    class="math inline">\(S_p\)</span>. Then the Gauss curvature
+    is:</li>
+    </ol>
+    <p><span class="math display">\[K(p) = \prod_{i=1}^{n-1} k_i =
+    \det(S_p)\]</span></p>
+    <ol start="2" type="1">
+    <li><strong>Using the Second Fundamental Form and Metric
+    Tensor:</strong> You can compute the Gauss curvature using the
+    determinant of the matrix of the second fundamental form <span
+    class="math inline">\((b_{ij})\)</span> and the determinant of the
+    matrix of the metric tensor <span
+    class="math inline">\((g_{ij})\)</span>, both expressed in the
+    <em>same</em> basis for <span
+    class="math inline">\(T_pM\)</span>:</li>
+    </ol>
+    <p><span class="math display">\[K(p) =
+    \frac{\det(b_{ij})}{\det(g_{ij})}\]</span></p>
+    <p>It’s important to remember that the Gauss curvature is an
+    intrinsic quantity. This means it can be determined solely by
+    measurements <em>within</em> the surface itself, without reference
+    to the ambient Euclidean space <span
+    class="math inline">\(E^n\)</span>. This is a consequence of Gauss’s
+    Theorema Egregium (Remarkable Theorem).</p>
+    <p>For the special case of a 2-dimensional surface (n=3), the Gauss
+    curvature is the product of the two principal curvatures: <span
+    class="math inline">\(K = k_1k_2\)</span>.</p>
+    <p>The Gauss curvature gives us important information about the
+    local geometry of the surface at a point. For example:</p>
+    <ul>
+    <li><span class="math inline">\(K(p) &gt; 0\)</span>: The surface is
+    locally convex (like a sphere) around <span
+    class="math inline">\(p\)</span>.</li>
+    <li><span class="math inline">\(K(p) &lt; 0\)</span>: The surface is
+    locally saddle-shaped (like a hyperbolic paraboloid) around <span
+    class="math inline">\(p\)</span>.</li>
+    <li><span class="math inline">\(K(p) = 0\)</span>: The surface is
+    locally flat or cylindrical around <span
+    class="math inline">\(p\)</span>. At least one principal curvature
+    is zero.</li>
+    </ul>
+    <h1 id="example-to-illustrate-curvature-measures">Example to
+    illustrate Curvature measures</h1>
+    <p><strong><span class="math inline">\(E^n\)</span> is the ambient
+    space. <span class="math inline">\(M \subset E^n\)</span> is a
+    hypersurface. Let <span class="math inline">\(H(p)\)</span> be the
+    mean curvature and <span class="math inline">\(K(p)\)</span> the
+    Gauss curvature of <span class="math inline">\(M\)</span> at <span
+    class="math inline">\(p\)</span>. Provide an intuition of these
+    measures using an example in <span
+    class="math inline">\(E^3\)</span>.</strong></p>
+    <p>Let’s consider a hypersurface <span
+    class="math inline">\(M\)</span> in <span
+    class="math inline">\(E^3\)</span>, which is simply a 2-dimensional
+    surface. A good example to build intuition is the torus.</p>
+    <p><strong>Mean Curvature (<span
+    class="math inline">\(H(p)\)</span>)</strong></p>
+    <p>Imagine a small patch of the surface around a point <span
+    class="math inline">\(p\)</span>. The mean curvature at <span
+    class="math inline">\(p\)</span> essentially tells you how much this
+    patch is “curved on average” in all directions. More formally, it’s
+    the average of the principal curvatures (we’ll get to those in a
+    moment).</p>
+    <ul>
+    <li><strong>On the outer rim of the torus:</strong> Here, the
+    surface curves away from the center of the torus in one direction,
+    and along the torus’ circumference in the other. Both curvatures are
+    in the same general “outward” direction. Thus, the mean curvature is
+    positive and relatively large.</li>
+    <li><strong>On the inner rim of the torus:</strong> One direction
+    curves <em>towards</em> the center of the torus (negative
+    curvature), while the other curves along the circumference (positive
+    curvature). The magnitudes of these curvatures are different. The
+    inner rim curves more sharply towards the center than it curves
+    along the circumference. The mean curvature is negative, since the
+    inward curvature dominates.</li>
+    <li><strong>On the top/bottom of the torus:</strong> Here, the
+    surface curves “downward” in one direction and “upward” in the
+    other, like a saddle. One principal curvature is positive and the
+    other is negative. If they have equal magnitudes, as is the case on
+    some points of the torus, the mean curvature is zero.</li>
+    </ul>
+    <p><strong>Gauss Curvature (<span
+    class="math inline">\(K(p)\)</span>)</strong></p>
+    <p>The Gauss curvature describes the <em>product</em> of the
+    principal curvatures at a point. It measures how much the surface
+    locally deviates from being a plane. Unlike mean curvature, Gauss
+    curvature is <em>intrinsic</em>: it can be determined entirely by
+    measurements <em>within</em> the surface, without reference to the
+    ambient space.</p>
+    <ul>
+    <li><strong>On the outer rim of the torus:</strong> Both principal
+    curvatures are positive. Their product, the Gauss curvature, is
+    therefore positive.</li>
+    <li><strong>On the inner rim of the torus:</strong> One principal
+    curvature is positive, the other negative. Their product, the Gauss
+    curvature, is negative. This negativity corresponds to the
+    saddle-like shape locally.</li>
+    <li><strong>On the top/bottom of the torus:</strong> As described
+    before, one curvature is positive, one is negative, and <span
+    class="math inline">\(K(p)\)</span> is therefore negative.</li>
+    </ul>
+    <p><strong>Principal Curvatures</strong></p>
+    <p>Imagine taking a plane that contains the normal vector to the
+    surface at <span class="math inline">\(p\)</span>. As you rotate
+    this plane, the intersection of the plane and the surface forms a
+    curve. The curvature of this curve at <span
+    class="math inline">\(p\)</span> changes as you rotate the plane.
+    The maximum and minimum curvatures obtained this way are the
+    principal curvatures, often denoted <span
+    class="math inline">\(k_1\)</span> and <span
+    class="math inline">\(k_2\)</span>.</p>
+    <p>Then: <span class="math display">\[H(p) = \frac{k_1 +
+    k_2}{2}\]</span> <span class="math display">\[K(p) = k_1
+    k_2\]</span></p>
+    <p>Thinking about these curvatures on various points of the torus
+    helps solidify the intuitive understanding of how these measures
+    capture the shape of a surface. The torus is a great illustrative
+    example because it exhibits regions of positive, negative, and zero
+    Gauss and mean curvatures.</p>
+    <figure>
+    <img src="Torus.png" alt="My Picture" />
+    <figcaption aria-hidden="true">My Picture</figcaption>
+    </figure>
   </article>
 </body>
 </html>
